@@ -1,1 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venti Verde - Geotecnologias e Meio Ambiente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-area" onclick="switchPage('home')">
+                <img src="VENTI VERDE.png" alt="Venti Verde Logo" class="nav-logo">
+            </a>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" onclick="switchPage('home')">Início</a>
+                <a href="#cursos-servicos" class="nav-link" onclick="switchPage('cursos')">Cursos & Serviços</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-home" class="page-content active">
+        <section class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content scroll-anim">
+                <h1>Tecnologia e Precisão para o Agro e Meio Ambiente</h1>
+                <p>Transformando dados aéreos e espaciais em informações estratégicas de alta performance.</p>
+                <a href="#cursos-servicos" class="btn-primary" onclick="switchPage('cursos')">Conheça Nossas Soluções</a>
+            </div>
+        </section>
+
+        <section class="institucional section-padding">
+            <div class="container scroll-anim">
+                <span class="section-subtitle">Quem Somos</span>
+                <h2>Venti Verde - Soluções em Drones, Geotecnologias e Meio Ambiente</h2>
+                <p class="section-text">
+                    A Venti Verde é uma empresa especializada em soluções utilizando drones, geotecnologias e inteligência espacial para atender empresas, produtores rurais e profissionais que buscam inovação, precisão e segurança em seus projetos.
+                </p>
+                <p class="section-text">
+                    Atuamos com cursos especializados, processamento de imagens, geoprocessamento, levantamentos aéreos, elaboração de mapas, laudos e análises ambientais voltadas à regularização ambiental e ao planejamento territorial. Nosso objetivo é transformar dados em informações estratégicas por meio da tecnologia.
+                </p>
+            </div>
+        </section>
+
+        <section class="fundadora section-padding bg-light">
+            <div class="container grid-2 scroll-anim">
+                <div class="fundadora-img-wrapper">
+                    <img src="Larissa.JPG" alt="Larissa Dall'Agnol - Fundadora da Venti Verde" class="fundadora-img">
+                </div>
+                <div class="fundadora-info">
+                    <span class="section-subtitle">Liderança</span>
+                    <h2>Conheça a Fundadora</h2>
+                    <p class="fundadora-bio">
+                        <strong>Larissa Dall'Agnol</strong> é Engenheira Agrícola e Ambiental, Mestre em Gestão e Tecnologia Ambiental e Pós-graduanda em Gestão, Licenciamento e Auditoria Ambiental.
+                    </p>
+                    <p class="fundadora-bio">
+                        Especialista em drones e geotecnologias aplicadas ao meio ambiente e agricultura, atua desde 2022 desenvolvendo soluções voltadas ao processamento de imagens, geoprocessamento, mapeamentos aéreos, análises ambientais e capacitação profissional.
+                    </p>
+                    <p class="fundadora-bio">
+                        Seu propósito é aproximar a tecnologia da realidade de empresas e profissionais, oferecendo soluções práticas, modernas e acessíveis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-services section-padding">
+            <div class="container scroll-anim">
+                <div class="center-title">
+                    <span class="section-subtitle">O Que Fazemos</span>
+                    <h2>Nossas Especialidades</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card-mini">
+                        <i class="fa-solid fa-helicopter"></i>
+                        <h3>Cursos de Pilotagem de Drones</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <h3>Formação em Geoprocessamento</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-images"></i>
+                        <h3>Fotogrametria e Processamento</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h3>Mapeamentos com Drone</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <h3>Laudos Ambientais</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-seedling"></i>
+                        <h3>Regularização Ambiental</h3>
+                    </div>
+                    <div class="card-mini">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <h3>Consultorias Técnicas</h3>
+                    </div>
+                </div>
+                <div class="center-btn margin-top">
+                    <a href="#cursos-servicos" class="btn-secondary" onclick="switchPage('cursos')">Ver Detalhes dos Serviços</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-cursos" class="page-content">
+        <section class="treinamentos section-padding-top">
+            <div class="container scroll-anim">
+                <div class="center-title">
+                    <span class="section-subtitle">Capacitação</span>
+                    <h2>Treinamentos Profissionais</h2>
+                </div>
+                
+                <div class="cursos-container">
+                    <div class="course-card">
+                        <div class="course-icon-header">
+                            <i class="fa-solid fa-drone-front"></i> 🚁
+                        </div>
+                        <h3>Curso de Pilotagem de Drone</h3>
+                        <p>Aprenda a pilotar com segurança, seguindo as regulamentações vigentes e aplicando técnicas profissionais de voo.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-clock"></i> Carga Horária: [Inserir Horas]</span>
+                        </div>
+                        <div class="price-box">
+                            <p><strong>Presencial Individual:</strong> R$ 2.000,00</p>
+                            <p><strong>Presencial em Grupo:</strong> R$ 800,00 <small>/ aluno</small></p>
+                            <p><strong>Online:</strong> R$ 250,00</p>
+                        </div>
+                        <a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20o%20Curso%20de%20Pilotagem" target="_blank" class="btn-card">Inscrever-se</a>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-icon-header">
+                            🌎
+                        </div>
+                        <h3>Formação em Geoprocessamento</h3>
+                        <p>Voltado para profissionais que desejam trabalhar com mapas, drones, análises ambientais e agricultura de precisão utilizando QGIS e processamento de dados espaciais.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-clock"></i> Carga Horária: [Inserir Horas]</span>
+                            <span><i class="fa-solid fa-laptop-file"></i> Modalidade: Online/Presencial</span>
+                        </div>
+                        <h4 class="topics-title">Conteúdos abordados:</h4>
+                        <ul class="course-topics">
+                            <li>Introdução ao QGIS & Cartografia</li>
+                            <li>Sistemas de Coordenadas, Vetores e Raster</li>
+                            <li>Banco de Dados Espaciais & Criação de Mapas</li>
+                            <li>Cálculo de Áreas & Mapas Temáticos</li>
+                            <li>Processamento de dados de drone e ortomosaicos</li>
+                        </ul>
+                        <div class="price-single">
+                            <span>Investimento:</span>
+                            <span class="price-value">R$ 450,00</span>
+                        </div>
+                        <a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20a%20Formacao%20em%20Geoprocessamento" target="_blank" class="btn-card">Inscrever-se</a>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-icon-header">
+                            📷
+                        </div>
+                        <h3>Formação em Fotogrametria</h3>
+                        <p>Curso perfeitamente destinado ao processamento profissional de imagens de alta resolução obtidas por drones.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-clock"></i> Carga Horária: [Inserir Horas]</span>
+                            <span><i class="fa-solid fa-graduation-cap"></i> Modalidade: Online/Presencial</span>
+                        </div>
+                        <h4 class="topics-title">Conteúdos abordados:</h4>
+                        <ul class="course-topics">
+                            <li>Agisoft Metashape & Alinhamento de imagens</li>
+                            <li>Geração de Ortomosaicos, MDT e MDS</li>
+                            <li>Nuvem de Pontos & Curvas de Nível</li>
+                            <li>Cálculo de Volumes e Cubagem</li>
+                            <li>Exportação para QGIS e AutoCAD</li>
+                        </ul>
+                        <div class="price-single">
+                            <span>Investimento:</span>
+                            <span class="price-value">R$ 600,00</span>
+                        </div>
+                        <a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20a%20Formacao%20em%20Fotogrametria" target="_blank" class="btn-card">Inscrever-se</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solucoes-tecnicas section-padding">
+            <div class="container scroll-anim">
+                <div class="center-title">
+                    <span class="section-subtitle">Serviços</span>
+                    <h2>Soluções Técnicas</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-box">
+                        <i class="fa-solid fa-drone"></i>
+                        <h3>Mapeamentos com Drone</h3>
+                        <p>Levantamentos aéreos precisos para monitoramento agrícola, ambiental e topográfico.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-processor"></i>
+                        <h3>Processamento de Imagens</h3>
+                        <p>Transformação de dados brutos coletados por sensores em produtos cartográficos inteligíveis.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-border-all"></i>
+                        <h3>Geração de Ortomosaicos</h3>
+                        <p>Mosaicos de fotos retificadas e georreferenciadas em altíssima resolução dimensional.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-mountain"></i>
+                        <h3>Modelos Digitais de Terreno (MDT)</h3>
+                        <p>Representação altimétrica do relevo desconsiderando a cobertura vegetal e objetos.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-building-ngo"></i>
+                        <h3>Modelos Digitais de Superfície (MDS)</h3>
+                        <p>Representação da superfície terrestre incluindo todas as estruturas e copas de árvores existentes.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-lines-leaning"></i>
+                        <h3>Curvas de Nível</h3>
+                        <p>Delimitações topográficas fundamentais para estudos de declividade e planejamento de solo.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-chart-area"></i>
+                        <h3>Cálculo de Áreas</h3>
+                        <p>Mensuração exata de polígonos territoriais complexos com máxima precisão georreferenciada.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-cubes"></i>
+                        <h3>Cálculo de Volumes</h3>
+                        <p>Cubagem precisa para estoques de materiais, terraplenagem e movimentação de cargas.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-map"></i>
+                        <h3>Mapas Temáticos</h3>
+                        <p>Cartografia customizada expressando dados qualitativos e quantitativos georreferenciados.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h3>Geoprocessamento</h3>
+                        <p>Análise de dados espaciais cruzados para geração de inteligência geográfica aplicada.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-file-shield"></i>
+                        <h3>Laudos Ambientais</h3>
+                        <p>Documentações técnicas robustas atestando as condições ambientais de propriedades.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>Regularização Ambiental</h3>
+                        <p>Processos de CAR, licenças e adequações às legislações ambientais vigentes.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <h3>Consultoria Técnica</h3>
+                        <p>Apoio estratégico personalizado para tomada de decisões eficazes no agro e meio ambiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Venti%20Verde." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer id="contato" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="VENTI VERDE.png" alt="Venti Verde Logo" class="footer-logo">
+                <p>Tecnologia e precisão para o agro e meio ambiente.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contatos</h3>
+                <p><i class="fa-solid fa-envelope"></i> contato@ventiverde.com.br</p>
+                <p><i class="fa-solid fa-phone"></i> (00) 00000-0000</p>
+            </div>
+            <div class="footer-geo">
+                <h3>Localização</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Atendimento Nacional / Base Física</p>
+            </div>
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2026 Venti Verde Geotecnologias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script href="script.js" src="script.js"></script>
+</body>
+</html>
