@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venti Verde - Geotecnologias e Meio Ambiente</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones FontAwesome para os Cards e Redes Sociais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- MENU DE NAVEGAÇÃO FIXO -->
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo-area" onclick="switchPage('home')">
@@ -27,7 +29,11 @@
         </div>
     </header>
 
+    <!-- ==================================================
+         PÁGINA 1 - HOME
+         ================================================== -->
     <main id="page-home" class="page-content active">
+        <!-- BANNER PRINCIPAL -->
         <section class="hero-banner">
             <div class="hero-overlay"></div>
             <div class="hero-content scroll-anim">
@@ -37,6 +43,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO INSTITUCIONAL -->
         <section class="institucional section-padding">
             <div class="container scroll-anim">
                 <span class="section-subtitle">Quem Somos</span>
@@ -50,6 +57,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO FUNDADORA -->
         <section class="fundadora section-padding bg-light">
             <div class="container grid-2 scroll-anim">
                 <div class="fundadora-img-wrapper">
@@ -71,6 +79,7 @@
             </div>
         </section>
 
+        <!-- RESUMO DE SERVIÇOS (CARDS) -->
         <section class="home-services section-padding">
             <div class="container scroll-anim">
                 <div class="center-title">
@@ -88,7 +97,7 @@
                     </div>
                     <div class="card-mini">
                         <i class="fa-solid fa-images"></i>
-                        <h3>Fotogrametria e Processamento</h3>
+                        <h3>Fotogrametria e Processamento de Imagens</h3>
                     </div>
                     <div class="card-mini">
                         <i class="fa-solid fa-map-location-dot"></i>
@@ -114,7 +123,11 @@
         </section>
     </main>
 
+    <!-- ==================================================
+         PÁGINA 2 - CURSOS E SERVIÇOS
+         ================================================== -->
     <main id="page-cursos" class="page-content">
+        <!-- SEÇÃO TREINAMENTOS -->
         <section class="treinamentos section-padding-top">
             <div class="container scroll-anim">
                 <div class="center-title">
@@ -123,9 +136,10 @@
                 </div>
                 
                 <div class="cursos-container">
+                    <!-- Curso 1 -->
                     <div class="course-card">
                         <div class="course-icon-header">
-                            <i class="fa-solid fa-drone-front"></i> 🚁
+                            <i class="fa-solid fa-helicopter" style="color: var(--primary-dark);"></i>
                         </div>
                         <h3>Curso de Pilotagem de Drone</h3>
                         <p>Aprenda a pilotar com segurança, seguindo as regulamentações vigentes e aplicando técnicas profissionais de voo.</p>
@@ -140,9 +154,10 @@
                         <a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20o%20Curso%20de%20Pilotagem" target="_blank" class="btn-card">Inscrever-se</a>
                     </div>
 
+                    <!-- Curso 2 -->
                     <div class="course-card">
                         <div class="course-icon-header">
-                            🌎
+                            <i class="fa-solid fa-earth-americas" style="color: var(--primary-dark);"></i>
                         </div>
                         <h3>Formação em Geoprocessamento</h3>
                         <p>Voltado para profissionais que desejam trabalhar com mapas, drones, análises ambientais e agricultura de precisão utilizando QGIS e processamento de dados espaciais.</p>
@@ -165,9 +180,10 @@
                         <a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20a%20Formacao%20em%20Geoprocessamento" target="_blank" class="btn-card">Inscrever-se</a>
                     </div>
 
+                    <!-- Curso 3 -->
                     <div class="course-card">
                         <div class="course-icon-header">
-                            📷
+                            <i class="fa-solid fa-images" style="color: var(--primary-dark);"></i>
                         </div>
                         <h3>Formação em Fotogrametria</h3>
                         <p>Curso perfeitamente destinado ao processamento profissional de imagens de alta resolução obtidas por drones.</p>
@@ -193,6 +209,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO SOLUÇÕES TÉCNICAS -->
         <section class="solucoes-tecnicas section-padding">
             <div class="container scroll-anim">
                 <div class="center-title">
@@ -202,12 +219,12 @@
 
                 <div class="services-grid">
                     <div class="service-box">
-                        <i class="fa-solid fa-drone"></i>
+                        <i class="fa-solid fa-helicopter"></i>
                         <h3>Mapeamentos com Drone</h3>
                         <p>Levantamentos aéreos precisos para monitoramento agrícola, ambiental e topográfico.</p>
                     </div>
                     <div class="service-box">
-                        <i class="fa-solid fa-processor"></i>
+                        <i class="fa-solid fa-laptop-code"></i>
                         <h3>Processamento de Imagens</h3>
                         <p>Transformação de dados brutos coletados por sensores em produtos cartográficos inteligíveis.</p>
                     </div>
@@ -222,12 +239,12 @@
                         <p>Representação altimétrica do relevo desconsiderando a cobertura vegetal e objetos.</p>
                     </div>
                     <div class="service-box">
-                        <i class="fa-solid fa-building-ngo"></i>
+                        <i class="fa-solid fa-cubes"></i>
                         <h3>Modelos Digitais de Superfície (MDS)</h3>
                         <p>Representação da superfície terrestre incluindo todas as estruturas e copas de árvores existentes.</p>
                     </div>
                     <div class="service-box">
-                        <i class="fa-solid fa-lines-leaning"></i>
+                        <i class="fa-solid fa-route"></i>
                         <h3>Curvas de Nível</h3>
                         <p>Delimitações topográficas fundamentais para estudos de declividade e planejamento de solo.</p>
                     </div>
@@ -237,7 +254,7 @@
                         <p>Mensuração exata de polígonos territoriais complexos com máxima precisão georreferenciada.</p>
                     </div>
                     <div class="service-box">
-                        <i class="fa-solid fa-cubes"></i>
+                        <i class="fa-solid fa-boxes-stacked"></i>
                         <h3>Cálculo de Volumes</h3>
                         <p>Cubagem precisa para estoques de materiais, terraplenagem e movimentação de cargas.</p>
                     </div>
@@ -271,10 +288,12 @@
         </section>
     </main>
 
+    <!-- BUTTON WHATSAPP FLUTUANTE -->
     <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Venti%20Verde." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- RODAPÉ DO SITE -->
     <footer id="contato" class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -305,6 +324,6 @@
         </div>
     </footer>
 
-    <script href="script.js" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
