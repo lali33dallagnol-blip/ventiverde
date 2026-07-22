@@ -205,29 +205,35 @@ h2 {
 /* BANNER PRINCIPAL (HERO) */
 .hero-banner {
     position: relative;
-    height: 70vh;
-    min-height: 450px;
-    background-image: url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1920'); /* Backup representativo tecnológico */
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    min-height: 80vh; /* Ajuste a altura conforme necessário */
+    
+    /* Configuração da imagem de fundo */
+    background-image: url('capa_home.png');
+    background-size: cover;      /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    
     display: flex;
     align-items: center;
-    color: var(--pure-white);
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(10, 92, 54, 0.9) 0%, rgba(18, 38, 30, 0.7) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece levemente o fundo */
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    z-index: 10;
+    z-index: 2;
+    color: #ffffff;
 }
 
 .hero-content h1 {
