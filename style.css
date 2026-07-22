@@ -208,7 +208,9 @@ h2 {
     width: 100%;
     min-height: 80vh;
     
-    background-image: url('img/home_capa.png');
+    /* Chame o arquivo direto, pois ele está solto na raiz do GitHub */
+    background-image: url('home_capa.png');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
