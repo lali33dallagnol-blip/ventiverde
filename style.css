@@ -208,10 +208,10 @@ h2 {
     width: 100%;
     min-height: 80vh; /* Ajuste a altura conforme necessário */
     
-    /* Configuração da imagem de fundo */
+    /* Aqui é onde a imagem é chamada! */
     background-image: url('capa_home.png');
-    background-size: cover;      /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     
     display: flex;
