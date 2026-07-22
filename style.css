@@ -89,13 +89,27 @@ body {
     transform: translateY(-2px);
 }
 
+/* HEADER E NAVBAR FIXA */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-light);
+    z-index: 1000;
+    transition: var(--transition-smooth);
+}
+
 .nav-container {
     width: 90%;
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Mantém os links à esquerda e a logo à direita */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -103,18 +117,23 @@ body {
     margin-left: auto; /* Garante que a logo fique alinhada totalmente à direita */
 }
 
-.nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: var(--transition-smooth);
-    position: relative;
-    padding: 5px 0;
-    text-transform: none; /* Garante que respeite as minúsculas e maiúsculas exatas do HTML */
-}.nav-menu {
+.nav-logo {
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.nav-menu {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-separator {
+    color: var(--primary-light);
+    font-weight: 600;
+    font-size: 0.9rem;
+    user-select: none;
 }
 
 .nav-link {
@@ -125,6 +144,7 @@ body {
     transition: var(--transition-smooth);
     position: relative;
     padding: 5px 0;
+    text-transform: none; /* Mantém maiúsculas e minúsculas exatas do HTML */
 }
 
 .nav-link:hover, .nav-link.active {
@@ -201,9 +221,7 @@ h2 {
     width: 100%;
     min-height: 80vh;
     
-    /* Chame o arquivo direto, pois ele está solto na raiz do GitHub */
     background-image: url('home_capa.png');
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -231,6 +249,7 @@ h2 {
     z-index: 2;
     color: #ffffff;
 }
+
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -533,7 +552,7 @@ h2 {
     height: 70px;
     object-fit: contain;
     margin-bottom: 15px;
-    filter: brightness(0) invert(1); /* Deixa a logo em versão branca elegante */
+    filter: brightness(0) invert(1);
 }
 
 .footer h3 {
