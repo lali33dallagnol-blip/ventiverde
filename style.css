@@ -220,6 +220,7 @@ h2 {
     text-align: center;
 }
 
+/* Camada semitransparente para dar contraste e destacar o texto e botão */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -230,12 +231,12 @@ h2 {
     z-index: 1;
 }
 
+/* Garante que o conteúdo (título, parágrafo e botão) fique por cima da imagem */
 .hero-content {
     position: relative;
     z-index: 2;
     color: #ffffff;
 }
-
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 700;
