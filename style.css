@@ -209,7 +209,7 @@ h2 {
     min-height: 80vh; /* Ajuste a altura conforme necessário */
     
     /* Aqui é onde a imagem é chamada! */
-    background-image: url('capa_home.png');
+    background-image: url('home_capa.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
