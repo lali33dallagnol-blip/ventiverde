@@ -114,7 +114,7 @@ body {
 }
 
 .logo-area {
-    margin-left: auto; /* Garante que a logo fique alinhada totalmente à direita */
+    margin-left: auto; /* Alinha o logo à extrema direita */
 }
 
 .nav-logo {
@@ -144,7 +144,7 @@ body {
     transition: var(--transition-smooth);
     position: relative;
     padding: 5px 0;
-    text-transform: none; /* Mantém maiúsculas e minúsculas exatas do HTML */
+    text-transform: none; /* Respeita minúsculas e maiúsculas do HTML */
 }
 
 .nav-link:hover, .nav-link.active {
