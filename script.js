@@ -1,16 +1,20 @@
-// CONTROLE DE NAVEGAÇÃO ENTRE ABAS/PÁGINAS
+// ==================================================
+// CONTROLE DE NAVEGAÇÃO ENTRE PÁGINAS/ABAS
+// ==================================================
 function switchPage(pageId, targetSectionId = null) {
     const homePage = document.getElementById('page-home');
     const cursosPage = document.getElementById('page-cursos');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Remove active de todos os links e páginas
+    // 1. Limpa classes ativas anteriores
     if (homePage) homePage.classList.remove('active');
     if (cursosPage) cursosPage.classList.remove('active');
     navLinks.forEach(link => link.classList.remove('active'));
 
+    // 2. Direciona para a página solicitada
     if (pageId === 'home') {
         if (homePage) homePage.classList.add('active');
+        
         const activeLink = document.querySelector('.nav-link[href="#home"]');
         if (activeLink) activeLink.classList.add('active');
         
@@ -19,11 +23,10 @@ function switchPage(pageId, targetSectionId = null) {
     } else if (pageId === 'cursos') {
         if (cursosPage) cursosPage.classList.add('active');
 
-        // Se veio de um clique específico ou pela URL
+        // Se o clique foi para uma seção específica (#treinamentos ou #solucoes-tecnicas)
         if (targetSectionId) {
             const section = document.getElementById(targetSectionId);
             if (section) {
-                // Pequeno atraso para aguardar a troca de exibição da página
                 setTimeout(() => {
                     section.scrollIntoView({ behavior: 'smooth' });
                 }, 50);
@@ -33,20 +36,22 @@ function switchPage(pageId, targetSectionId = null) {
         }
     }
 
-    // Atualiza estado ativo dos links da Navbar
+    // 3. Atualiza destaque no menu e fecha menu mobile se estiver aberto
     updateActiveNavLink(pageId, targetSectionId);
 
-    // Fecha o menu hambúrguer no mobile após a seleção
     const navMenu = document.querySelector('.nav-menu');
     const menuToggle = document.querySelector('.menu-toggle');
+    
     if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
     }
 }
 
-// Auxiliar para destacar o link correto do menu
+// Auxiliar para destacar o link correto do menu (Cursos ou Serviços)
 function updateActiveNavLink(pageId, targetSectionId) {
     if (pageId === 'cursos') {
         if (targetSectionId === 'solucoes-tecnicas') {
@@ -59,12 +64,14 @@ function updateActiveNavLink(pageId, targetSectionId) {
     }
 }
 
-// EVENTOS INICIAIS E MENU HAMBÚRGUER
+// ==================================================
+// EVENTOS APÓS O CARREGAMENTO DO DOM
+// ==================================================
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Toggle do Menu Mobile
+    // Alternador do Menu Mobile (Hambúrguer -> X)
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('active');
@@ -73,28 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // SISTEMA DE ANIMAÇÃO AO ROLAR A TELA (Intersection Observer)
+    // Sistema de Animação ao Rolar a Tela (Intersection Observer)
     const animElements = document.querySelectorAll('.scroll-anim');
     
-    const options = {
+    const observerOptions = {
         root: null,
-        threshold: 0.15, // Gatilho dispara quando 15% do elemento está visível
+        threshold: 0.15,
         rootMargin: "0px"
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, observerInstance) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                observer.unobserve(entry.target); // Executa a animação apenas uma vez
+                observerInstance.unobserve(entry.target);
             }
         });
-    }, options);
+    }, observerOptions);
 
     animElements.forEach(el => observer.observe(el));
 });
 
+// ==================================================
 // GERENCIAMENTO DE CARREGAMENTO DIRETO VIA HASH DA URL
+// ==================================================
 window.addEventListener('load', () => {
     const hash = window.location.hash;
 
