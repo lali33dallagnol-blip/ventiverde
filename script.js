@@ -1,42 +1,77 @@
-// CONTROLE DE NAVEGAÇÃO ENTRE ABAS/PÁGINAS (Leve e Sem Framework)
-function switchPage(pageId) {
+// CONTROLE DE NAVEGAÇÃO ENTRE ABAS/PÁGINAS
+function switchPage(pageId, targetSectionId = null) {
     const homePage = document.getElementById('page-home');
     const cursosPage = document.getElementById('page-cursos');
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Remove active de todos os links e páginas
-    homePage.classList.remove('active');
-    cursosPage.classList.remove('active');
+    if (homePage) homePage.classList.remove('active');
+    if (cursosPage) cursosPage.classList.remove('active');
     navLinks.forEach(link => link.classList.remove('active'));
 
     if (pageId === 'home') {
-        homePage.classList.add('active');
-        document.querySelector('a[href="#home"]').classList.add('active');
+        if (homePage) homePage.classList.add('active');
+        const activeLink = document.querySelector('.nav-link[href="#home"]');
+        if (activeLink) activeLink.classList.add('active');
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
     } else if (pageId === 'cursos') {
-        cursosPage.classList.add('active');
-        document.querySelector('a[href="#cursos-servicos"]').classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (cursosPage) cursosPage.classList.add('active');
+
+        // Se veio de um clique específico ou pela URL
+        if (targetSectionId) {
+            const section = document.getElementById(targetSectionId);
+            if (section) {
+                // Pequeno atraso para aguardar a troca de exibição da página
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
 
-    // Fecha o menu hambúrguer no mobile após o clique
+    // Atualiza estado ativo dos links da Navbar
+    updateActiveNavLink(pageId, targetSectionId);
+
+    // Fecha o menu hambúrguer no mobile após a seleção
     const navMenu = document.querySelector('.nav-menu');
     const menuToggle = document.querySelector('.menu-toggle');
-    if(navMenu.classList.contains('active')) {
+    if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
-        menuToggle.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 }
 
-// MENU HAMBÚRGUER (MOBILE)
+// Auxiliar para destacar o link correto do menu
+function updateActiveNavLink(pageId, targetSectionId) {
+    if (pageId === 'cursos') {
+        if (targetSectionId === 'solucoes-tecnicas') {
+            const linkServicos = document.querySelector('.nav-link[href="#servicos"]');
+            if (linkServicos) linkServicos.classList.add('active');
+        } else {
+            const linkCursos = document.querySelector('.nav-link[href="#cursos"]');
+            if (linkCursos) linkCursos.classList.add('active');
+        }
+    }
+}
+
+// EVENTOS INICIAIS E MENU HAMBÚRGUER
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('open');
-    });
+    // Toggle do Menu Mobile
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    }
 
     // SISTEMA DE ANIMAÇÃO AO ROLAR A TELA (Intersection Observer)
     const animElements = document.querySelectorAll('.scroll-anim');
@@ -59,10 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
     animElements.forEach(el => observer.observe(el));
 });
 
-// Correção de hash direto na URL (caso o usuário atualize a página)
+// GERENCIAMENTO DE CARREGAMENTO DIRETO VIA HASH DA URL
 window.addEventListener('load', () => {
-    if (window.location.hash === '#cursos-servicos') {
-        switchPage('cursos');
+    const hash = window.location.hash;
+
+    if (hash === '#cursos' || hash === '#treinamentos') {
+        switchPage('cursos', 'treinamentos');
+    } else if (hash === '#servicos' || hash === '#solucoes-tecnicas' || hash === '#cursos-servicos') {
+        switchPage('cursos', 'solucoes-tecnicas');
     } else {
         switchPage('home');
     }
