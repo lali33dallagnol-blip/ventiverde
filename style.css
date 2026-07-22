@@ -5,7 +5,7 @@
     --primary-dark: #0a5c36;    /* Verde Escuro Principal */
     --primary-light: #7bc15e;   /* Verde Claro Secundário */
     --accent-dark: #12261e;     /* Escuro Quase Preto */
-    --bg-white: #f9f8f3;         /* Off-White do Logotipo */
+    --bg-white: #f9f8f3;        /* Off-White do Logotipo */
     --pure-white: #ffffff;
     --text-color: #333333;
     --text-muted: #666666;
@@ -114,7 +114,7 @@ body {
 }
 
 .logo-area {
-    margin-left: auto; /* Alinha o logo à extrema direita */
+    margin-left: auto; /* Alinha o logo à extrema direita no Desktop */
 }
 
 .nav-logo {
@@ -126,14 +126,7 @@ body {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 20px;
-}
-
-.nav-separator {
-    color: var(--primary-light);
-    font-weight: 600;
-    font-size: 0.9rem;
-    user-select: none;
+    gap: 25px;
 }
 
 .nav-link {
@@ -144,7 +137,6 @@ body {
     transition: var(--transition-smooth);
     position: relative;
     padding: 5px 0;
-    text-transform: none; /* Respeita minúsculas e maiúsculas do HTML */
 }
 
 .nav-link:hover, .nav-link.active {
@@ -166,32 +158,62 @@ body {
     width: 100%;
 }
 
+/* BOTÃO HAMBÚRGUER MOBILE */
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .menu-toggle .bar {
-    width: 25px;
+    width: 100%;
     height: 3px;
     background-color: var(--primary-dark);
+    border-radius: 3px;
     transition: var(--transition-smooth);
 }
 
-/* SEÇÃO DINÂMICA DE PÁGINAS */
+/* Animação do botão menu aberto (vira um X) */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* SEÇÃO DINÂMICA DE PÁGINAS COM FADE-IN */
 .page-content {
     display: none;
 }
 
 .page-content.active {
     display: block;
+    animation: fadeIn 0.4s ease-in-out forwards;
 }
 
-/* TYPOGRAPHY COMPONENTS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TYPOGRAPHY & LAYOUT COMPONENTS */
 .section-padding { padding: 80px 0; }
 .section-padding-top { padding: 80px 0 40px 0; }
 .bg-light { background-color: rgba(123, 193, 94, 0.05); }
@@ -220,24 +242,21 @@ h2 {
     position: relative;
     width: 100%;
     min-height: 80vh;
-    
     background-image: url('home_capa.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
@@ -248,6 +267,7 @@ h2 {
     position: relative;
     z-index: 2;
     color: #ffffff;
+    max-width: 800px;
 }
 
 .hero-content h1 {
@@ -280,7 +300,7 @@ h2 {
     align-items: center;
 }
 
-.fundadora-img-wrapper {
+.fundadora--wrapper {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -294,7 +314,7 @@ h2 {
     transition: var(--transition-smooth);
 }
 
-.fundadora-img-wrapper:hover .fundadora-img {
+.fundadora--wrapper:hover .fundadora-img {
     transform: scale(1.03);
 }
 
@@ -308,7 +328,7 @@ h2 {
 /* CARDS RESUMO HOME */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
 }
 
@@ -349,7 +369,7 @@ h2 {
    ================================================== */
 .cursos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
@@ -393,6 +413,9 @@ h2 {
     font-size: 0.9rem;
     color: var(--primary-dark);
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .topics-title {
@@ -475,7 +498,7 @@ h2 {
 /* GRADE DE SOLUÇÕES TÉCNICAS */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
 }
 
@@ -528,6 +551,7 @@ h2 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 999;
     transition: var(--transition-smooth);
+    text-decoration: none;
 }
 
 .whatsapp-float:hover {
@@ -548,18 +572,10 @@ h2 {
     gap: 40px;
 }
 
-.footer-brand .footer-logo {
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    filter: brightness(0) invert(1);
-}
-
 .footer h3 {
     color: var(--pure-white);
     margin-bottom: 20px;
     font-size: 1.2rem;
-    position: relative;
 }
 
 .footer p {
@@ -609,28 +625,42 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* RESPONSIVIDADE (MOBILE FIRST / ADAPTABILITY) */
-@media(max-width: 900px) {
+/* RESPONSIVIDADE (MOBILE ADAPTABILITY) */
+@media (max-width: 900px) {
     .grid-2 {
         grid-template-columns: 1fr;
         gap: 30px;
     }
     
     .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; }
     
     .menu-toggle { display: flex; }
     
+    .logo-area {
+        margin-left: 0;
+    }
+
     .nav-menu {
-        position: absolute;
-        top: 80px; left: -100%;
-        width: 100%; height: calc(100vh - 80px);
+        position: fixed;
+        top: 80px; 
+        left: -100%;
+        width: 100%; 
+        height: calc(100vh - 80px);
         background-color: var(--pure-white);
         flex-direction: column;
         align-items: center;
-        padding-top: 50px;
-        transition: 0.5s ease;
+        padding-top: 40px;
+        transition: left 0.4s ease-in-out;
         box-shadow: var(--shadow-medium);
+        overflow-y: auto;
     }
     
-    .nav-menu.active { left: 0; }
+    .nav-menu.active { 
+        left: 0; 
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
 }
