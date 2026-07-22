@@ -203,13 +203,14 @@ h2 {
 .margin-top { margin-top: 40px; }
 
 /* BANNER PRINCIPAL (HERO) */
+/* BANNER PRINCIPAL (HERO) */
 .hero-banner {
     position: relative;
     width: 100%;
-    min-height: 80vh; /* Ajuste a altura conforme necessário */
+    min-height: 80vh;
     
-    /* Aqui é onde a imagem é chamada! */
-    background-image: url('home_capa.png');
+    /* Adicionado o nome da pasta antes do nome do arquivo */
+    background-image: url('img/home_capa.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -225,6 +226,8 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* Escurece levemente o fundo */
