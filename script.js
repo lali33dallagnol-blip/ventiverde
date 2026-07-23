@@ -10,7 +10,7 @@ function switchPage(pageId) {
 
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // 1. Oculta todas as páginas e remove destaque dos links do menu
+    // 1. Esconde todas as páginas e remove destaques do menu
     Object.keys(pages).forEach(key => {
         if (pages[key]) {
             pages[key].classList.remove('active');
@@ -20,28 +20,25 @@ function switchPage(pageId) {
 
     navLinks.forEach(link => link.classList.remove('active'));
 
-    // 2. Exibe a página selecionada
+    // 2. Torna visível a página desejada
     const activePage = pages[pageId] || pages['home'];
     const activeId = pages[pageId] ? pageId : 'home';
 
     if (activePage) {
         activePage.style.display = 'block';
-        // Pequeno atraso para a animação de fadeIn funcionar suavemente
-        setTimeout(() => {
-            activePage.classList.add('active');
-        }, 10);
+        activePage.classList.add('active');
     }
 
-    // 3. Atualiza destaque no menu de navegação
+    // 3. Atualiza o link ativo na Navbar
     const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
 
-    // 4. Rola a tela para o topo
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 4. Força o topo da tela imediatamente (Destrava o bug de rolagem no footer)
+    window.scrollTo(0, 0);
 
-    // 5. Fecha o menu mobile se estiver aberto
+    // 5. Fecha o menu mobile caso esteja aberto
     closeMobileMenu();
 }
 
@@ -78,10 +75,7 @@ function openCourseCategory(category) {
     }
 
     // Rola até o topo dos cursos para facilitar a leitura
-    const cursosPage = document.getElementById('page-cursos');
-    if (cursosPage) {
-        cursosPage.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeCourseCategory() {
@@ -92,6 +86,8 @@ function closeCourseCategory() {
     if (dronesCategory) dronesCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
     if (hub) hub.style.display = 'grid';
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ==================================================
