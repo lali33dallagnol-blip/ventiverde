@@ -1,47 +1,55 @@
 // ==================================================
-// CONTROLE DE NAVEGAÇÃO ENTRE PÁGINAS/ABAS
+// CONTROLE DE NAVEGAÇÃO ENTRE PÁGINAS (SPA)
 // ==================================================
-function switchPage(pageId, targetSectionId = null) {
-    const homePage = document.getElementById('page-home');
-    const cursosPage = document.getElementById('page-cursos');
+function switchPage(pageId) {
+    const pages = {
+        'home': document.getElementById('page-home'),
+        'cursos': document.getElementById('page-cursos'),
+        'servicos': document.getElementById('page-servicos')
+    };
+
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // 1. Limpa classes ativas anteriores
-    if (homePage) homePage.classList.remove('active');
-    if (cursosPage) cursosPage.classList.remove('active');
+    // 1. Oculta todas as páginas e remove destaque dos links do menu
+    Object.keys(pages).forEach(key => {
+        if (pages[key]) {
+            pages[key].classList.remove('active');
+            pages[key].style.display = 'none';
+        }
+    });
+
     navLinks.forEach(link => link.classList.remove('active'));
 
-    // 2. Direciona para a página solicitada
-    if (pageId === 'home') {
-        if (homePage) homePage.classList.add('active');
-        
-        const activeLink = document.querySelector('.nav-link[href="#home"]');
-        if (activeLink) activeLink.classList.add('active');
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 2. Exibe a página selecionada
+    const activePage = pages[pageId] || pages['home'];
+    const activeId = pages[pageId] ? pageId : 'home';
 
-    } else if (pageId === 'cursos') {
-        if (cursosPage) cursosPage.classList.add('active');
-
-        // Se o clique foi para uma seção específica (#treinamentos ou #solucoes-tecnicas)
-        if (targetSectionId) {
-            const section = document.getElementById(targetSectionId);
-            if (section) {
-                setTimeout(() => {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }, 50);
-            }
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    if (activePage) {
+        activePage.style.display = 'block';
+        // Pequeno atraso para a animação de fadeIn funcionar suavemente
+        setTimeout(() => {
+            activePage.classList.add('active');
+        }, 10);
     }
 
-    // 3. Atualiza destaque no menu e fecha menu mobile se estiver aberto
-    updateActiveNavLink(pageId, targetSectionId);
+    // 3. Atualiza destaque no menu de navegação
+    const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
 
+    // 4. Rola a tela para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 5. Fecha o menu mobile se estiver aberto
+    closeMobileMenu();
+}
+
+// Auxiliar para fechar o menu mobile
+function closeMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const menuToggle = document.querySelector('.menu-toggle');
-    
+
     if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         if (menuToggle) {
@@ -51,17 +59,39 @@ function switchPage(pageId, targetSectionId = null) {
     }
 }
 
-// Auxiliar para destacar o link correto do menu (Cursos ou Serviços)
-function updateActiveNavLink(pageId, targetSectionId) {
-    if (pageId === 'cursos') {
-        if (targetSectionId === 'solucoes-tecnicas') {
-            const linkServicos = document.querySelector('.nav-link[href="#servicos"]');
-            if (linkServicos) linkServicos.classList.add('active');
-        } else {
-            const linkCursos = document.querySelector('.nav-link[href="#cursos"]');
-            if (linkCursos) linkCursos.classList.add('active');
-        }
+// ==================================================
+// GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
+// ==================================================
+function openCourseCategory(category) {
+    const hub = document.getElementById('cursos-hub');
+    const dronesCategory = document.getElementById('category-drones');
+    const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
+
+    if (hub) hub.style.display = 'none';
+
+    if (category === 'drones' && dronesCategory) {
+        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
+        dronesCategory.style.display = 'block';
+    } else if (category === 'geoprocessamento' && geoprocessamentoCategory) {
+        if (dronesCategory) dronesCategory.style.display = 'none';
+        geoprocessamentoCategory.style.display = 'block';
     }
+
+    // Rola até o topo dos cursos para facilitar a leitura
+    const cursosPage = document.getElementById('page-cursos');
+    if (cursosPage) {
+        cursosPage.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function closeCourseCategory() {
+    const hub = document.getElementById('cursos-hub');
+    const dronesCategory = document.getElementById('category-drones');
+    const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
+
+    if (dronesCategory) dronesCategory.style.display = 'none';
+    if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
+    if (hub) hub.style.display = 'grid';
 }
 
 // ==================================================
@@ -82,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sistema de Animação ao Rolar a Tela (Intersection Observer)
     const animElements = document.querySelectorAll('.scroll-anim');
-    
+
     const observerOptions = {
         root: null,
         threshold: 0.15,
@@ -105,12 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // GERENCIAMENTO DE CARREGAMENTO DIRETO VIA HASH DA URL
 // ==================================================
 window.addEventListener('load', () => {
-    const hash = window.location.hash;
+    const hash = window.location.hash.replace('#', '');
 
-    if (hash === '#cursos' || hash === '#treinamentos') {
-        switchPage('cursos', 'treinamentos');
-    } else if (hash === '#servicos' || hash === '#solucoes-tecnicas' || hash === '#cursos-servicos') {
-        switchPage('cursos', 'solucoes-tecnicas');
+    if (hash === 'cursos' || hash === 'treinamentos') {
+        switchPage('cursos');
+    } else if (hash === 'servicos' || hash === 'solucoes-tecnicas') {
+        switchPage('servicos');
     } else {
         switchPage('home');
     }
