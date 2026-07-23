@@ -8,6 +8,17 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Adicional para garantir os 4 cards de serviços lado a lado -->
+    <style>
+        @media (min-width: 1024px) {
+            .services-full-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 20px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -133,12 +144,15 @@
                     <!-- SUBPÁGINA: DETALHES CURSOS DE DRONES -->
                     <div id="category-drones" class="course-detail-view" style="display: none;">
                         <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
-                        <h2 class="category-title">CURSOS DE DRONES</h2>
+                        
+                        <div class="center-title">
+                            <h2 class="category-title">CURSOS DE DRONES</h2>
+                        </div>
 
                         <div class="cursos-container">
                             <!-- ESSENCIAL -->
                             <div class="course-card">
-                                <div class="course-badge">📘 ESSENCIAL</div>
+                                <div class="course-badge">ESSENCIAL</div>
                                 <p class="course-description">Para quem quer aprender os fundamentos dos drones e começar com segurança.</p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
@@ -149,12 +163,12 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 150,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20começar%20com%20o%20Curso%20de%20Drone%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO COMEÇAR</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20começar%20com%20o%20Curso%20de%20Drone%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO COMEÇAR</a>
                             </div>
 
                             <!-- PROFISSIONAL -->
                             <div class="course-card highlighted-card">
-                                <div class="course-badge">🎯 PROFISSIONAL</div>
+                                <div class="course-badge">PROFISSIONAL</div>
                                 <p class="course-description">Para quem quer aprender a pilotar com segurança e desenvolver habilidades para uso profissional com aulas práticas.</p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
@@ -167,12 +181,12 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 750,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20ser%20um%20profissional%20com%20o%20Curso%20de%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO SER UM PROFISSIONAL</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20ser%20um%20profissional%20com%20o%20Curso%20de%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO SER UM PROFISSIONAL</a>
                             </div>
 
                             <!-- PREMIUM -->
                             <div class="course-card">
-                                <div class="course-badge">⭐ PREMIUM</div>
+                                <div class="course-badge">PREMIUM</div>
                                 <p class="course-description">Para quem busca acompanhamento individual do início ao fim com conteúdo personalizado e exclusivo.</p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
@@ -187,14 +201,14 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 1.400,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20uma%20formação%20exclusiva%20no%20Curso%20Premium%20de%20Drones." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO UMA FORMAÇÃO EXCLUSIVA</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20uma%20formação%20exclusiva%20no%20Curso%20Premium%20de%20Drones." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO UMA FORMAÇÃO EXCLUSIVA</a>
                             </div>
                         </div>
 
                         <!-- TURMAS EM GRUPO -->
                         <div class="group-course-card margin-top">
                             <div class="group-course-header">
-                                <h3>🛫 TURMAS PRÁTICAS EM GRUPO</h3>
+                                <h3>TURMAS PRÁTICAS EM GRUPO</h3>
                                 <p>Quer praticar presencialmente, mas prefere uma opção mais acessível?</p>
                                 <p class="group-highlight">Participe de uma turma prática com até 5 alunos.</p>
                             </div>
@@ -206,7 +220,7 @@
                                 </ul>
                             </div>
                             <div class="group-course-action">
-                                <a href="https://wa.me/555198654971?text=Olá!%20Tenho%20interesse%20na%20próxima%20turma%20prática%20em%20grupo." target="_blank" rel="noopener noreferrer" class="btn-secondary">TENHO INTERESSE NA PRÓXIMA TURMA</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Tenho%20interesse%20na%20próxima%20turma%20prática%20em%20grupo." target="_blank" rel="noopener noreferrer" class="btn-secondary">TENHO INTERESSE NA PRÓXIMA TURMA</a>
                             </div>
                         </div>
                     </div>
@@ -214,13 +228,19 @@
                     <!-- SUBPÁGINA: DETALHES CURSOS DE GEOPROCESSAMENTO -->
                     <div id="category-geoprocessamento" class="course-detail-view" style="display: none;">
                         <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
-                        <h2 class="category-title">CURSOS DE GEOPROCESSAMENTO</h2>
+                        
+                        <div class="center-title">
+                            <h2 class="category-title">CURSOS DE GEOPROCESSAMENTO</h2>
+                        </div>
 
                         <div class="cursos-container">
                             <!-- QGIS ESSENCIAL -->
                             <div class="course-card">
-                                <div class="course-badge">🗺️ QGIS ESSENCIAL</div>
-                                <p class="course-subtitle">Do zero ao mapa. Curso para quem está começando no QGIS.</p>
+                                <div class="course-badge">QGIS ESSENCIAL</div>
+                                <p class="course-description">
+                                    Do zero ao mapa.<br>
+                                    Curso para quem está começando no QGIS.
+                                </p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
                                     <ul class="course-topics">
@@ -231,14 +251,16 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 180,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
                             </div>
 
                             <!-- QGIS PROFISSIONAL -->
                             <div class="course-card highlighted-card">
-                                <div class="course-badge">📊 QGIS PROFISSIONAL</div>
-                                <p class="course-subtitle">Análise espacial e produção cartográfica.</p>
-                                <p class="course-description">Para quem já possui uma base e quer aprofundar seus conhecimentos.</p>
+                                <div class="course-badge">QGIS PROFISSIONAL</div>
+                                <p class="course-description">
+                                    Análise espacial e produção cartográfica.<br>
+                                    Para quem já possui uma base e quer aprofundar seus conhecimentos.
+                                </p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
                                     <ul class="course-topics">
@@ -251,14 +273,16 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 650,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Profissional." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Profissional." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
                             </div>
 
                             <!-- PROCESSAMENTO FOTOGRAMÉTRICO METASHAPE -->
                             <div class="course-card">
-                                <div class="course-badge">💻 PROCESSAMENTO FOTOGRAMÉTRICO COM METASHAPE</div>
-                                <p class="course-subtitle">Do voo ao produto cartográfico.</p>
-                                <p class="course-description">Para aprender a processar imagens capturadas por drones e gerar produtos como ortomosaicos, MDS e MDT.</p>
+                                <div class="course-badge">PROCESSAMENTO FOTOGRAMÉTRICO COM METASHAPE</div>
+                                <p class="course-description">
+                                    Do voo ao produto cartográfico.<br>
+                                    Para aprender a processar imagens capturadas por drones e gerar produtos como ortomosaicos, MDS e MDT.
+                                </p>
                                 <div class="course-includes">
                                     <h4>Inclui:</h4>
                                     <ul class="course-topics">
@@ -271,7 +295,7 @@
                                     </ul>
                                 </div>
                                 <div class="price-single"><span class="price-value">R$ 850,00</span></div>
-                                <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20Processamento%20Fotogramétrico%20com%20Metashape." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20me%20inscrever%20no%20Processamento%20Fotogramétrico%20com%20Metashape." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
                             </div>
                         </div>
                     </div>
@@ -310,7 +334,7 @@
                                 <li><i class="fa-solid fa-chevron-right"></i> Mapeamento detalhado</li>
                                 <li><i class="fa-solid fa-chevron-right"></i> Inspeção visual</li>
                             </ul>
-                            <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapeamento%20com%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                            <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapeamento%20com%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                         </div>
 
                         <!-- SERVIÇO 2 -->
@@ -330,7 +354,7 @@
                                 <li><i class="fa-solid fa-chevron-right"></i> Análises ambientais</li>
                                 <li><i class="fa-solid fa-chevron-right"></i> Comparação entre diferentes períodos</li>
                             </ul>
-                            <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Análise%20de%20Imagens%20de%20Satélite." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                            <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Análise%20de%20Imagens%20de%20Satélite." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                         </div>
 
                         <!-- SERVIÇO 3 -->
@@ -353,7 +377,7 @@
                                 <li><i class="fa-solid fa-chevron-right"></i> Mapas para relatórios técnicos</li>
                                 <li><i class="fa-solid fa-chevron-right"></i> Mapas para apresentações e projetos</li>
                             </ul>
-                            <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapas%20Temáticos." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                            <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapas%20Temáticos." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                         </div>
 
                         <!-- SERVIÇO 4 -->
@@ -373,7 +397,7 @@
                                 <li><i class="fa-solid fa-chevron-right"></i> Monitoramento de áreas</li>
                                 <li><i class="fa-solid fa-chevron-right"></i> Relatórios técnicos com mapas e informações geoespaciais</li>
                             </ul>
-                            <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Relatórios%20e%20Estudos%20Ambientais." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                            <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Relatórios%20e%20Estudos%20Ambientais." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                         </div>
                     </div>
 
@@ -381,7 +405,7 @@
                     <div class="custom-consult-box margin-top">
                         <h3>Não sabe qual solução é ideal para o seu projeto?</h3>
                         <p>Entre em contato com a Venti Verde. Avaliamos sua necessidade e indicamos a melhor solução técnica para o seu objetivo.</p>
-                        <a href="https://wa.me/555198654971?text=Olá!%20Não%20sei%20qual%20solução%20é%20ideal%20para%20meu%20projeto.%20Poderiam%20me%20ajudar?" target="_blank" rel="noopener noreferrer" class="btn-primary">SOLICITAR ORÇAMENTO</a>
+                        <a href="https://wa.me/5551998654971?text=Olá!%20Não%20sei%20qual%20solução%20é%20ideal%20para%20meu%20projeto.%20Poderiam%20me%20ajudar?" target="_blank" rel="noopener noreferrer" class="btn-primary">SOLICITAR ORÇAMENTO</a>
                     </div>
                 </div>
             </div>
@@ -390,7 +414,7 @@
     </main>
 
     <!-- BUTTON WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Venti%20Verde." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+    <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Venti%20Verde." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -405,7 +429,7 @@
             <div class="footer-links">
                 <h3>Contatos</h3>
                 <p><i class="fa-solid fa-envelope"></i> contato@ventiverde.com.br</p>
-                <p><i class="fa-solid fa-phone"></i> (51) 98654-971</p>
+                <p><i class="fa-solid fa-phone"></i> (51) 99865-4971</p>
             </div>
             <div class="footer-geo">
                 <h3>Localização</h3>
@@ -414,8 +438,7 @@
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ventiverde_geo?igsh=aWM0Zzl3dW1ib3M2&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
