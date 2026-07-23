@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Adicional para garantir os 4 cards de serviços lado a lado -->
+    <!-- CSS Adicional para alinhamentos específicos -->
     <style>
+        .center-title {
+            text-align: center !important;
+            margin: 0 auto 2.5rem auto !important;
+        }
+
+        .center-title .section-subtitle,
+        .center-title h2 {
+            text-align: center !important;
+            display: block !important;
+        }
+
         @media (min-width: 1024px) {
             .services-full-grid {
                 display: grid !important;
@@ -55,15 +66,17 @@
                 <div class="hero-content scroll-anim">
                     <h1>Tecnologia e Precisão para o Agro e Meio Ambiente</h1>
                     <p>Transformando dados aéreos e espaciais em informações estratégicas de alta performance.</p>
-                    <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos')">Conheça Nossas Soluções</a>
+                    <a href="#explore-solucoes" class="btn-primary" onclick="document.getElementById('explore-solucoes').scrollIntoView({ behavior: 'smooth' });">Conheça Nossas Soluções</a>
                 </div>
             </div>
 
             <!-- SEÇÃO INSTITUCIONAL -->
             <div class="institucional section-padding">
                 <div class="container scroll-anim">
-                    <span class="section-subtitle">Quem Somos</span>
-                    <h2>Venti Verde - Soluções em Drones, Geotecnologias e Meio Ambiente</h2>
+                    <div class="center-title">
+                        <span class="section-subtitle">Quem Somos</span>
+                        <h2>Venti Verde - Soluções em Drones, Geotecnologias e Meio Ambiente</h2>
+                    </div>
                     <p class="section-text">
                         A Venti Verde é uma empresa especializada em soluções utilizando drones, geotecnologias e inteligência espacial para atender empresas, produtores rurais e profissionais que buscam inovação, precisão e segurança em seus projetos.
                     </p>
@@ -96,7 +109,7 @@
             </div>
 
             <!-- ATALHO DE NAVEGAÇÃO -->
-            <div class="home-explore section-padding">
+            <div id="explore-solucoes" class="home-explore section-padding">
                 <div class="container center-title scroll-anim">
                     <span class="section-subtitle">Explore Nossas Soluções</span>
                     <h2>O Que Você Procura Hoje?</h2>
