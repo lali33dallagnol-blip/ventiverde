@@ -179,7 +179,6 @@ body {
     transition: var(--transition-smooth);
 }
 
-/* Animação do botão menu aberto (vira um X) */
 .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -365,13 +364,14 @@ h2 {
 }
 
 /* ==================================================
-   PÁGINA 2: CURSOS E SEÇÕES DE DETALHES
+   PÁGINA 2: CURSOS E TREINAMENTOS (ESTRUTURA NOVA)
    ================================================== */
 .cursos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 20px;
+    align-items: stretch;
 }
 
 .course-card {
@@ -381,8 +381,9 @@ h2 {
     box-shadow: var(--shadow-light);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     transition: var(--transition-smooth);
-    border: 1px solid rgba(10, 92, 54, 0.05);
+    border: 1px solid rgba(10, 92, 54, 0.08);
 }
 
 .course-card:hover {
@@ -390,90 +391,75 @@ h2 {
     transform: translateY(-5px);
 }
 
-.course-icon-header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Destaque para o Plano Profissional */
+.course-card.highlighted-card {
+    border: 2px solid var(--primary-dark);
+    position: relative;
 }
 
-.course-card h3 {
+.course-badge {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+}
+
+.course-subtitle {
     color: var(--primary-dark);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-
-.course-card p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.course-meta {
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: var(--primary-dark);
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.topics-title {
     font-size: 1rem;
     margin-bottom: 10px;
+}
+
+.course-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.course-includes {
+    text-align: left;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Alinha o rodapé e os botões */
+}
+
+.course-includes h4 {
+    font-size: 0.95rem;
     color: var(--accent-dark);
+    margin-bottom: 12px;
 }
 
 .course-topics {
     list-style: none;
-    margin-bottom: 25px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 .course-topics li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 8px;
     color: var(--text-muted);
-    position: relative;
-    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.course-topics li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
+.course-topics li i {
     color: var(--primary-light);
-    font-weight: bold;
+    font-size: 0.85rem;
 }
-
-.price-box {
-    background-color: var(--bg-white);
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
-.price-box p {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: var(--text-color);
-}
-
-.price-box p:last-child { margin-bottom: 0; }
 
 .price-single {
+    background-color: rgba(123, 193, 94, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
     margin-top: auto;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(123, 193, 94, 0.1);
-    padding: 12px 20px;
-    border-radius: 10px;
 }
 
 .price-value {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-dark);
 }
@@ -483,8 +469,8 @@ h2 {
     text-align: center;
     background-color: var(--primary-dark);
     color: var(--pure-white);
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition-smooth);
@@ -493,6 +479,52 @@ h2 {
 .btn-card:hover {
     background-color: var(--primary-light);
     color: var(--accent-dark);
+}
+
+/* ==================================================
+   CARD TURMAS PRÁTICAS EM GRUPO
+   ================================================== */
+.group-course-card {
+    background-color: var(--pure-white);
+    border: 2px dashed var(--primary-light);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-light);
+    text-align: left;
+}
+
+.group-course-header h3 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+}
+
+.group-course-header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 2px 0;
+}
+
+.group-course-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.group-course-details li {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.group-course-details li i {
+    color: var(--primary-light);
+    margin-right: 8px;
 }
 
 /* GRADE DE SOLUÇÕES TÉCNICAS */
@@ -662,5 +694,19 @@ h2 {
 
     .nav-link {
         font-size: 1.2rem;
+    }
+
+    .group-course-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .group-course-action {
+        width: 100%;
+    }
+
+    .group-course-action a {
+        display: block;
+        text-align: center;
     }
 }
