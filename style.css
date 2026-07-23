@@ -1,20 +1,24 @@
 /* ==================================================
-   VARIÁVEIS DE IDENTIDADE VISUAL E CORES
+   1. IMPORTAÇÃO DE FONTE MODERNA E VARIÁVEIS
    ================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
     --primary-dark: #0a5c36;    /* Verde Escuro Principal */
     --primary-light: #7bc15e;   /* Verde Claro Secundário */
     --accent-dark: #12261e;     /* Escuro Quase Preto */
-    --bg-white: #f9f8f3;        /* Off-White */
+    --bg-white: #f9f8f3;        /* Off-White de Fundo */
     --pure-white: #ffffff;
-    --text-color: #222222;      /* Escuro de alta visibilidade */
-    --text-muted: #555555;
+    --text-color: #1a1a1a;      /* Escuro de Altíssima Legibilidade */
+    --text-muted: #4a4a4a;      /* Cinza Escuro para Descrições */
     --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.06);
     --shadow-medium: 0 8px 30px rgba(10, 92, 54, 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* RESET E CONFIGURAÇÕES GERAIS */
+/* ==================================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+   ================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -23,15 +27,16 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-white);
-    font-size: 17px;
+    font-size: 18px; /* Aumentada a base geral para maior legibilidade */
 }
 
 body {
     overflow-x: hidden;
     padding-top: 80px;
+    line-height: 1.6;
 }
 
 /* Compensação do cabeçalho fixo para âncoras */
@@ -45,14 +50,14 @@ section, [id] {
     margin: 0 auto;
 }
 
-/* FOCO ACESSÍVEL */
+/* FOCO ACESSÍVEL PARA NAVEGAÇÃO VIA TECLADO */
 a:focus-visible, 
 button:focus-visible {
     outline: 3px solid var(--primary-light);
     outline-offset: 3px;
 }
 
-/* ANIMAÇÃO DE ENTRADA */
+/* ANIMAÇÃO DE ENTRADA AO ROLAR */
 .scroll-anim {
     opacity: 0;
     transform: translateY(30px);
@@ -64,18 +69,22 @@ button:focus-visible {
     transform: translateY(0);
 }
 
-/* BOTÕES ESTILIZADOS */
+/* ==================================================
+   3. BOTÕES ESTILIZADOS
+   ================================================== */
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-light);
     color: var(--accent-dark);
-    padding: 16px 32px;
+    padding: 16px 34px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-weight: 800;
+    font-size: 1.1rem;
     transition: var(--transition-smooth);
     box-shadow: 0 4px 15px rgba(123, 193, 94, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -89,12 +98,13 @@ button:focus-visible {
     background-color: transparent;
     color: var(--primary-dark);
     border: 2px solid var(--primary-dark);
-    padding: 14px 30px;
+    padding: 14px 32px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-weight: 800;
+    font-size: 1.1rem;
     transition: var(--transition-smooth);
+    cursor: pointer;
 }
 
 .btn-secondary:hover {
@@ -102,7 +112,9 @@ button:focus-visible {
     color: var(--pure-white);
 }
 
-/* NAVBAR FIXA */
+/* ==================================================
+   4. NAVBAR FIXA
+   ================================================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -132,8 +144,8 @@ button:focus-visible {
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
     transition: var(--transition-smooth);
     position: relative;
     padding: 5px 0;
@@ -172,7 +184,9 @@ button:focus-visible {
     transition: var(--transition-smooth);
 }
 
-/* SEÇÕES DINÂMICAS */
+/* ==================================================
+   5. ESTRUTURA DE SEÇÕES E TÍTULOS
+   ================================================== */
 .page-content { display: none; }
 .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out forwards; }
 
@@ -191,14 +205,16 @@ button:focus-visible {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
-h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-weight: 800; }
+h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-weight: 800; line-height: 1.25; }
 .center-title { text-align: center; margin-bottom: 50px; }
-.margin-top { margin-top: 40px; }
+.margin-top { margin-top: 45px; }
 
-/* BANNER HERO */
+/* ==================================================
+   6. BANNER HERO & PÁGINA INICIAL
+   ================================================== */
 .hero-banner {
     position: relative;
     width: 100%;
@@ -218,38 +234,49 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.48);
     z-index: 1;
 }
-.hero-content { position: relative; z-index: 2; color: #ffffff; max-width: 850px; }
-.hero-content h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-.hero-content p { font-size: 1.4rem; margin-bottom: 35px; }
+.hero-content { position: relative; z-index: 2; color: #ffffff; max-width: 900px; }
+.hero-content h1 { font-size: 3.3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+.hero-content p { font-size: 1.45rem; margin-bottom: 35px; opacity: 0.95; }
 
-/* LARISSA & INSTITUCIONAL */
-.section-text { font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+/* SEÇÃO LARISSA & INSTITUCIONAL */
+.section-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 22px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center; }
 .fundadora--wrapper { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); }
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
-.fundadora-bio { font-size: 1.2rem; line-height: 1.8; margin-bottom: 18px; color: var(--text-color); }
+.fundadora-bio { font-size: 1.25rem; line-height: 1.8; margin-bottom: 20px; color: var(--text-color); }
 
 .explore-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
 /* ==================================================
-   PÁGINA CURSOS - MENU 2 OPÇÕES
+   7. ABA CURSOS (MENU 2 OPÇÕES + DETALHES)
    ================================================== */
-.cursos-main-desc { font-size: 1.35rem; color: var(--accent-dark); max-width: 800px; margin: 0 auto; }
+.cursos-main-desc {
+    font-size: 1.45rem;
+    color: var(--accent-dark);
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.cursos-main-desc strong {
+    font-weight: 800;
+}
 
 .cursos-options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 40px;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .option-card {
     background: var(--pure-white);
-    padding: 45px 35px;
-    border-radius: 20px;
+    padding: 50px 40px;
+    border-radius: 24px;
     text-align: center;
     box-shadow: var(--shadow-light);
     border: 2px solid rgba(10, 92, 54, 0.1);
@@ -259,19 +286,19 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     align-items: center;
 }
 
-.category-icon { font-size: 3.5rem; color: var(--primary-dark); margin-bottom: 20px; }
-.option-card h3 { font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 15px; font-weight: 800; }
-.option-card p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
+.category-icon { font-size: 3.8rem; color: var(--primary-dark); margin-bottom: 20px; }
+.option-card h3 { font-size: 1.65rem; color: var(--primary-dark); margin-bottom: 15px; font-weight: 800; }
+.option-card p { font-size: 1.25rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 35px; }
 
 .btn-card-large {
     width: 100%;
     background-color: var(--primary-dark);
     color: white;
     border: none;
-    padding: 16px;
+    padding: 18px;
     border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 800;
+    font-size: 1.15rem;
     cursor: pointer;
     transition: var(--transition-smooth);
 }
@@ -281,78 +308,79 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     transform: translateY(-3px);
 }
 
-/* SUBPÁGINA DETALHES CURSOS */
+/* SUBPÁGINA DETALHES DOS CURSOS */
 .btn-back {
     background: none;
     border: none;
     color: var(--primary-dark);
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 .btn-back:hover { text-decoration: underline; }
 
-.category-title { text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
+.category-title { text-align: center; margin-bottom: 45px; font-size: 2.4rem; color: var(--primary-dark); font-weight: 800; }
 
 .cursos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
     align-items: stretch;
 }
 
 .course-card {
     background-color: var(--pure-white);
-    border-radius: 20px;
-    padding: 35px;
+    border-radius: 24px;
+    padding: 40px 35px;
     box-shadow: var(--shadow-light);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgba(10, 92, 54, 0.1);
+    border: 1px solid rgba(10, 92, 54, 0.12);
 }
 .course-card.highlighted-card { border: 3px solid var(--primary-dark); }
 
-.course-badge { font-size: 1.3rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 12px; }
-.course-subtitle { color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 10px; }
-.course-description { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
+.course-badge { font-size: 1.4rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 12px; }
+.course-subtitle { color: var(--primary-dark); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+.course-description { color: var(--text-muted); font-size: 1.2rem; line-height: 1.7; margin-bottom: 22px; }
 
 .course-includes { margin-bottom: 25px; flex-grow: 1; }
-.course-includes h4 { font-size: 1.05rem; color: var(--accent-dark); margin-bottom: 12px; }
+.course-includes h4 { font-size: 1.15rem; color: var(--accent-dark); margin-bottom: 14px; font-weight: 800; }
 .course-topics { list-style: none; }
 .course-topics li {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
     color: var(--text-color);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 600;
 }
-.course-topics li i { color: var(--primary-dark); }
+.course-topics li i { color: var(--primary-dark); font-size: 1.1rem; }
 
 .price-single {
     background-color: rgba(123, 193, 94, 0.15);
-    padding: 15px;
-    border-radius: 12px;
+    padding: 16px;
+    border-radius: 14px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
-.price-value { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); }
+.price-value { font-size: 1.75rem; font-weight: 800; color: var(--primary-dark); }
 
 .btn-card {
     display: block;
     text-align: center;
     background-color: var(--primary-dark);
     color: var(--pure-white);
-    padding: 15px;
+    padding: 16px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-weight: 800;
+    font-size: 1.1rem;
     transition: var(--transition-smooth);
 }
 .btn-card:hover { background-color: var(--primary-light); color: var(--accent-dark); }
@@ -361,74 +389,79 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
 .group-course-card {
     background-color: var(--pure-white);
     border: 2px dashed var(--primary-dark);
-    border-radius: 20px;
-    padding: 35px;
+    border-radius: 24px;
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
-.group-course-header h3 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px; }
-.group-course-header p { font-size: 1.1rem; color: var(--text-muted); }
-.group-course-details li { font-size: 1.1rem; margin-bottom: 8px; }
+.group-course-header h3 { font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 8px; font-weight: 800; }
+.group-course-header p { font-size: 1.2rem; color: var(--text-muted); }
+.group-highlight { font-weight: 700; color: var(--primary-dark); margin-top: 6px; }
+.group-course-details li { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
 
 /* ==================================================
-   PÁGINA SERVIÇOS
+   8. ABA SERVIÇOS
    ================================================== */
 .services-full-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 35px;
 }
 
 .service-card-full {
     background: var(--pure-white);
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 24px;
     box-shadow: var(--shadow-light);
-    border: 1px solid rgba(10, 92, 54, 0.1);
+    border: 1px solid rgba(10, 92, 54, 0.12);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.service-card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-.service-card-header i { font-size: 2.2rem; color: var(--primary-dark); }
-.service-card-header h3 { font-size: 1.4rem; color: var(--accent-dark); font-weight: 800; }
+.service-card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
+.service-card-header i { font-size: 2.4rem; color: var(--primary-dark); }
+.service-card-header h3 { font-size: 1.6rem; color: var(--accent-dark); font-weight: 800; }
 
-.service-card-desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
+.service-card-desc { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 25px; }
 
 .service-card-list { list-style: none; margin-bottom: 30px; flex-grow: 1; }
 .service-card-list li {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: var(--text-color);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 600;
 }
-.service-card-list li i { color: var(--primary-light); font-size: 0.85rem; }
+.service-card-list li i { color: var(--primary-light); font-size: 0.9rem; }
 
 /* BLOCO FINAL CONSULTORIA */
 .custom-consult-box {
     background-color: var(--accent-dark);
     color: white;
-    padding: 50px;
-    border-radius: 20px;
+    padding: 55px 40px;
+    border-radius: 24px;
     text-align: center;
 }
-.custom-consult-box h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--pure-white); }
+.custom-consult-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--pure-white); font-weight: 800; }
 .custom-consult-box p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    max-width: 800px;
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
-/* FLOATING WHATSAPP & FOOTER */
+/* ==================================================
+   9. WHATSAPP FLUTUANTE E RODAPÉ
+   ================================================== */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -441,42 +474,43 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 34px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     z-index: 999;
     transition: var(--transition-smooth);
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
 }
 
 .footer {
     background-color: var(--accent-dark);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 60px 0 20px 0;
-    margin-top: 60px;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 70px 0 25px 0;
+    margin-top: 70px;
 }
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 40px;
 }
-.footer h3 { color: var(--pure-white); margin-bottom: 20px; font-size: 1.2rem; }
-.footer p { font-size: 1rem; margin-bottom: 12px; }
+.footer h3 { color: var(--pure-white); margin-bottom: 20px; font-size: 1.3rem; font-weight: 800; }
+.footer p { font-size: 1.1rem; margin-bottom: 12px; }
 
 .social-icons { display: flex; gap: 15px; }
 .social-icons a {
     color: white;
     background: rgba(255, 255, 255, 0.1);
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-size: 1.2rem;
     transition: var(--transition-smooth);
 }
 .social-icons a:hover {
@@ -484,11 +518,14 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     color: var(--accent-dark);
 }
 
-.footer-bottom { text-align: center; margin-top: 40px; font-size: 0.9rem; }
+.footer-bottom { text-align: center; margin-top: 45px; font-size: 1rem; }
+.footer-bottom hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
 
-/* RESPONSIVIDADE */
+/* ==================================================
+   10. RESPONSIVIDADE E ACESSIBILIDADE
+   ================================================== */
 @media (max-width: 900px) {
-    html { font-size: 15px; }
+    html { font-size: 16px; }
     .grid-2 { grid-template-columns: 1fr; }
     .menu-toggle { display: flex; }
     .logo-area { margin-left: 0; }
@@ -507,7 +544,6 @@ h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     .nav-menu.active { left: 0; }
 }
 
-/* PREFERÊNCIA DE MOVIMENTO REDUZIDO (ACESSIBILIDADE) */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
