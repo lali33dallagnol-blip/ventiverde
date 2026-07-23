@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venti Verde - Geotecnologias e Meio Ambiente</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones FontAwesome para os Cards e Redes Sociais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -21,7 +20,7 @@
             <nav class="nav-menu">
                 <a href="#home" class="nav-link active" onclick="switchPage('home')">Início</a>
                 <a href="#cursos" class="nav-link" onclick="switchPage('cursos')">Cursos</a>
-                <a href="#servicos" class="nav-link" onclick="switchPage('cursos')">Serviços</a>
+                <a href="#servicos" class="nav-link" onclick="switchPage('servicos')">Serviços</a>
                 <a href="#contato" class="nav-link">Contato</a>
             </nav>
             <a href="#home" class="logo-area" onclick="switchPage('home')">
@@ -40,7 +39,7 @@
             <div class="hero-content scroll-anim">
                 <h1>Tecnologia e Precisão para o Agro e Meio Ambiente</h1>
                 <p>Transformando dados aéreos e espaciais em informações estratégicas de alta performance.</p>
-                <a href="#cursos-servicos" class="btn-primary" onclick="switchPage('cursos')">Conheça Nossas Soluções</a>
+                <a href="#cursos" class="btn-primary" onclick="switchPage('cursos')">Conheça Nossas Soluções</a>
             </div>
         </section>
 
@@ -53,12 +52,12 @@
                     A Venti Verde é uma empresa especializada em soluções utilizando drones, geotecnologias e inteligência espacial para atender empresas, produtores rurais e profissionais que buscam inovação, precisão e segurança em seus projetos.
                 </p>
                 <p class="section-text">
-                    Atuamos com cursos especializados, processamento de imagens, geoprocessamento, levantamentos aéreos, elaboração de mapas, laudos e análises ambientais voltadas à regularização ambiental e ao planejamento territorial. Nosso objetivo é transformar dados em informações estratégicas por meio da tecnologia.
+                    Atuamos com cursos especializados, processamento de imagens, geoprocessamento, levantamentos aéreos, elaboração de mapas, laudos e análises ambientais voltadas à regularização ambiental e ao planejamento territorial.
                 </p>
             </div>
         </section>
 
-        <!-- SEÇÃO FUNDADORA -->
+        <!-- SEÇÃO FUNDADORA (LARISSA) -->
         <section class="fundadora section-padding bg-light">
             <div class="container grid-2 scroll-anim">
                 <div class="fundadora--wrapper">
@@ -66,256 +65,323 @@
                 </div>
                 <div class="fundadora-info">
                     <span class="section-subtitle">Liderança</span>
-<h2>Conheça a Fundadora</h2>
+                    <h2>Conheça a Fundadora</h2>
 
-<p class="fundadora-bio">
-    Olá! Sou <strong>Larissa Dall'Agnol</strong>, Engenheira Agrícola e Ambiental, Mestre em Gestão e Tecnologia Ambiental e Pós-graduanda em Gestão, Licenciamento e Auditoria Ambiental.
-</p>
-
-<p class="fundadora-bio">
-    Como <strong>Especialista em Drones e Geotecnologias</strong>, atuo desde 2022 utilizando o drone não apenas para captura de imagens, mas como uma solução estratégica de alta precisão para o agronegócio e a gestão ambiental.
-</p>
-
-<p class="fundadora-bio">
-    Minha missão é aproximar a tecnologia da sua realidade. Por isso, criei treinamentos práticos para quem deseja dominar o mercado: desde a <strong>pilotagem e planejamento com Drones</strong> até o processamento e criação de mapas inteligentes no <strong>Geoprocessamento</strong>.
-</p>
-
+                    <p class="fundadora-bio">
+                        Olá! Sou <strong>Larissa Dall'Agnol</strong>, Engenheira Agrícola e Ambiental, Mestre em Gestão e Tecnologia Ambiental e Pós-graduanda em Gestão, Licenciamento e Auditoria Ambiental.
+                    </p>
+                    <p class="fundadora-bio">
+                        Como <strong>Especialista em Drones e Geotecnologias</strong>, atuo desde 2022 utilizando o drone não apenas para captura de imagens, mas como uma solução estratégica de alta precisão para o agronegócio e a gestão ambiental.
+                    </p>
+                    <p class="fundadora-bio">
+                        Minha missão é aproximar a tecnologia da sua realidade. Por isso, criei treinamentos práticos para quem deseja dominar o mercado: desde a <strong>pilotagem e planejamento com Drones</strong> até o processamento e criação de mapas inteligentes no <strong>Geoprocessamento</strong>.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- RESUMO DE SERVIÇOS (CARDS) -->
-        <section class="home-services section-padding">
-            <div class="container scroll-anim">
-                <div class="center-title">
-                    <span class="section-subtitle">O Que Fazemos</span>
-                    <h2>Nossas Especialidades</h2>
-                </div>
-                <div class="cards-grid">
-                    <div class="card-mini">
-                        <i class="fa-solid fa-helicopter"></i>
-                        <h3>Cursos de Pilotagem de Drones</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-earth-americas"></i>
-                        <h3>Formação em Geoprocessamento</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-images"></i>
-                        <h3>Fotogrametria e Processamento de Imagens</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <h3>Mapeamentos com Drone</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-file-invoice"></i>
-                        <h3>Laudos Ambientais</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-seedling"></i>
-                        <h3>Regularização Ambiental</h3>
-                    </div>
-                    <div class="card-mini">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <h3>Consultorias Técnicas</h3>
-                    </div>
-                </div>
-                <div class="center-btn margin-top">
-                    <a href="#cursos-servicos" class="btn-secondary" onclick="switchPage('cursos')">Ver Detalhes dos Serviços</a>
+        <!-- ATALHO DE NAVEGAÇÃO APÓS A APRESENTAÇÃO -->
+        <section class="home-explore section-padding">
+            <div class="container center-title scroll-anim">
+                <span class="section-subtitle">Explore Nossas Soluções</span>
+                <h2>O Que Você Procura Hoje?</h2>
+                <div class="explore-buttons margin-top">
+                    <a href="#cursos" class="btn-primary" onclick="switchPage('cursos')"><i class="fa-solid fa-graduation-cap"></i> Cursos e Capacitações</a>
+                    <a href="#servicos" class="btn-secondary" onclick="switchPage('servicos')"><i class="fa-solid fa-gears"></i> Serviços e Consultorias</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- ==================================================
-         PÁGINA 2 - CURSOS E SERVIÇOS
+         PÁGINA 2 - CURSOS
          ================================================== -->
     <main id="page-cursos" class="page-content">
-        <!-- SEÇÃO TREINAMENTOS -->
-        <!-- SEÇÃO TREINAMENTOS -->
-        <section id="treinamentos" class="treinamentos section-padding-top">
+        <section class="treinamentos section-padding">
             <div class="container scroll-anim">
                 <div class="center-title">
-                    <span class="section-subtitle">Capacitação</span>
-                    <h2>Treinamentos Profissionais em Drones</h2>
+                    <span class="section-subtitle">Aba Cursos</span>
+                    <h2>CURSOS VENTI VERDE</h2>
+                    <p class="cursos-main-desc">
+                        <strong>Aprenda a utilizar drones e geotecnologias para transformar dados em soluções profissionais.</strong>
+                    </p>
                 </div>
-                
-                <!-- GRID DE PLANOS (3 COLUNAS) -->
-                <div class="cursos-container">
+
+                <!-- MENU PRINCIPAL DE CURSOS (2 OPÇÕES) -->
+                <div id="cursos-hub" class="cursos-options-grid">
+                    <!-- OPÇÃO 1 -->
+                    <div class="option-card">
+                        <i class="fa-solid fa-helicopter category-icon"></i>
+                        <h3>OPÇÃO 1 - CURSOS DE DRONES</h3>
+                        <p>Aprenda a operar drones com segurança e desenvolva habilidades para aplicações profissionais.</p>
+                        <button onclick="openCourseCategory('drones')" class="btn-card-large">VER CURSOS DE DRONES</button>
+                    </div>
+
+                    <!-- OPÇÃO 2 -->
+                    <div class="option-card">
+                        <i class="fa-solid fa-earth-americas category-icon"></i>
+                        <h3>OPÇÃO 2 - CURSOS DE GEOPROCESSAMENTO</h3>
+                        <p>Aprenda a trabalhar com dados geográficos, imagens e ferramentas de geoprocessamento.</p>
+                        <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
+                    </div>
+                </div>
+
+                <!-- SUBPÁGINA: DETALHES CURSOS DE DRONES -->
+                <div id="category-drones" class="course-detail-view" style="display: none;">
+                    <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
                     
-                    <!-- PLANO 1: ESSENCIAL -->
-                    <div class="course-card">
-                        <div class="course-badge">📘 ESSENCIAL</div>
-                        <p class="course-subtitle"><strong>Teoria online gravada</strong></p>
-                        <p class="course-description">Para quem quer aprender os fundamentos dos drones e começar com segurança.</p>
-                        
-                        <div class="course-includes">
-                            <h4>Inclui:</h4>
-                            <ul class="course-topics">
-                                <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
-                                <li><i class="fa-solid fa-check"></i> Apostila digital</li>
-                                <li><i class="fa-solid fa-check"></i> Material complementar</li>
-                                <li><i class="fa-solid fa-check"></i> Certificado digital</li>
-                            </ul>
+                    <h2 class="category-title">CURSOS DE DRONES</h2>
+
+                    <div class="cursos-container">
+                        <!-- ESSENCIAL -->
+                        <div class="course-card">
+                            <div class="course-badge">📘 ESSENCIAL</div>
+                            <p class="course-description">Para quem quer aprender os fundamentos dos drones e começar com segurança.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 150,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20começar%20com%20o%20Curso%20de%20Drone%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO COMEÇAR</a>
                         </div>
 
-                        <div class="price-single">
-                            <span class="price-value">R$ 150,00</span>
+                        <!-- PROFISSIONAL -->
+                        <div class="course-card highlighted-card">
+                            <div class="course-badge">🎯 PROFISSIONAL</div>
+                            <p class="course-description">Para quem quer aprender a pilotar com segurança e desenvolver habilidades para uso profissional com aulas práticas.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Conteúdo teórico completo</li>
+                                    <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Prática presencial individual</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 750,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20ser%20um%20profissional%20com%20o%20Curso%20de%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO SER UM PROFISSIONAL</a>
                         </div>
-                        
-                        <a href="https://wa.me/555198654971?text=Olá!%20Quero%20começar%20com%20o%20Plano%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO COMEÇAR</a>
+
+                        <!-- PREMIUM -->
+                        <div class="course-card">
+                            <div class="course-badge">⭐ PREMIUM</div>
+                            <p class="course-description">Para quem busca acompanhamento individual do início ao fim com conteúdo personalizado e exclusivo.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Aulas teóricas online ao vivo conforme disponibilidade do aluno</li>
+                                    <li><i class="fa-solid fa-check"></i> Prática individual exclusiva</li>
+                                    <li><i class="fa-solid fa-check"></i> Conteúdo personalizado</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Suporte pós-curso</li>
+                                    <li><i class="fa-solid fa-check"></i> Suporte prova ANAC para pilotos de drone</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 1.400,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20uma%20formação%20exclusiva%20no%20Curso%20Premium%20de%20Drones." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO UMA FORMAÇÃO EXCLUSIVA</a>
+                        </div>
                     </div>
 
-                    <!-- PLANO 2: PROFISSIONAL -->
-                    <div class="course-card highlighted-card">
-                        <div class="course-badge">🎯 PROFISSIONAL</div>
-                        <p class="course-subtitle"><strong>Teoria online + prática individual</strong></p>
-                        <p class="course-description">Para quem quer aprender a pilotar com segurança e desenvolver habilidades para uso profissional.</p>
-                        
-                        <div class="course-includes">
-                            <h4>Inclui:</h4>
-                            <ul class="course-topics">
-                                <li><i class="fa-solid fa-check"></i> Todo o conteúdo teórico</li>
-                                <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
-                                <li><i class="fa-solid fa-check"></i> Prática presencial individual</li>
-                                <li><i class="fa-solid fa-check"></i> Apostila digital</li>
-                                <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                    <!-- TURMAS EM GRUPO -->
+                    <div class="group-course-card margin-top">
+                        <div class="group-course-header">
+                            <h3>🛫 TURMAS PRÁTICAS EM GRUPO</h3>
+                            <p>Quer praticar presencialmente, mas prefere uma opção mais acessível?</p>
+                            <p><em>Participe de uma turma prática com até 5 alunos.</em></p>
+                        </div>
+                        <div class="group-course-details">
+                            <ul>
+                                <li><i class="fa-solid fa-clock"></i> <strong>4 horas</strong> de prática presencial</li>
+                                <li><i class="fa-solid fa-users"></i> <strong>Até 5 alunos</strong> por turma</li>
+                                <li><i class="fa-solid fa-tag"></i> <strong>R$ 450,00</strong> por aluno</li>
                             </ul>
                         </div>
-
-                        <div class="price-single">
-                            <span class="price-value">R$ 850,00</span>
+                        <div class="group-course-action">
+                            <a href="https://wa.me/555198654971?text=Olá!%20Tenho%20interesse%20na%20próxima%20turma%20prática%20em%20grupo." target="_blank" rel="noopener noreferrer" class="btn-secondary">TENHO INTERESSE NA PRÓXIMA TURMA</a>
                         </div>
-                        
-                        <a href="https://wa.me/555198654971?text=Olá!%20Quero%20ser%20profissional%20com%20o%20Plano%20Profissional." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO SER PROFISSIONAL</a>
                     </div>
-
-                    <!-- PLANO 3: PREMIUM -->
-                    <div class="course-card">
-                        <div class="course-badge">⭐ PREMIUM</div>
-                        <p class="course-subtitle"><strong>Formação completa e personalizada</strong></p>
-                        <p class="course-description">Para quem busca acompanhamento individual do início ao fim.</p>
-                        
-                        <div class="course-includes">
-                            <h4>Inclui:</h4>
-                            <ul class="course-topics">
-                                <li><i class="fa-solid fa-check"></i> Aulas teóricas online ao vivo</li>
-                                <li><i class="fa-solid fa-check"></i> Prática individual exclusiva</li>
-                                <li><i class="fa-solid fa-check"></i> Conteúdo personalizado</li>
-                                <li><i class="fa-solid fa-check"></i> Apostila</li>
-                                <li><i class="fa-solid fa-check"></i> Certificado digital</li>
-                                <li><i class="fa-solid fa-check"></i> Suporte pós-curso</li>
-                            </ul>
-                        </div>
-
-                        <div class="price-single">
-                            <span class="price-value">R$ 1.800,00</span>
-                        </div>
-                        
-                        <a href="https://wa.me/555198654971?text=Olá!%20Quero%20uma%20formação%20completa%20no%20Plano%20Premium." target="_blank" rel="noopener noreferrer" class="btn-card">QUERO UMA FORMAÇÃO COMPLETA</a>
-                    </div>
-
                 </div>
 
-                <!-- CARD TURMAS PRÁTICAS EM GRUPO -->
-                <div class="group-course-card margin-top">
-                    <div class="group-course-header">
-                        <h3>🛫 TURMAS PRÁTICAS EM GRUPO</h3>
-                        <p>Quer praticar presencialmente, mas prefere uma opção mais acessível?</p>
-                        <p><em>Participe de uma turma prática com até 5 alunos.</em></p>
-                    </div>
+                <!-- SUBPÁGINA: DETALHES CURSOS DE GEOPROCESSAMENTO -->
+                <div id="category-geoprocessamento" class="course-detail-view" style="display: none;">
+                    <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                    
+                    <h2 class="category-title">CURSOS DE GEOPROCESSAMENTO</h2>
 
-                    <div class="group-course-details">
-                        <ul>
-                            <li><i class="fa-solid fa-clock"></i> <strong>4 horas</strong> de prática presencial</li>
-                            <li><i class="fa-solid fa-users"></i> <strong>Até 5 alunos</strong> por turma</li>
-                            <li><i class="fa-solid fa-tag"></i> <strong>R$ 450,00</strong> por aluno</li>
-                        </ul>
-                    </div>
+                    <div class="cursos-container">
+                        <!-- QGIS ESSENCIAL -->
+                        <div class="course-card">
+                            <div class="course-badge">🗺️ QGIS ESSENCIAL</div>
+                            <p class="course-subtitle"><strong>Do zero ao mapa.</strong></p>
+                            <p class="course-description">Curso para quem está começando no QGIS.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Conteúdo teórico</li>
+                                    <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 180,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Essencial." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                        </div>
 
-                    <div class="group-course-action">
-                        <a href="https://wa.me/555198654971?text=Olá!%20Tenho%20interesse%20na%20próxima%20turma%20prática%20em%20grupo." target="_blank" rel="noopener noreferrer" class="btn-secondary">TENHO INTERESSE NA PRÓXIMA TURMA</a>
+                        <!-- QGIS PROFISSIONAL -->
+                        <div class="course-card highlighted-card">
+                            <div class="course-badge">📊 QGIS PROFISSIONAL</div>
+                            <p class="course-subtitle"><strong>Análise espacial e produção cartográfica.</strong></p>
+                            <p class="course-description">Para quem já possui uma base e quer aprofundar seus conhecimentos.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Conteúdo teórico</li>
+                                    <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Exercícios práticos</li>
+                                    <li><i class="fa-solid fa-check"></i> Encontros ao vivo para esclarecer dúvidas</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 650,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20QGIS%20Profissional." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                        </div>
+
+                        <!-- PROCESSAMENTO METASHAPE -->
+                        <div class="course-card">
+                            <div class="course-badge">💻 METASHAPE</div>
+                            <p class="course-subtitle"><strong>Processamento Fotogramétrico.</strong></p>
+                            <p class="course-description">Do voo ao produto cartográfico. Aprenda a processar imagens de drones para gerar ortomosaicos, MDS e MDT.</p>
+                            <div class="course-includes">
+                                <h4>Inclui:</h4>
+                                <ul class="course-topics">
+                                    <li><i class="fa-solid fa-check"></i> Conteúdo teórico</li>
+                                    <li><i class="fa-solid fa-check"></i> Aulas gravadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Exercícios práticos</li>
+                                    <li><i class="fa-solid fa-check"></i> Encontros ao vivo para esclarecer dúvidas</li>
+                                    <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                    <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                </ul>
+                            </div>
+                            <div class="price-single"><span class="price-value">R$ 850,00</span></div>
+                            <a href="https://wa.me/555198654971?text=Olá!%20Quero%20me%20inscrever%20no%20Processamento%20Fotogramétrico%20com%20Metashape." target="_blank" rel="noopener noreferrer" class="btn-card">INSCREVER-SE</a>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
+    </main>
 
-        <!-- SEÇÃO SOLUÇÕES TÉCNICAS -->
-        <section id="solucoes-tecnicas" class="solucoes-tecnicas section-padding">
+    <!-- ==================================================
+         PÁGINA 3 - SERVIÇOS
+         ================================================== -->
+    <main id="page-servicos" class="page-content">
+        <section class="solucoes-tecnicas section-padding">
             <div class="container scroll-anim">
                 <div class="center-title">
-                    <span class="section-subtitle">Serviços</span>
-                    <h2>Soluções Técnicas</h2>
+                    <span class="section-subtitle">Serviços Técnicos</span>
+                    <h2>SOLUÇÕES TÉCNICAS</h2>
                 </div>
 
-                <div class="services-grid">
-                    <div class="service-box">
-                        <i class="fa-solid fa-helicopter"></i>
-                        <h3>Mapeamentos com Drone</h3>
-                        <p>Levantamentos aéreos precisos para monitoramento agrícola, ambiental e topográfico.</p>
+                <div class="services-full-grid">
+                    <!-- SERVIÇO 1 -->
+                    <div class="service-card-full">
+                        <div class="service-card-header">
+                            <i class="fa-solid fa-helicopter"></i>
+                            <h3>Mapeamento com Drone</h3>
+                        </div>
+                        <p class="service-card-desc">Levantamentos aéreos precisos para monitoramento agrícola, ambiental e topográfico para áreas específicas.</p>
+                        <ul class="service-card-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> Ortomosaico</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> MDS</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> MDT</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Curvas de nível</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Modelo 3D</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Cálculo de áreas</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Cálculo de volumes</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Declividade</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapeamento detalhado</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Inspeção visual</li>
+                        </ul>
+                        <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapeamento%20com%20Drone." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                     </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-laptop-code"></i>
-                        <h3>Processamento de Imagens</h3>
-                        <p>Transformação de dados brutos coletados por sensores em produtos cartográficos inteligíveis.</p>
+
+                    <!-- SERVIÇO 2 -->
+                    <div class="service-card-full">
+                        <div class="service-card-header">
+                            <i class="fa-solid fa-satellite"></i>
+                            <h3>Processamento e Análise de Imagens de Satélite</h3>
+                        </div>
+                        <p class="service-card-desc">Ideal para analisar e monitorar grandes áreas com eficiência e dados precisos.</p>
+                        <ul class="service-card-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> NDVI e outros índices de vegetação</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Análise de uso e cobertura do solo</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Monitoramento temporal</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Identificação de áreas de vegetação</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Análise de áreas agrícolas</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas temáticos</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Análises ambientais</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Comparação entre diferentes períodos</li>
+                        </ul>
+                        <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Análise%20de%20Imagens%20de%20Satélite." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                     </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-border-all"></i>
-                        <h3>Geração de Ortomosaicos</h3>
-                        <p>Mosaicos de fotos retificadas e georreferenciadas em altíssima resolução dimensional.</p>
+
+                    <!-- SERVIÇO 3 -->
+                    <div class="service-card-full">
+                        <div class="service-card-header">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h3>Mapas Temáticos</h3>
+                        </div>
+                        <p class="service-card-desc">Transformação de dados geográficos em mapas claros, técnicos e visualmente eficientes.</p>
+                        <ul class="service-card-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de localização</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de uso e cobertura do solo</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de vegetação</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de declividade</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de hipsometria</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de recursos hídricos</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de áreas de preservação</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas de propriedades rurais</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas para estudos ambientais</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas para relatórios técnicos</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas para apresentações e projetos</li>
+                        </ul>
+                        <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Mapas%20Temáticos." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                     </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-mountain"></i>
-                        <h3>Modelos Digitais de Terreno (MDT)</h3>
-                        <p>Representação altimétrica do relevo desconsiderando a cobertura vegetal e objetos.</p>
+
+                    <!-- SERVIÇO 4 -->
+                    <div class="service-card-full">
+                        <div class="service-card-header">
+                            <i class="fa-solid fa-file-contract"></i>
+                            <h3>Relatórios e Estudos Ambientais</h3>
+                        </div>
+                        <p class="service-card-desc">Elaboração e apoio técnico na produção de documentos e estudos ambientais, com uso de geoprocessamento, sensoriamento remoto e análise territorial.</p>
+                        <ul class="service-card-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> Diagnósticos ambientais</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Caracterização de áreas</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Mapas e análises para estudos ambientais</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Uso e cobertura do solo</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Análise de áreas de preservação</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Análise de recursos hídricos</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Monitoramento de áreas</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Relatórios técnicos com mapas e informações geoespaciais</li>
+                        </ul>
+                        <a href="https://wa.me/555198654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Relatórios%20e%20Estudos%20Ambientais." target="_blank" rel="noopener noreferrer" class="btn-card">SOLICITAR ORÇAMENTO</a>
                     </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-cubes"></i>
-                        <h3>Modelos Digitais de Superfície (MDS)</h3>
-                        <p>Representação da superfície terrestre incluindo todas as estruturas e copas de árvores existentes.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-route"></i>
-                        <h3>Curvas de Nível</h3>
-                        <p>Delimitações topográficas fundamentais para estudos de declividade e planejamento de solo.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-chart-area"></i>
-                        <h3>Cálculo de Áreas</h3>
-                        <p>Mensuração exata de polígonos territoriais complexos com máxima precisão georreferenciada.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                        <h3>Cálculo de Volumes</h3>
-                        <p>Cubagem precisa para estoques de materiais, terraplenagem e movimentação de cargas.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-map"></i>
-                        <h3>Mapas Temáticos</h3>
-                        <p>Cartografia customizada expressando dados qualitativos e quantitativos georreferenciados.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <h3>Geoprocessamento</h3>
-                        <p>Análise de dados espaciais cruzados para geração de inteligência geográfica aplicada.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-file-shield"></i>
-                        <h3>Laudos Ambientais</h3>
-                        <p>Documentações técnicas robustas atestando as condições ambientais de propriedades.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-leaf"></i>
-                        <h3>Regularização Ambiental</h3>
-                        <p>Processos de CAR, licenças e adequações às legislações ambientais vigentes.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-handshake-angle"></i>
-                        <h3>Consultoria Técnica</h3>
-                        <p>Apoio estratégico personalizado para tomada de decisões eficazes no agro e meio ambiente.</p>
-                    </div>
+                </div>
+
+                <!-- BLOCO FINAL CONSULTORIA -->
+                <div class="custom-consult-box margin-top">
+                    <h3>Não sabe qual solução é ideal para o seu projeto?</h3>
+                    <p>Entre em contato com a Venti Verde. Avaliamos sua necessidade e indicamos a melhor solução técnica para o seu objetivo.</p>
+                    <a href="https://wa.me/555198654971?text=Olá!%20Não%20sei%20qual%20solução%20é%20ideal%20para%20meu%20projeto.%20Poderiam%20me%20ajudar?" target="_blank" rel="noopener noreferrer" class="btn-primary">SOLICITAR ORÇAMENTO</a>
                 </div>
             </div>
         </section>
