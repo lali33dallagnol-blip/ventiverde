@@ -6,7 +6,7 @@
 :root {
     --primary-dark: #0a5c36;    /* Verde Escuro Principal */
     --primary-light: #7bc15e;   /* Verde Claro Secundário */
-    --accent-dark: #12261e;     /* Escuro Quase Preto */
+    --accent-dark: #12261e;      /* Escuro Quase Preto */
     --bg-white: #f9f8f3;        /* Off-White de Fundo */
     --pure-white: #ffffff;
     --text-color: #1a1a1a;      /* Escuro de Altíssima Legibilidade */
@@ -30,7 +30,7 @@ html {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-white);
-    font-size: 18px; /* Aumentada a base geral para maior legibilidade */
+    font-size: 18px;
 }
 
 body {
@@ -39,7 +39,6 @@ body {
     line-height: 1.6;
 }
 
-/* Compensação do cabeçalho fixo para âncoras */
 section, [id] {
     scroll-margin-top: 90px;
 }
@@ -50,14 +49,12 @@ section, [id] {
     margin: 0 auto;
 }
 
-/* FOCO ACESSÍVEL PARA NAVEGAÇÃO VIA TECLADO */
 a:focus-visible, 
 button:focus-visible {
     outline: 3px solid var(--primary-light);
     outline-offset: 3px;
 }
 
-/* ANIMAÇÃO DE ENTRADA AO ROLAR */
 .scroll-anim {
     opacity: 0;
     transform: translateY(30px);
@@ -164,7 +161,6 @@ button:focus-visible {
 }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-/* MOBILE HAMBURGUER */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -206,10 +202,23 @@ button:focus-visible {
     letter-spacing: 2px;
     margin-bottom: 10px;
     font-size: 1rem;
+    text-align: center;
 }
 
-h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-weight: 800; line-height: 1.25; }
-.center-title { text-align: center; margin-bottom: 50px; }
+h2 { 
+    font-size: 2.6rem; 
+    color: var(--primary-dark); 
+    margin-bottom: 25px; 
+    font-weight: 800; 
+    line-height: 1.25; 
+    text-align: center;
+}
+
+.center-title { 
+    text-align: center; 
+    margin: 0 auto 50px auto; 
+}
+
 .margin-top { margin-top: 45px; }
 
 /* ==================================================
@@ -241,14 +250,21 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
 .hero-content h1 { font-size: 3.3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
 .hero-content p { font-size: 1.45rem; margin-bottom: 35px; opacity: 0.95; }
 
-/* SEÇÃO LARISSA & INSTITUCIONAL */
 .section-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 22px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center; }
 .fundadora--wrapper { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); }
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
 .fundadora-bio { font-size: 1.25rem; line-height: 1.8; margin-bottom: 20px; color: var(--text-color); }
 
-.explore-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.home-explore, .home-explore .container { text-align: center; }
+.explore-buttons { 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    margin-top: 1.5rem;
+}
 
 /* ==================================================
    7. ABA CURSOS (MENU 2 OPÇÕES + DETALHES)
@@ -262,9 +278,7 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     line-height: 1.6;
 }
 
-.cursos-main-desc strong {
-    font-weight: 800;
-}
+.cursos-main-desc strong { font-weight: 800; }
 
 .cursos-options-grid {
     display: grid;
@@ -308,7 +322,6 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     transform: translateY(-3px);
 }
 
-/* SUBPÁGINA DETALHES DOS CURSOS */
 .btn-back {
     background: none;
     border: none;
@@ -385,7 +398,6 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
 }
 .btn-card:hover { background-color: var(--primary-light); color: var(--accent-dark); }
 
-/* TURMA EM GRUPO */
 .group-course-card {
     background-color: var(--pure-white);
     border: 2px dashed var(--primary-dark);
@@ -403,17 +415,24 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
 .group-course-details li { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
 
 /* ==================================================
-   8. ABA SERVIÇOS
+   8. ABA SERVIÇOS & CONSULTORIA
    ================================================== */
 .services-full-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+@media (min-width: 1024px) {
+    .services-full-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
 }
 
 .service-card-full {
     background: var(--pure-white);
-    padding: 40px;
+    padding: 35px 25px;
     border-radius: 24px;
     box-shadow: var(--shadow-light);
     border: 1px solid rgba(10, 92, 54, 0.12);
@@ -424,31 +443,46 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
 
 .service-card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
 .service-card-header i { font-size: 2.4rem; color: var(--primary-dark); }
-.service-card-header h3 { font-size: 1.6rem; color: var(--accent-dark); font-weight: 800; }
+.service-card-header h3 { font-size: 1.5rem; color: var(--accent-dark); font-weight: 800; }
 
-.service-card-desc { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 25px; }
+.service-card-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
 
 .service-card-list { list-style: none; margin-bottom: 30px; flex-grow: 1; }
 .service-card-list li {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-weight: 600;
 }
 .service-card-list li i { color: var(--primary-light); font-size: 0.9rem; }
 
-/* BLOCO FINAL CONSULTORIA */
+/* BLOCO FINAL CONSULTORIA (DESTAQUE INTEGRAL) */
 .custom-consult-box {
-    background-color: var(--accent-dark);
-    color: white;
-    padding: 55px 40px;
+    width: 100%;
+    background: linear-gradient(135deg, #0a5c36 0%, #12261e 100%);
+    color: var(--pure-white);
+    padding: 60px 40px;
     border-radius: 24px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-medium);
+    margin-top: 55px;
 }
-.custom-consult-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--pure-white); font-weight: 800; }
+
+.custom-consult-box h3 { 
+    font-size: 2.2rem; 
+    margin-bottom: 18px; 
+    color: var(--pure-white); 
+    font-weight: 800;
+    text-align: center;
+}
+
 .custom-consult-box p {
     font-size: 1.3rem;
     margin-bottom: 35px;
@@ -457,6 +491,22 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
+    text-align: center;
+}
+
+.custom-consult-box .btn-primary {
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.custom-consult-box .btn-primary:hover {
+    background-color: #20ba5a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
 /* ==================================================
@@ -491,11 +541,13 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     padding: 70px 0 25px 0;
     margin-top: 70px;
 }
+
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 40px;
 }
+
 .footer h3 { color: var(--pure-white); margin-bottom: 20px; font-size: 1.3rem; font-weight: 800; }
 .footer p { font-size: 1.1rem; margin-bottom: 12px; }
 
@@ -513,6 +565,7 @@ h2 { font-size: 2.6rem; color: var(--primary-dark); margin-bottom: 25px; font-we
     font-size: 1.2rem;
     transition: var(--transition-smooth);
 }
+
 .social-icons a:hover {
     background-color: var(--primary-light);
     color: var(--accent-dark);
