@@ -6,8 +6,8 @@
     <title>Venti Verde - Geotecnologias, Drones e Meio Ambiente</title>
     <meta name="description" content="Soluções corporativas e cursos práticos em Drones, Geoprocessamento, QGIS, Mapeamento Aéreo e Consultoria Ambiental.">
 
-    <!-- CABEÇALHOS DE SEGURANÇA (SECURITY HEADERS) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
+    <!-- CABEÇALHOS DE SEGURANÇA -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -26,15 +26,16 @@
                 <span class="bar"></span>
             </button>
 
-            <!-- Links alinhados à esquerda -->
+            <!-- Links com Inclusão de "Quem Somos" -->
             <nav class="nav-menu">
                 <button type="button" class="nav-link active" onclick="switchPage('home')">Início</button>
+                <button type="button" class="nav-link" onclick="scrollToSection('institucional')">Quem Somos</button>
                 <button type="button" class="nav-link" onclick="switchPage('cursos')">Cursos</button>
                 <button type="button" class="nav-link" onclick="switchPage('servicos')">Serviços</button>
                 <a href="#contato" class="nav-link" onclick="scrollToContato(event)">Contato</a>
             </nav>
 
-            <!-- Logo em destaque à direita -->
+            <!-- Logo -->
             <button type="button" class="logo-area" onclick="switchPage('home')" aria-label="Ir para a página inicial">
                 <img src="Logo Header.png" alt="Logo Venti Verde Geotecnologias" class="nav-logo">
             </button>
@@ -44,12 +45,10 @@
     <!-- CONTEÚDO PRINCIPAL (SPA) -->
     <main id="app-content">
 
-        <!-- ==================================================
-             PÁGINA 1 - HOME
-             ================================================== -->
+        <!-- PÁGINA 1 - HOME -->
         <section id="page-home" class="page-content active">
 
-            <!-- CARROSSEL HERO FLUIDO -->
+            <!-- CARROSSEL HERO -->
             <div class="container hero-section-container">
                 <div class="hero-carousel">
                     <div class="hero-overlay"></div>
@@ -62,21 +61,21 @@
                             <p class="hero-description">Domine a pilotagem e o mapeamento aéreo aplicado a <strong>Fotofilmagem, Agricultura de Precisão, Meio Ambiente e Engenharia.</strong></p>
                             <div class="hero-actions">
                                 <button type="button" class="btn-primary" onclick="openCourseDirectly('drones-imagem')">
-                                    <i class="fa-solid fa-rocket"></i> VER CURSOS DE MAPEAMENTO
+                                    <i class="fa-solid fa-rocket"></i> VER CURSOS DE DRONE E MAPEAMENTO
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- SLIDE 2: DRONE AGRÍCOLA -->
-                    <div class="hero-slide" style="background-image: url('drone_agricola.png');">
+                    <div class="hero-slide" style="background-image: url('drone_agricola.png'), url('reis_agricola.jpeg');">
                         <div class="hero-content scroll-anim">
                             <span class="hero-badge badge-agri-banner"><i class="fa-solid fa-wheat-awn"></i> Habilitação CAAR Oficial</span>
                             <h1>Curso de Piloto de Drone Agrícola</h1>
                             <p class="hero-description">Em parceria com a <strong>Reis Pulverização</strong>, obtenha sua habilitação oficial para o <strong>CAAR</strong> com aulas teóricas e práticas em turma reduzida.</p>
                             <div class="hero-actions">
                                 <button type="button" class="btn-primary btn-agri-hero" onclick="openCourseDirectly('drone-agricola')">
-                                    <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO AGRÍCOLA
+                                    <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO DRONE AGRÍCOLA
                                 </button>
                             </div>
                         </div>
@@ -113,8 +112,8 @@
                 </div>
             </div>
 
-            <!-- SEÇÃO INSTITUCIONAL -->
-            <div class="institucional section-padding bg-light">
+            <!-- SEÇÃO INSTITUCIONAL / QUEM SOMOS -->
+            <div id="institucional" class="institucional section-padding bg-light">
                 <div class="container scroll-anim">
                     <div class="center-title">
                         <span class="section-subtitle">Quem Somos</span>
@@ -164,17 +163,13 @@
             </div>
         </section>
 
-        <!-- ==================================================
-             PÁGINA 2 - CURSOS
-             ================================================== -->
+        <!-- PÁGINA 2 - CURSOS -->
         <section id="page-cursos" class="page-content" style="display: none;">
             <div class="treinamentos section-padding">
                 <div class="container scroll-anim">
 
-                    <!-- TITULO CABEÇALHO DO HUB -->
+                    <!-- CABEÇALHO DO HUB -->
                     <div id="hub-header">
-                        <button type="button" class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
-
                         <div class="center-title">
                             <span class="section-subtitle">Capacitação Profissional</span>
                             <h2>CURSOS VENTI VERDE</h2>
@@ -186,8 +181,6 @@
 
                     <!-- HUB COM CARDS -->
                     <div id="cursos-hub" class="cursos-options-grid">
-                        
-                        <!-- CARD 1: DRONE AGRÍCOLA -->
                         <div class="option-card-banner">
                             <img src="reis_agricola.jpeg" alt="Curso Drone Agrícola" class="card-media-img" onerror="this.src='reis_agricola.jpg'">
                             <div class="card-overlay-gradient"></div>
@@ -199,7 +192,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 2: DRONES DE IMAGEM -->
                         <div class="option-card-banner">
                             <img src="larissa_drone.jpeg" alt="Cursos Drones de Imagem" class="card-media-img" onerror="this.src='larissa_drone.jpg'">
                             <div class="card-overlay-gradient"></div>
@@ -211,7 +203,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 3: GEOPROCESSAMENTO -->
                         <div class="option-card-banner">
                             <img src="calor_-_mapa.png" alt="Cursos de Geoprocessamento" class="card-media-img">
                             <div class="card-overlay-gradient"></div>
@@ -222,12 +213,15 @@
                                 <button type="button" onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- BOTÃO VOLTAR À HOME NO HUB DE CURSOS (NO CANTO DIREITO) -->
+                    <div id="hub-footer-nav" class="subpage-nav-bar nav-bottom hub-nav-right">
+                        <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Voltar para Página Principal</button>
                     </div>
 
                     <!-- SUBPÁGINA: DETALHES CURSO DRONE AGRÍCOLA -->
                     <div id="category-drone-agricola" class="course-detail-view" style="display: none;">
-                        
                         <div class="agri-full-page-box">
                             <div class="agri-header-title">
                                 <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
@@ -297,8 +291,8 @@
                             </div>
                         </div>
 
-                        <!-- NAVEGAÇÃO BOTTOM (EXCLUSIVA) -->
-                        <div class="subpage-nav-bar nav-bottom">
+                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS (ESQUERDA E DIREITA) -->
+                        <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
                             <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
                         </div>
@@ -306,7 +300,6 @@
 
                     <!-- SUBPÁGINA: DETALHES DRONES DE IMAGEM -->
                     <div id="category-drones-imagem" class="course-detail-view" style="display: none;">
-                        
                         <div class="center-title">
                             <h2 class="category-title">CURSOS DE DRONES DE IMAGEM</h2>
                             <p class="section-subtitle">Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública</p>
@@ -365,8 +358,8 @@
                             </div>
                         </div>
 
-                        <!-- NAVEGAÇÃO BOTTOM (EXCLUSIVA) -->
-                        <div class="subpage-nav-bar nav-bottom">
+                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS -->
+                        <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
                             <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
                         </div>
@@ -374,7 +367,6 @@
 
                     <!-- SUBPÁGINA: DETALHES GEOPROCESSAMENTO -->
                     <div id="category-geoprocessamento" class="course-detail-view" style="display: none;">
-                        
                         <div class="center-title">
                             <h2 class="category-title">CURSOS DE GEOPROCESSAMENTO</h2>
                             <p class="section-subtitle">Do zero ao avançado: QGIS e Metashape Fotogrametria</p>
@@ -431,8 +423,8 @@
                             </div>
                         </div>
 
-                        <!-- NAVEGAÇÃO BOTTOM (EXCLUSIVA) -->
-                        <div class="subpage-nav-bar nav-bottom">
+                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS -->
+                        <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
                             <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
                         </div>
@@ -442,15 +434,11 @@
             </div>
         </section>
 
-        <!-- ==================================================
-             PÁGINA 3 - SERVIÇOS TÉCNICOS
-             ================================================== -->
+        <!-- PÁGINA 3 - SERVIÇOS TÉCNICOS -->
         <section id="page-servicos" class="page-content" style="display: none;">
             <div class="solucoes-tecnicas section-padding">
                 <div class="container scroll-anim">
                     
-                    <button type="button" class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
-
                     <div class="center-title">
                         <span class="section-subtitle">Serviços Técnicos</span>
                         <h2>SOLUÇÕES TÉCNICAS E CONSULTORIA</h2>
@@ -540,18 +528,23 @@
                         <p>Entre em contato com a Venti Verde. Avaliamos sua necessidade e indicamos a melhor solução técnica para o seu objetivo.</p>
                         <a href="https://wa.me/5551998654971?text=Olá!%20Não%20sei%20qual%20solução%20é%20ideal%20para%20meu%20projeto.%20Poderiam%20me%20ajudar?" target="_blank" rel="noopener noreferrer" class="btn-primary">SOLICITAR CONSULTORIA</a>
                     </div>
+
+                    <div class="subpage-nav-bar nav-bottom hub-nav-right">
+                        <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Voltar para Página Principal</button>
+                    </div>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- BUTTON WHATSAPP FLUTUANTE -->
+    <!-- WHATSAPP FLUTUANTE -->
     <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Venti%20Verde." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- RODAPÉ DO SITE -->
+    <!-- RODAPÉ DA PÁGINA -->
     <footer id="contato" class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -586,7 +579,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT SEPARADO -->
     <script src="script.js"></script>
 </body>
 </html>
