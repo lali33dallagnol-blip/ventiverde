@@ -7,10 +7,10 @@
     --primary-dark: #0a5c36;    /* Verde Escuro Principal */
     --primary-light: #7bc15e;   /* Verde Claro Secundário */
     --accent-dark: #12261e;      /* Escuro Quase Preto */
-    --bg-white: #f9f8f3;        /* Off-White Fundo Limpo */
+    --bg-white: #f9f8f3;        /* Off-White de Fundo */
     --pure-white: #ffffff;
-    --text-color: #1a1a1a;      
-    --text-muted: #4a4a4a;      
+    --text-color: #1a1a1a;      /* Escuro de Altíssima Legibilidade */
+    --text-muted: #4a4a4a;      /* Cinza Escuro para Descrições */
     --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.06);
     --shadow-medium: 0 8px 30px rgba(10, 92, 54, 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -37,7 +37,6 @@ body {
     overflow-x: hidden;
     padding-top: 80px;
     line-height: 1.6;
-    background-color: var(--bg-white);
 }
 
 section, [id] {
@@ -50,8 +49,19 @@ section, [id] {
     margin: 0 auto;
 }
 
+.scroll-anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+.scroll-anim.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ==================================================
-   3. BOTÕES E COMPONENTES
+   3. BOTÕES ESTILIZADOS
    ================================================== */
 .btn-primary {
     display: inline-block;
@@ -108,7 +118,7 @@ section, [id] {
 .btn-back:hover { text-decoration: underline; }
 
 /* ==================================================
-   4. NAVBAR FIXA
+   4. NAVBAR FIXA (LOGO NA EXTREMA DIREITA)
    ================================================== */
 .navbar {
     position: fixed;
@@ -132,8 +142,13 @@ section, [id] {
     align-items: center;
 }
 
-.logo-area { margin-left: auto; }
-.nav-logo { height: 60px; object-fit: contain; cursor: pointer; }
+.logo-area {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo { height: 55px; object-fit: contain; cursor: pointer; }
 
 .nav-menu { display: flex; align-items: center; gap: 30px; }
 .nav-link {
@@ -178,13 +193,13 @@ section, [id] {
 }
 
 /* ==================================================
-   5. CARROSSEL HERO FLUIDO
+   5. CARROSSEL HERO
    ================================================== */
 .page-content { display: none; }
 .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out forwards; }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -211,11 +226,7 @@ h2 {
     text-align: center;
 }
 
-.center-title { 
-    text-align: center; 
-    margin: 0 auto 40px auto; 
-}
-
+.center-title { text-align: center; margin: 0 auto 40px auto; }
 .margin-top { margin-top: 40px; }
 .margin-top-sm { margin-top: 20px; }
 
@@ -256,10 +267,7 @@ h2 {
     padding: 0 5%;
 }
 
-.hero-slide.active {
-    opacity: 1;
-    visibility: visible;
-}
+.hero-slide.active { opacity: 1; visibility: visible; }
 
 .hero-content {
     position: relative;
@@ -283,38 +291,13 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.badge-agri-banner {
-    background-color: #27ae60;
-    color: #ffffff;
-}
+.badge-agri-banner { background-color: #27ae60; color: #ffffff; }
 
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
+.hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+.hero-description { font-size: 1.2rem; margin-bottom: 20px; opacity: 0.95; line-height: 1.6; }
 
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    opacity: 0.95;
-    line-height: 1.6;
-}
-
-.hero-highlights-list {
-    list-style: none;
-    margin-bottom: 25px;
-}
-
-.hero-highlights-list li {
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
+.hero-highlights-list { list-style: none; margin-bottom: 25px; }
+.hero-highlights-list li { font-size: 1.05rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
 .hero-highlights-list li i { color: var(--primary-light); }
 
 .carousel-control {
@@ -335,7 +318,6 @@ h2 {
     align-items: center;
     justify-content: center;
 }
-
 .carousel-control:hover { background: var(--primary-dark); }
 .carousel-control.prev { left: 20px; }
 .carousel-control.next { right: 20px; }
@@ -358,19 +340,14 @@ h2 {
     cursor: pointer;
     transition: var(--transition-smooth);
 }
-
-.dot.active {
-    background-color: var(--primary-light);
-    width: 26px;
-    border-radius: 10px;
-}
+.dot.active { background-color: var(--primary-light); width: 26px; border-radius: 10px; }
 
 /* ==================================================
-   6. HUB DE OPÇÕES DE CURSOS (COM IMAGENS DE FUNDO)
+   6. CARDS DE CURSOS COM BANNER DE FUNDO
    ================================================== */
 .cursos-options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 35px;
 }
@@ -387,13 +364,8 @@ h2 {
     transition: var(--transition-smooth);
 }
 
-.option-card-banner:hover {
-    transform: translateY(-5px);
-}
-
-.card-banner-content {
-    color: var(--pure-white);
-}
+.option-card-banner:hover { transform: translateY(-5px); }
+.card-banner-content { color: var(--pure-white); }
 
 .badge-card-agri, .badge-card-map {
     display: inline-block;
@@ -404,21 +376,11 @@ h2 {
     margin-bottom: 12px;
     text-transform: uppercase;
 }
-
 .badge-card-agri { background-color: #27ae60; color: #fff; }
 .badge-card-map { background-color: var(--primary-dark); color: #fff; }
 
-.card-banner-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    font-weight: 800;
-}
-
-.card-banner-content p {
-    font-size: 1.05rem;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
+.card-banner-content h3 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 800; }
+.card-banner-content p { font-size: 1.05rem; margin-bottom: 20px; opacity: 0.9; }
 
 .btn-card-large {
     width: 100%;
@@ -432,19 +394,10 @@ h2 {
     cursor: pointer;
     transition: var(--transition-smooth);
 }
+.btn-green-card { background-color: #27ae60; }
+.btn-card-large:hover { background-color: var(--primary-light); color: var(--accent-dark); }
 
-.btn-green-card {
-    background-color: #27ae60;
-}
-
-.btn-card-large:hover {
-    background-color: var(--primary-light);
-    color: var(--accent-dark);
-}
-
-/* ==================================================
-   7. DETALHES DO CURSO AGRÍCOLA + TABELA
-   ================================================== */
+/* DETALHES DO CURSO AGRÍCOLA & TABELA */
 .agri-full-page-box {
     background: var(--pure-white);
     border-radius: 20px;
@@ -460,30 +413,11 @@ h2 {
     padding-bottom: 20px;
 }
 
-.agri-header-title h2 {
-    font-size: 2.3rem;
-    color: var(--primary-dark);
-}
+.agri-header-title h2 { font-size: 2.3rem; color: var(--primary-dark); }
+.agri-partner-desc { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
 
-.agri-partner-desc {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.agri-details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-}
-
-.agri-info-col h3, .agri-curriculum-col h3 {
-    font-size: 1.4rem;
-    color: var(--accent-dark);
-    margin-bottom: 20px;
-    font-weight: 800;
-}
+.agri-details-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+.agri-info-col h3, .agri-curriculum-col h3 { font-size: 1.4rem; color: var(--accent-dark); margin-bottom: 20px; font-weight: 800; }
 
 .price-single {
     background-color: rgba(123, 193, 94, 0.15);
@@ -493,65 +427,25 @@ h2 {
     justify-content: space-between;
     align-items: center;
 }
-
 .price-label { font-size: 1.2rem; font-weight: 700; color: var(--accent-dark); }
 .price-value { font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); }
 
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    margin-bottom: 25px;
-}
+.table-responsive { width: 100%; overflow-x: auto; margin-bottom: 25px; }
+.curriculum-table { width: 100%; border-collapse: collapse; background: var(--bg-white); border-radius: 10px; overflow: hidden; }
+.curriculum-table th { background-color: var(--primary-dark); color: white; padding: 12px; text-align: left; font-size: 0.9rem; }
+.curriculum-table td { padding: 12px; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
 
-.curriculum-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--bg-white);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.curriculum-table th {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-.curriculum-table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    font-size: 0.9rem;
-}
-
-.btn-agri-cta {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: #25d366;
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-
+.btn-agri-cta { display: block; width: 100%; text-align: center; background-color: #25d366; color: #fff; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
 .btn-agri-cta:hover { background-color: #20ba5a; }
 
-/* ==================================================
-   8. INSTITUCIONAL E DEMAIS CURSOS
-   ================================================== */
+/* INSTITUCIONAL, CURSOS DEMAIS E SERVIÇOS */
 .section-text { font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: center; }
 .fundadora--wrapper { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); }
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
 .fundadora-bio { font-size: 1.2rem; line-height: 1.8; margin-bottom: 18px; }
 
-.cursos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
+.cursos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
 .course-card {
     background-color: var(--pure-white);
     border-radius: 20px;
@@ -562,7 +456,6 @@ h2 {
     justify-content: space-between;
     border: 1px solid rgba(10, 92, 54, 0.12);
 }
-
 .course-card.highlighted-card { border: 3px solid var(--primary-dark); }
 .course-badge { font-size: 1.3rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 10px; }
 .course-description { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px; }
@@ -571,16 +464,7 @@ h2 {
 .course-topics li { font-size: 1.05rem; margin-bottom: 10px; display: flex; gap: 10px; align-items: center; }
 .course-topics li i { color: var(--primary-dark); }
 
-.btn-card {
-    display: block;
-    text-align: center;
-    background-color: var(--primary-dark);
-    color: var(--pure-white);
-    padding: 15px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 800;
-}
+.btn-card { display: block; text-align: center; background-color: var(--primary-dark); color: var(--pure-white); padding: 15px; border-radius: 50px; text-decoration: none; font-weight: 800; }
 .btn-card:hover { background-color: var(--primary-light); color: var(--accent-dark); }
 
 .group-course-card {
@@ -595,13 +479,7 @@ h2 {
     gap: 20px;
 }
 
-/* SERVIÇOS */
-.services-full-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
+.services-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
 .service-card-full {
     background: var(--pure-white);
     padding: 30px 22px;
@@ -628,7 +506,6 @@ h2 {
     border-radius: 20px;
     text-align: center;
 }
-
 .custom-consult-box h3 { font-size: 2rem; margin-bottom: 15px; color: #fff; }
 .custom-consult-box p { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.95; }
 
@@ -650,33 +527,14 @@ h2 {
     z-index: 999;
 }
 
-.footer {
-    background-color: var(--accent-dark);
-    color: rgba(255, 255, 255, 0.85);
-    padding: 60px 0 25px 0;
-    margin-top: 60px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
-}
-
+.footer { background-color: var(--accent-dark); color: rgba(255, 255, 255, 0.85); padding: 60px 0 25px 0; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; }
 .footer h3 { color: var(--pure-white); margin-bottom: 15px; }
 .social-icons { display: flex; gap: 12px; }
-.social-icons a {
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    width: 44px;
-    height: 44px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.social-icons a { color: white; background: rgba(255, 255, 255, 0.1); width: 44px; height: 44px; border-radius: 50px; display: flex; justify-content: center; align-items: center; text-decoration: none; }
+.footer-bottom { text-align: center; margin-top: 40px; font-size: 0.95rem; }
+.footer-bottom hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
 
-/* RESPONSIVO */
 @media (max-width: 900px) {
     .grid-2, .agri-details-grid { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.1rem; }
