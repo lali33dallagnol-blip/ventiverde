@@ -109,6 +109,17 @@ button:focus-visible {
     color: var(--pure-white);
 }
 
+/* Estilo do botão secundário quando está dentro do Hero (sobre imagem escura) */
+.btn-hero-secondary {
+    color: var(--pure-white) !important;
+    border-color: var(--pure-white) !important;
+}
+
+.btn-hero-secondary:hover {
+    background-color: var(--pure-white) !important;
+    color: var(--accent-dark) !important;
+}
+
 /* ==================================================
    4. NAVBAR FIXA
    ================================================== */
@@ -222,13 +233,35 @@ h2 {
 .margin-top { margin-top: 45px; }
 
 /* ==================================================
-   6. BANNER HERO & PÁGINA INICIAL
+   6. NOVO CARROSSEL HERO (E NOVO SLIDER)
    ================================================== */
-.hero-banner {
+.hero-carousel {
     position: relative;
     width: 100%;
-    min-height: 80vh;
-    background-image: url('home_capa.png');
+    min-height: 82vh;
+    overflow: hidden;
+    background-color: var(--accent-dark);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -237,18 +270,129 @@ h2 {
     text-align: center;
     padding: 0 20px;
 }
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.48);
-    z-index: 1;
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
 }
-.hero-content { position: relative; z-index: 2; color: #ffffff; max-width: 900px; }
-.hero-content h1 { font-size: 3.3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-.hero-content p { font-size: 1.45rem; margin-bottom: 35px; opacity: 0.95; }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--pure-white);
+    max-width: 900px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-light);
+    color: var(--accent-dark);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.1rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.35rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Setas do Carrossel Hero */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(18, 38, 30, 0.6);
+    color: var(--pure-white);
+    border: none;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control:hover {
+    background: var(--primary-dark);
+    color: var(--pure-white);
+}
+
+.carousel-control.prev { left: 25px; }
+.carousel-control.next { right: 25px; }
+
+/* Indicadores (Pontos/Dots) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.dot.active {
+    background-color: var(--primary-light);
+    width: 32px;
+    border-radius: 10px;
+}
+
+/* ==================================================
+   7. SEÇÃO DE PULVERIZAÇÃO AGRÍCOLA (COMISSÃO/PARCERIA)
+   ================================================== */
+.agri-card-lead {
+    background: var(--pure-white);
+    padding: 28px;
+    border-radius: 20px;
+    border-left: 6px solid var(--primary-dark);
+    box-shadow: var(--shadow-light);
+    margin-top: 15px;
+}
+
+.agri-card-lead .btn-primary {
+    background-color: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.agri-card-lead .btn-primary:hover {
+    background-color: #20ba5a;
+}
 
 .section-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 22px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center; }
@@ -267,7 +411,7 @@ h2 {
 }
 
 /* ==================================================
-   7. ABA CURSOS (MENU 2 OPÇÕES + DETALHES)
+   8. ABA CURSOS (MENU 2 OPÇÕES + DETALHES)
    ================================================== */
 .cursos-main-desc {
     font-size: 1.45rem;
@@ -415,7 +559,7 @@ h2 {
 .group-course-details li { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
 
 /* ==================================================
-   8. ABA SERVIÇOS & CONSULTORIA
+   9. ABA SERVIÇOS & CONSULTORIA
    ================================================== */
 .services-full-grid {
     display: grid;
@@ -460,7 +604,7 @@ h2 {
 }
 .service-card-list li i { color: var(--primary-light); font-size: 0.9rem; }
 
-/* BLOCO FINAL CONSULTORIA (DESTAQUE INTEGRAL) */
+/* BLOCO FINAL CONSULTORIA */
 .custom-consult-box {
     width: 100%;
     background: linear-gradient(135deg, #0a5c36 0%, #12261e 100%);
@@ -511,7 +655,7 @@ h2 {
 }
 
 /* ==================================================
-   9. WHATSAPP FLUTUANTE E RODAPÉ
+   10. WHATSAPP FLUTUANTE E RODAPÉ
    ================================================== */
 .whatsapp-float {
     position: fixed;
@@ -576,13 +720,18 @@ h2 {
 .footer-bottom hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
 
 /* ==================================================
-   10. RESPONSIVIDADE E ACESSIBILIDADE
+   11. RESPONSIVIDADE E ACESSIBILIDADE
    ================================================== */
 @media (max-width: 900px) {
     html { font-size: 16px; }
     .grid-2 { grid-template-columns: 1fr; }
     .menu-toggle { display: flex; }
     .logo-area { margin-left: 0; }
+    
+    .carousel-control { display: none; } /* Oculta setas no celular para dar destaque ao texto */
+    .hero-carousel { min-height: 90vh; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; }
     
     .nav-menu {
         position: fixed;
