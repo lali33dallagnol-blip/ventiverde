@@ -45,6 +45,16 @@ function openCourseDirectly(category) {
     openCourseCategory(category);
 }
 
+function scrollToSection(sectionId) {
+    switchPage('home');
+    setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 150);
+}
+
 function scrollToContato(event) {
     if (event) event.preventDefault();
     closeMobileMenu();
@@ -73,12 +83,15 @@ function closeMobileMenu() {
 function openCourseCategory(category) {
     const hubHeader = document.getElementById('hub-header');
     const hubGrid = document.getElementById('cursos-hub');
+    const hubFooterNav = document.getElementById('hub-footer-nav');
+    
     const agricolaCategory = document.getElementById('category-drone-agricola');
     const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
     if (hubHeader) hubHeader.style.display = 'none';
     if (hubGrid) hubGrid.style.display = 'none';
+    if (hubFooterNav) hubFooterNav.style.display = 'none';
 
     if (agricolaCategory) agricolaCategory.style.display = 'none';
     if (imagemCategory) imagemCategory.style.display = 'none';
@@ -98,6 +111,8 @@ function openCourseCategory(category) {
 function closeCourseCategory() {
     const hubHeader = document.getElementById('hub-header');
     const hubGrid = document.getElementById('cursos-hub');
+    const hubFooterNav = document.getElementById('hub-footer-nav');
+    
     const agricolaCategory = document.getElementById('category-drone-agricola');
     const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
@@ -108,6 +123,7 @@ function closeCourseCategory() {
 
     if (hubHeader) hubHeader.style.display = 'block';
     if (hubGrid) hubGrid.style.display = 'grid';
+    if (hubFooterNav) hubFooterNav.style.display = 'flex';
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
