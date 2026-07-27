@@ -10,7 +10,6 @@ function switchPage(pageId) {
 
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Esconde todas as páginas e remove destaques do menu
     Object.keys(pages).forEach(key => {
         if (pages[key]) {
             pages[key].classList.remove('active');
@@ -20,7 +19,6 @@ function switchPage(pageId) {
 
     navLinks.forEach(link => link.classList.remove('active'));
 
-    // Torna visível a página desejada
     const activePage = pages[pageId] || pages['home'];
     const activeId = pages[pageId] ? pageId : 'home';
 
@@ -29,29 +27,28 @@ function switchPage(pageId) {
         activePage.classList.add('active');
     }
 
-    // Atualiza o link ativo na Navbar
     const activeLink = document.querySelector(`.nav-link[onclick*="'${activeId}'"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
 
-    // Reseta o topo da página e fecha o menu mobile se estiver aberto
     window.scrollTo(0, 0);
     closeMobileMenu();
 
-    // Se navegou para a aba Cursos, reseta a visualização para o HUB inicial
     if (activeId === 'cursos') {
-        const hub = document.getElementById('cursos-hub');
-        const dronesCategory = document.getElementById('category-drones');
-        const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
-
-        if (dronesCategory) dronesCategory.style.display = 'none';
-        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
-        if (hub) hub.style.display = 'grid';
+        closeCourseCategory();
     }
 }
 
-// Auxiliar para fechar o menu mobile hambúrguer
+function scrollToContato(event) {
+    if (event) event.preventDefault();
+    closeMobileMenu();
+    const footerContato = document.getElementById('contato');
+    if (footerContato) {
+        footerContato.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 function closeMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -66,24 +63,30 @@ function closeMobileMenu() {
 }
 
 // ==================================================
-// 2. GERENCIAMENTO DAS CATEGORIAS DE CURSOS
+// 2. GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
 // ==================================================
 function openCourseCategory(category) {
     const hub = document.getElementById('cursos-hub');
-    const dronesCategory = document.getElementById('category-drones');
+    const agricolaCategory = document.getElementById('category-drone-agricola');
+    const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
     if (hub) hub.style.display = 'none';
 
-    if (category === 'drones' && dronesCategory) {
+    if (category === 'drone-agricola' && agricolaCategory) {
+        if (imagemCategory) imagemCategory.style.display = 'none';
         if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
-        dronesCategory.style.display = 'block';
+        agricolaCategory.style.display = 'block';
+    } else if ((category === 'drones' || category === 'drones-imagem') && imagemCategory) {
+        if (agricolaCategory) agricolaCategory.style.display = 'none';
+        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
+        imagemCategory.style.display = 'block';
     } else if (category === 'geoprocessamento' && geoprocessamentoCategory) {
-        if (dronesCategory) dronesCategory.style.display = 'none';
+        if (agricolaCategory) agricolaCategory.style.display = 'none';
+        if (imagemCategory) imagemCategory.style.display = 'none';
         geoprocessamentoCategory.style.display = 'block';
     }
 
-    // Rola a tela suavemente até a seção de cursos
     const pageCursos = document.getElementById('page-cursos');
     if (pageCursos) {
         pageCursos.scrollIntoView({ behavior: 'smooth' });
@@ -92,10 +95,12 @@ function openCourseCategory(category) {
 
 function closeCourseCategory() {
     const hub = document.getElementById('cursos-hub');
-    const dronesCategory = document.getElementById('category-drones');
+    const agricolaCategory = document.getElementById('category-drone-agricola');
+    const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
-    if (dronesCategory) dronesCategory.style.display = 'none';
+    if (agricolaCategory) agricolaCategory.style.display = 'none';
+    if (imagemCategory) imagemCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
     if (hub) hub.style.display = 'grid';
 
@@ -106,7 +111,7 @@ function closeCourseCategory() {
 }
 
 // ==================================================
-// 3. GERENCIAMENTO DO CARROSSEL HERO (HOME)
+// 3. GERENCIAMENTO DO CARROSSEL HERO
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
@@ -139,7 +144,6 @@ function currentSlide(index) {
 }
 
 function startSlideTimer() {
-    // Alterna os slides automaticamente a cada 6 segundos
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1);
     }, 6000);
@@ -151,16 +155,14 @@ function resetSlideTimer() {
 }
 
 // ==================================================
-// 4. INICIALIZAÇÃO DE EVENTOS (DOM LOADED)
+// 4. EVENTOS APÓS O CARREGAMENTO DO DOM
 // ==================================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicia a rotação automática do carrossel Hero
     startSlideTimer();
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Alternador do menu responsivo (Hambúrguer -> X)
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('active');
@@ -169,15 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fecha o menu ao clicar em links âncora (#contato, etc.)
-    const anchorLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-    anchorLinks.forEach(anchor => {
-        anchor.addEventListener('click', () => {
-            closeMobileMenu();
-        });
-    });
-
-    // Animações ao rolar a página
     const animElements = document.querySelectorAll('.scroll-anim');
 
     const observerOptions = {
@@ -199,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================================================
-// 5. CARREGAMENTO DIRETO VIA HASH NA URL (#cursos, #servicos)
+// 5. CARREGAMENTO DIRETO VIA HASH DA URL (#cursos, #servicos)
 // ==================================================
 window.addEventListener('load', () => {
     const hash = window.location.hash.replace('#', '');
@@ -208,6 +201,11 @@ window.addEventListener('load', () => {
         switchPage('cursos');
     } else if (hash === 'servicos' || hash === 'solucoes-tecnicas') {
         switchPage('servicos');
+    } else if (hash === 'contato') {
+        switchPage('home');
+        setTimeout(() => {
+            scrollToContato();
+        }, 300);
     } else {
         switchPage('home');
     }
