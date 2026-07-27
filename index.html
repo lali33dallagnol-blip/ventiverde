@@ -43,69 +43,69 @@
              ================================================== -->
         <section id="page-home" class="page-content active">
 
-           <!-- CARROSSEL HERO FLUIDO (ESTRUTURA PADRONIZADA) -->
-<div class="container hero-section-container">
-    <div class="hero-carousel">
-        <div class="hero-overlay"></div>
+            <!-- CARROSSEL HERO FLUIDO (ESTRUTURA PADRONIZADA) -->
+            <div class="container hero-section-container">
+                <div class="hero-carousel">
+                    <div class="hero-overlay"></div>
 
-        <!-- SLIDE 1: MAPEAMENTO -->
-        <div class="hero-slide active" style="background-image: url('home_capa.png');">
-            <div class="hero-content scroll-anim">
-                <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação Profissional</span>
-                <h1>Cursos de Drones &amp; Mapeamento Aéreo</h1>
-                <p class="hero-description">Domine a pilotagem e o mapeamento aéreo aplicado a <strong>Fotofilmagem, Agricultura de Precisão, Meio Ambiente e Engenharia.</strong></p>
-                <div class="hero-actions">
-                    <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('drones-imagem')">
-                        <i class="fa-solid fa-rocket"></i> VER CURSOS DE MAPEAMENTO
-                    </a>
+                    <!-- SLIDE 1: MAPEAMENTO -->
+                    <div class="hero-slide active" style="background-image: url('home_capa.png');">
+                        <div class="hero-content scroll-anim">
+                            <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação Profissional</span>
+                            <h1>Cursos de Drones &amp; Mapeamento Aéreo</h1>
+                            <p class="hero-description">Domine a pilotagem e o mapeamento aéreo aplicado a <strong>Fotofilmagem, Agricultura de Precisão, Meio Ambiente e Engenharia.</strong></p>
+                            <div class="hero-actions">
+                                <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('drones-imagem')">
+                                    <i class="fa-solid fa-rocket"></i> VER CURSOS DE MAPEAMENTO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2: DRONE AGRÍCOLA (PADRONIZADO) -->
+                    <div class="hero-slide" style="background-image: url('drone_agricola.png.png');">
+                        <div class="hero-content scroll-anim">
+                            <span class="hero-badge badge-agri-banner"><i class="fa-solid fa-wheat-awn"></i> Habilitação CAAR Oficial</span>
+                            <h1>Curso de Piloto de Drone Agrícola</h1>
+                            <p class="hero-description">Em parceria com a <strong>Reis Pulverização</strong>, obtenha sua habilitação oficial para o <strong>CAAR</strong> com aulas teóricas e práticas em turma reduzida.</p>
+                            <div class="hero-actions">
+                                <a href="javascript:void(0)" class="btn-primary btn-agri-hero" onclick="openCourseDirectly('drone-agricola')">
+                                    <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO AGRÍCOLA
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3: GEOPROCESSAMENTO -->
+                    <div class="hero-slide" style="background-image: url('calor_-_mapa.png'); background-position: center center;">
+                        <div class="hero-content scroll-anim">
+                            <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
+                            <h1>Cursos de Geoprocessamento</h1>
+                            <p class="hero-description">Aprenda a criar mapas profissionais com <strong>QGIS do zero ao avançado</strong> e processamento fotogramétrico com Metashape.</p>
+                            <div class="hero-actions">
+                                <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('geoprocessamento')">
+                                    <i class="fa-solid fa-map"></i> VER CURSOS DE GEOPROCESSAMENTO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTROLES -->
+                    <button class="carousel-control prev" onclick="moveSlide(-1)" aria-label="Slide anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control next" onclick="moveSlide(1)" aria-label="Próximo slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <!-- INDICADORES -->
+                    <div class="carousel-indicators">
+                        <span class="dot active" onclick="currentSlide(0)"></span>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- SLIDE 2: DRONE AGRÍCOLA (PADRONIZADO) -->
-        <div class="hero-slide" style="background-image: url('drone_agricola.png.png');">
-            <div class="hero-content scroll-anim">
-                <span class="hero-badge badge-agri-banner"><i class="fa-solid fa-wheat-awn"></i> Habilitação CAAR Oficial</span>
-                <h1>Curso de Piloto de Drone Agrícola</h1>
-                <p class="hero-description">Em parceria com a <strong>Reis Pulverização</strong>, obtenha sua habilitação oficial para o <strong>CAAR</strong> com aulas teóricas e práticas em turma reduzida.</p>
-                <div class="hero-actions">
-                    <a href="javascript:void(0)" class="btn-primary btn-agri-hero" onclick="openCourseDirectly('drone-agricola')">
-                        <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO AGRÍCOLA
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 3: GEOPROCESSAMENTO -->
-        <div class="hero-slide" style="background-image: url('calor_-_mapa.png');">
-            <div class="hero-content scroll-anim">
-                <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
-                <h1>Cursos de Geoprocessamento</h1>
-                <p class="hero-description">Aprenda a criar mapas profissionais com <strong>QGIS do zero ao avançado</strong> e processamento fotogramétrico com Metashape.</p>
-                <div class="hero-actions">
-                    <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('geoprocessamento')">
-                        <i class="fa-solid fa-map"></i> VER CURSOS DE GEOPROCESSAMENTO
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTROLES -->
-        <button class="carousel-control prev" onclick="moveSlide(-1)" aria-label="Slide anterior">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-control next" onclick="moveSlide(1)" aria-label="Próximo slide">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <!-- INDICADORES -->
-        <div class="carousel-indicators">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-    </div>
-</div>
 
             <!-- SEÇÃO INSTITUCIONAL -->
             <div class="institucional section-padding bg-light">
@@ -178,7 +178,7 @@
                         </div>
                     </div>
 
-                    <!-- HUB COM CARDS (VERSÃO CORRIGIDA COM TAGS IMG REAIS) -->
+                    <!-- HUB COM CARDS -->
                     <div id="cursos-hub" class="cursos-options-grid">
                         
                         <!-- CARD 1: DRONE AGRÍCOLA -->
