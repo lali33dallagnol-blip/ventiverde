@@ -32,7 +32,7 @@ function switchPage(pageId) {
         activeLink.classList.add('active');
     }
 
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     closeMobileMenu();
 
     if (activeId === 'cursos') {
@@ -87,10 +87,12 @@ function openCourseCategory(category) {
         geoprocessamentoCategory.style.display = 'block';
     }
 
-    const pageCursos = document.getElementById('page-cursos');
-    if (pageCursos) {
-        pageCursos.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+        const pageCursos = document.getElementById('page-cursos');
+        if (pageCursos) {
+            pageCursos.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 50);
 }
 
 function closeCourseCategory() {
@@ -104,14 +106,16 @@ function closeCourseCategory() {
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
     if (hub) hub.style.display = 'grid';
 
-    const pageCursos = document.getElementById('page-cursos');
-    if (pageCursos) {
-        pageCursos.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+        const pageCursos = document.getElementById('page-cursos');
+        if (pageCursos) {
+            pageCursos.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 50);
 }
 
 // ==================================================
-// 3. AUTO-SLIDE DO CARROSSEL (DESLIZA SOZINHO A CADA 5s)
+// 3. AUTO-SLIDE DO CARROSSEL
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
