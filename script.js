@@ -10,7 +10,6 @@ function switchPage(pageId) {
 
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Oculta todas as páginas
     Object.keys(pages).forEach(key => {
         if (pages[key]) {
             pages[key].classList.remove('active');
@@ -18,7 +17,6 @@ function switchPage(pageId) {
         }
     });
 
-    // Remove classe active dos links do menu
     navLinks.forEach(link => link.classList.remove('active'));
 
     const activePage = pages[pageId] || pages['home'];
@@ -37,13 +35,11 @@ function switchPage(pageId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     closeMobileMenu();
 
-    // Se navegou para a página de cursos geral (ex: pelo menu)
     if (activeId === 'cursos') {
         closeCourseCategory();
     }
 }
 
-// Função para abrir o curso diretamente vindo do carrossel da Home
 function openCourseDirectly(category) {
     switchPage('cursos');
     openCourseCategory(category);
@@ -81,11 +77,9 @@ function openCourseCategory(category) {
     const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
-    // Esconde o Título Principal e o Grid de Opções para evitar duplicidade visual
     if (hubHeader) hubHeader.style.display = 'none';
     if (hubGrid) hubGrid.style.display = 'none';
 
-    // Esconde todas as visões para mostrar apenas a selecionada
     if (agricolaCategory) agricolaCategory.style.display = 'none';
     if (imagemCategory) imagemCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
@@ -112,7 +106,6 @@ function closeCourseCategory() {
     if (imagemCategory) imagemCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
 
-    // Restaura o HUB e Título Principal
     if (hubHeader) hubHeader.style.display = 'block';
     if (hubGrid) hubGrid.style.display = 'grid';
 
@@ -120,7 +113,7 @@ function closeCourseCategory() {
 }
 
 // ==================================================
-// 3. AUTO-SLIDE DO CARROSSEL COM PAUSA AO HOVER
+// 3. AUTO-SLIDE DO CARROSSEL
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
@@ -174,7 +167,6 @@ function resetSlideTimer() {
 document.addEventListener('DOMContentLoaded', () => {
     startSlideTimer();
 
-    // Pausa o carrossel no mouseover para permitir leitura tranquila
     const heroCarousel = document.querySelector('.hero-carousel');
     if (heroCarousel) {
         heroCarousel.addEventListener('mouseenter', stopSlideTimer);
@@ -192,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animação de Scroll Suave
     const animElements = document.querySelectorAll('.scroll-anim');
 
     const observerOptions = {
