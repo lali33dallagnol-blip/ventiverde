@@ -1,5 +1,5 @@
 // ==================================================
-// CONTROLE DE NAVEGAÇÃO ENTRE PÁGINAS (SPA)
+// 1. CONTROLE DE NAVEGAÇÃO ENTRE PÁGINAS (SPA)
 // ==================================================
 function switchPage(pageId) {
     const pages = {
@@ -10,7 +10,7 @@ function switchPage(pageId) {
 
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // 1. Esconde todas as páginas e remove destaques do menu
+    // Esconde todas as páginas e remove destaques do menu
     Object.keys(pages).forEach(key => {
         if (pages[key]) {
             pages[key].classList.remove('active');
@@ -20,7 +20,7 @@ function switchPage(pageId) {
 
     navLinks.forEach(link => link.classList.remove('active'));
 
-    // 2. Torna visível a página desejada
+    // Torna visível a página desejada
     const activePage = pages[pageId] || pages['home'];
     const activeId = pages[pageId] ? pageId : 'home';
 
@@ -29,19 +29,19 @@ function switchPage(pageId) {
         activePage.classList.add('active');
     }
 
-    // 3. Atualiza o link ativo na Navbar buscando pelo parâmetro onclick
+    // Atualiza o link ativo na Navbar buscando pelo parâmetro onclick
     const activeLink = document.querySelector(`.nav-link[onclick*="'${activeId}'"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
 
-    // 4. Força o topo da tela imediatamente (Destrava o bug de rolagem no footer)
+    // Força o topo da tela imediatamente
     window.scrollTo(0, 0);
 
-    // 5. Fecha o menu mobile caso esteja aberto
+    // Fecha o menu mobile caso esteja aberto
     closeMobileMenu();
 
-    // 6. Se alternou para a página de cursos, reseta para o HUB de cursos
+    // Se alternou para a página de cursos, reseta para o HUB de cursos
     if (activeId === 'cursos') {
         const hub = document.getElementById('cursos-hub');
         const dronesCategory = document.getElementById('category-drones');
@@ -68,7 +68,7 @@ function closeMobileMenu() {
 }
 
 // ==================================================
-// GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
+// 2. GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
 // ==================================================
 function openCourseCategory(category) {
     const hub = document.getElementById('cursos-hub');
@@ -109,9 +109,57 @@ function closeCourseCategory() {
 }
 
 // ==================================================
-// EVENTOS APÓS O CARREGAMENTO DO DOM
+// 3. GERENCIAMENTO DO CARROSSEL HERO
+// ==================================================
+let currentSlideIndex = 0;
+let slideInterval;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    if (!slides.length) return;
+
+    if (index >= slides.length) currentSlideIndex = 0;
+    else if (index < 0) currentSlideIndex = slides.length - 1;
+    else currentSlideIndex = index;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[currentSlideIndex].classList.add('active');
+    if (dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
+}
+
+function moveSlide(step) {
+    showSlide(currentSlideIndex + step);
+    resetSlideTimer();
+}
+
+function currentSlide(index) {
+    showSlide(index);
+    resetSlideTimer();
+}
+
+function startSlideTimer() {
+    // Alterna os slides automaticamente a cada 6 segundos
+    slideInterval = setInterval(() => {
+        showSlide(currentSlideIndex + 1);
+    }, 6000);
+}
+
+function resetSlideTimer() {
+    clearInterval(slideInterval);
+    startSlideTimer();
+}
+
+// ==================================================
+// 4. EVENTOS APÓS O CARREGAMENTO DO DOM
 // ==================================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicia a rotação automática do carrossel na Home
+    startSlideTimer();
+
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -124,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fecha o menu mobile ao clicar em links de âncora direta (ex: #contato)
+    // Fecha o menu mobile ao clicar em links de âncora direta (ex: #contato ou #solucao-agricola)
     const anchorLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
     anchorLinks.forEach(anchor => {
         anchor.addEventListener('click', () => {
@@ -154,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================================================
-// GERENCIAMENTO DE CARREGAMENTO DIRETO VIA HASH DA URL
+// 5. CARREGAMENTO DIRETO VIA HASH DA URL (#cursos, #servicos)
 // ==================================================
 window.addEventListener('load', () => {
     const hash = window.location.hash.replace('#', '');
