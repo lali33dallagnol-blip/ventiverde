@@ -25,7 +25,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none !important; /* Limpa bordas pesadas de todo o site */
+    border: none !important;
 }
 
 html {
@@ -66,7 +66,7 @@ body {
 }
 
 /* ==================================================
-   3. BOTÕES MODERNOS E FLUIDOS (SEM BORDA)
+   3. BOTÕES MODERNOS E FLUIDOS
    ================================================== */
 .btn-primary {
     display: inline-flex;
@@ -207,7 +207,7 @@ body {
 .menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
 /* ==================================================
-   5. CARROSSEL HERO FLUIDO
+   5. CARROSSEL HERO FLUIDO & LEGIBILIDADE OTIMIZADA
    ================================================== */
 .hero-section-container {
     padding-top: clamp(1rem, 2.5vw, 2rem);
@@ -223,13 +223,14 @@ body {
     box-shadow: 0 20px 40px rgba(10, 92, 54, 0.12);
 }
 
+/* OVERLAY AJUSTADO: Gradiente mais escuro à esquerda para garantir leitura total do texto */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(18, 38, 30, 0.92) 0%, rgba(18, 38, 30, 0.55) 60%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(90deg, rgba(10, 25, 18, 0.88) 0%, rgba(10, 25, 18, 0.65) 50%, rgba(0, 0, 0, 0.15) 100%);
     z-index: 1;
 }
 
@@ -262,12 +263,13 @@ body {
     max-width: 620px;
 }
 
+/* BADGES PADRONIZADAS: Mais destacadas e legíveis sobre qualquer imagem */
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background-color: rgba(123, 193, 94, 0.25);
-    color: var(--primary-light);
+    background-color: rgba(10, 92, 54, 0.85) !important;
+    color: var(--pure-white) !important;
     backdrop-filter: blur(8px);
     padding: 6px 16px;
     border-radius: 50px;
@@ -275,11 +277,12 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .badge-agri-banner {
-    background-color: rgba(39, 174, 96, 0.3);
-    color: #4cd984;
+    background-color: rgba(39, 174, 96, 0.9) !important;
+    color: #ffffff !important;
 }
 
 .hero-content h1 {
@@ -287,13 +290,15 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     line-height: 1.55;
     margin-bottom: 20px;
-    opacity: 0.92;
+    opacity: 0.95;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hero-highlights-list {
@@ -307,17 +312,19 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-highlights-list li i { color: var(--primary-light); }
 
+/* CONTROLES DO CARROSSEL PADRONIZADOS */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4) !important;
     backdrop-filter: blur(8px);
-    color: var(--pure-white);
+    color: var(--pure-white) !important;
     font-size: 14px;
     width: 42px;
     height: 42px;
@@ -330,7 +337,11 @@ body {
     justify-content: center;
 }
 
-.carousel-control:hover { background: var(--primary-light); color: var(--accent-dark); }
+.carousel-control:hover { 
+    background: var(--primary-light) !important; 
+    color: var(--accent-dark) !important; 
+}
+
 .carousel-control.prev { left: 16px; }
 .carousel-control.next { right: 16px; }
 
@@ -360,7 +371,7 @@ body {
 }
 
 /* ==================================================
-   6. CONTEÚDO E CARDS MODERNOS (SEM BORDAS)
+   6. CONTEÚDO E CARDS MODERNOS
    ================================================== */
 .section-subtitle {
     display: block;
@@ -498,7 +509,6 @@ h2 {
 
 .table-responsive { width: 100%; overflow-x: auto; margin-bottom: 20px; }
 
-/* TABELA LIMPA SEM LINHAS GROSSAS */
 .curriculum-table {
     width: 100%;
     border-collapse: collapse;
@@ -537,7 +547,6 @@ h2 {
     margin-top: 25px;
 }
 
-/* CARDS DE CURSOS E SERVIÇOS 100% CLEAN */
 .course-card {
     background-color: var(--pure-white);
     border-radius: 24px;
