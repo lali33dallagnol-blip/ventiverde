@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --primary-dark: #0a5c36;    /* Verde Escuro Principal */
-    --primary-light: #7bc15e;   /* Verde Claro Secundário */
+    --primary-dark: #0a5c36;     /* Verde Escuro Principal */
+    --primary-light: #7bc15e;    /* Verde Claro Secundário */
     --accent-dark: #12261e;      /* Escuro de Alto Contraste */
-    --bg-white: #f8f9fa;        /* Off-White Clean para Fundo */
+    --bg-white: #f8f9fa;         /* Off-White Clean para Fundo */
     --pure-white: #ffffff;
     --text-color: #1f2937;      /* Cor de Texto Principal */
     --text-muted: #4b5563;      /* Texto de Apoio */
@@ -17,14 +17,12 @@
 }
 
 /* ==================================================
-   2. RESET ZERADO DE BORDAS & LAYOUT REDIMENSIONÁVEL
+   2. RESET DE BORDAS & LAYOUT REDIMENSIONÁVEL
    ================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 0 !important; /* Elimina qualquer borda indesejada */
-    outline: none !important;
 }
 
 html {
@@ -32,7 +30,7 @@ html {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-white);
-    font-size: clamp(14px, 0.8vw + 10px, 17px); /* Tipografia totalmente fluida */
+    font-size: clamp(14px, 0.8vw + 10px, 17px);
 }
 
 body {
@@ -48,7 +46,7 @@ body {
 }
 
 .section-padding {
-    padding: clamp(2rem, 4.5vw, 4rem) 0; /* Compacta espaçamentos na janela */
+    padding: clamp(2rem, 4.5vw, 4rem) 0;
 }
 
 .bg-light { background-color: var(--pure-white); }
@@ -81,6 +79,7 @@ body {
     transition: var(--transition-smooth);
     box-shadow: 0 4px 15px rgba(123, 193, 94, 0.3);
     cursor: pointer;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -103,6 +102,7 @@ body {
     transition: var(--transition-smooth);
     box-shadow: var(--shadow-soft);
     cursor: pointer;
+    border: 1px solid rgba(10, 92, 54, 0.15);
 }
 
 .btn-secondary:hover {
@@ -113,6 +113,7 @@ body {
 
 .btn-back {
     background: transparent;
+    border: none;
     color: var(--primary-dark);
     font-size: 0.95rem;
     font-weight: 800;
@@ -136,7 +137,7 @@ body {
     height: clamp(70px, 8vh, 85px);
     background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     z-index: 1000;
 }
 
@@ -188,6 +189,7 @@ body {
     width: 28px;
     height: 22px;
     background: transparent;
+    border: none;
     cursor: pointer;
     z-index: 1001;
 }
@@ -197,10 +199,16 @@ body {
     height: 3px;
     background-color: var(--primary-dark);
     border-radius: 3px;
+    transition: var(--transition-smooth);
 }
 
+/* Animation hamburger */
+.menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
 /* ==================================================
-   5. CARROSSEL HERO FLUIDO E SEM MOLDURAS FALSAS
+   5. CARROSSEL HERO FLUIDO
    ================================================== */
 .hero-section-container {
     padding-top: clamp(0.8rem, 2vw, 1.5rem);
@@ -209,7 +217,7 @@ body {
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: clamp(360px, 50vh, 480px); /* Altura auto-ajustável */
+    height: clamp(360px, 50vh, 480px);
     border-radius: clamp(14px, 1.8vw, 24px);
     overflow: hidden;
     background-color: var(--accent-dark);
@@ -308,13 +316,14 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
     color: var(--pure-white);
     font-size: 14px;
     width: 38px;
     height: 38px;
     cursor: pointer;
+    border: none;
     border-radius: 50%;
     transition: var(--transition-smooth);
     z-index: 10;
@@ -452,6 +461,7 @@ h2 {
     font-weight: 800;
     font-size: 0.9rem;
     cursor: pointer;
+    border: none;
     transition: var(--transition-smooth);
 }
 
@@ -499,6 +509,7 @@ h2 {
     background: var(--bg-white);
     border-radius: 12px;
     overflow: hidden;
+    border: 1px solid rgba(10, 92, 54, 0.1);
 }
 
 .curriculum-table th {
@@ -513,6 +524,7 @@ h2 {
     padding: 10px;
     background-color: var(--pure-white);
     font-size: 0.82rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .btn-agri-cta {
@@ -522,6 +534,7 @@ h2 {
     background-color: #25d366;
     color: #fff;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    border: none;
 }
 
 .cursos-container {
@@ -540,6 +553,12 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition-smooth);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.highlighted-card {
+    border: 2px solid var(--primary-light);
+    box-shadow: var(--shadow-hover);
 }
 
 .course-badge { font-size: 1.1rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 6px; }
@@ -587,6 +606,7 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition-smooth);
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
 .service-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -615,15 +635,20 @@ h2 {
     right: 18px;
     background-color: #25d366;
     color: white;
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 999;
+    transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
 }
 
 .footer {
@@ -651,6 +676,12 @@ h2 {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.social-icons a:hover {
+    background: var(--primary-light);
+    color: var(--accent-dark);
 }
 
 .footer-bottom { text-align: center; margin-top: 25px; font-size: 0.82rem; opacity: 0.7; }
@@ -667,8 +698,9 @@ h2 {
         background-color: var(--pure-white);
         flex-direction: column;
         align-items: center;
-        gap: 18px;
-        padding-top: 25px;
+        gap: 22px;
+        padding-top: 35px;
+        box-shadow: var(--shadow-hover);
         transition: left 0.4s ease-in-out;
     }
     .nav-menu.active { left: 0; }
