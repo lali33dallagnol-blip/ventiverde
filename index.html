@@ -26,7 +26,7 @@
                 <span class="bar"></span>
             </button>
 
-            <!-- Links com Inclusão de "Quem Somos" -->
+            <!-- Links de Navegação -->
             <nav class="nav-menu">
                 <button type="button" class="nav-link active" onclick="switchPage('home')">Início</button>
                 <button type="button" class="nav-link" onclick="scrollToSection('institucional')">Quem Somos</button>
@@ -35,7 +35,7 @@
                 <a href="#contato" class="nav-link" onclick="scrollToContato(event)">Contato</a>
             </nav>
 
-            <!-- Logo -->
+            <!-- Logo em Destaque -->
             <button type="button" class="logo-area" onclick="switchPage('home')" aria-label="Ir para a página inicial">
                 <img src="Logo Header.png" alt="Logo Venti Verde Geotecnologias" class="nav-logo">
             </button>
@@ -45,7 +45,9 @@
     <!-- CONTEÚDO PRINCIPAL (SPA) -->
     <main id="app-content">
 
-        <!-- PÁGINA 1 - HOME -->
+        <!-- ==================================================
+             PÁGINA 1 - HOME
+             ================================================== -->
         <section id="page-home" class="page-content active">
 
             <!-- CARROSSEL HERO -->
@@ -67,7 +69,7 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 2: DRONE AGRÍCOLA -->
+                    <!-- SLIDE 2: DRONE AGRÍCOLA (IMAGEM E CAMINHO CORRIGIDO) -->
                     <div class="hero-slide" style="background-image: url('drone_agricola.png');">
                         <div class="hero-content scroll-anim">
                             <span class="hero-badge badge-agri-banner"><i class="fa-solid fa-wheat-awn"></i> Habilitação CAAR Oficial</span>
@@ -82,7 +84,7 @@
                     </div>
 
                     <!-- SLIDE 3: GEOPROCESSAMENTO -->
-                    <div class="hero-slide" style="background-image: url('calor_-_mapa.png'); background-position: center center;">
+                    <div class="hero-slide" style="background-image: url('calor_-_mapa.png');">
                         <div class="hero-content scroll-anim">
                             <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
                             <h1>Cursos de Geoprocessamento</h1>
@@ -128,7 +130,7 @@
                 </div>
             </div>
 
-            <!-- SEÇÃO FUNDADORA -->
+            <!-- SEÇÃO FUNDADORA (REESTRUTURADA COM CHIPS VISUAIS) -->
             <div class="fundadora section-padding">
                 <div class="container grid-2 scroll-anim">
                     <div class="fundadora--wrapper">
@@ -138,13 +140,16 @@
                         <span class="section-subtitle">Liderança e Experiência</span>
                         <h2>Conheça a Fundadora</h2>
                         <p class="fundadora-bio">
-                            Olá! Sou <strong>Larissa Dall'Agnol</strong>, Engenheira Agrícola e Ambiental, Mestre em Gestão e Tecnologia Ambiental e Pós-graduanda em Gestão, Licenciamento e Auditoria Ambiental.
+                            Olá! Sou <strong>Larissa Dall'Agnol</strong>, especialista dedicada a conectar a precisão das tecnologias geográficas às necessidades reais do mercado e do agronegócio.
                         </p>
+                        <div class="fundadora-badges">
+                            <span class="badge-chip"><i class="fa-solid fa-graduation-cap"></i> Engenheira Agrícola e Ambiental</span>
+                            <span class="badge-chip"><i class="fa-solid fa-certificate"></i> Mestre em Gestão e Tecnologia Ambiental</span>
+                            <span class="badge-chip"><i class="fa-solid fa-award"></i> Pós-graduanda em Licenciamento e Auditoria</span>
+                            <span class="badge-chip"><i class="fa-solid fa-drone"></i> Especialista em Drones e Geotecnologias</span>
+                        </div>
                         <p class="fundadora-bio">
-                            Como <strong>Especialista em Drones e Geotecnologias</strong>, atuo utilizando o drone não apenas para captura de imagens, mas como uma solução estratégica de alta precisão para o agronegócio e a gestão ambiental.
-                        </p>
-                        <p class="fundadora-bio">
-                            Minha missão é aproximar a tecnologia da sua realidade. Por isso, criei treinamentos práticos para quem deseja dominar o mercado: desde a <strong>pilotagem e planejamento com Drones</strong> até o processamento e criação de mapas inteligentes no <strong>Geoprocessamento</strong>.
+                            Minha missão é transformar Drones e Geoprocessamento em soluções estratégicas e inteligência territorial, capacitando profissionais do básico à prática avançada.
                         </p>
                     </div>
                 </div>
@@ -163,7 +168,9 @@
             </div>
         </section>
 
-        <!-- PÁGINA 2 - CURSOS -->
+        <!-- ==================================================
+             PÁGINA 2 - CURSOS
+             ================================================== -->
         <section id="page-cursos" class="page-content" style="display: none;">
             <div class="treinamentos section-padding">
                 <div class="container scroll-anim">
@@ -179,8 +186,10 @@
                         </div>
                     </div>
 
-                    <!-- HUB COM CARDS -->
+                    <!-- HUB COM CARDS DE CURSOS -->
                     <div id="cursos-hub" class="cursos-options-grid">
+                        
+                        <!-- CARD 1: DRONE AGRÍCOLA -->
                         <div class="option-card-banner">
                             <img src="reis_agricola.jpeg" alt="Curso Drone Agrícola" class="card-media-img" onerror="this.src='reis_agricola.jpg'">
                             <div class="card-overlay-gradient"></div>
@@ -192,6 +201,7 @@
                             </div>
                         </div>
 
+                        <!-- CARD 2: DRONES DE IMAGEM -->
                         <div class="option-card-banner">
                             <img src="larissa_drone.jpeg" alt="Cursos Drones de Imagem" class="card-media-img" onerror="this.src='larissa_drone.jpg'">
                             <div class="card-overlay-gradient"></div>
@@ -203,6 +213,7 @@
                             </div>
                         </div>
 
+                        <!-- CARD 3: GEOPROCESSAMENTO -->
                         <div class="option-card-banner">
                             <img src="calor_-_mapa.png" alt="Cursos de Geoprocessamento" class="card-media-img">
                             <div class="card-overlay-gradient"></div>
@@ -215,9 +226,9 @@
                         </div>
                     </div>
 
-                    <!-- BOTÃO VOLTAR À HOME NO HUB DE CURSOS (NO CANTO DIREITO) -->
+                    <!-- BOTÃO NO BOTTOM HUB DA HOME -->
                     <div id="hub-footer-nav" class="subpage-nav-bar nav-bottom hub-nav-right">
-                        <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Voltar para Página Principal</button>
+                        <button type="button" class="btn-back-home" onclick="switchPage('home')">Página Principal <i class="fa-solid fa-house"></i></button>
                     </div>
 
                     <!-- SUBPÁGINA: DETALHES CURSO DRONE AGRÍCOLA -->
@@ -291,10 +302,10 @@
                             </div>
                         </div>
 
-                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS (ESQUERDA E DIREITA) -->
+                        <!-- BOTÕES DE NAVEGAÇÃO NO BOTTOM (ESQUERDA E DIREITA) -->
                         <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
-                            <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                            <button type="button" class="btn-back-home" onclick="switchPage('home')">Página Principal <i class="fa-solid fa-house"></i></button>
                         </div>
                     </div>
 
@@ -358,10 +369,10 @@
                             </div>
                         </div>
 
-                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS -->
+                        <!-- BOTÕES DE NAVEGAÇÃO NO BOTTOM (ESQUERDA E DIREITA) -->
                         <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
-                            <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                            <button type="button" class="btn-back-home" onclick="switchPage('home')">Página Principal <i class="fa-solid fa-house"></i></button>
                         </div>
                     </div>
 
@@ -423,10 +434,10 @@
                             </div>
                         </div>
 
-                        <!-- BOTÕES DE NAVEGAÇÃO SEPARADOS -->
+                        <!-- BOTÕES DE NAVEGAÇÃO NO BOTTOM (ESQUERDA E DIREITA) -->
                         <div class="subpage-nav-bar nav-bottom nav-split">
                             <button type="button" class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
-                            <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                            <button type="button" class="btn-back-home" onclick="switchPage('home')">Página Principal <i class="fa-solid fa-house"></i></button>
                         </div>
                     </div>
 
@@ -434,7 +445,9 @@
             </div>
         </section>
 
-        <!-- PÁGINA 3 - SERVIÇOS TÉCNICOS -->
+        <!-- ==================================================
+             PÁGINA 3 - SERVIÇOS TÉCNICOS
+             ================================================== -->
         <section id="page-servicos" class="page-content" style="display: none;">
             <div class="solucoes-tecnicas section-padding">
                 <div class="container scroll-anim">
@@ -530,7 +543,7 @@
                     </div>
 
                     <div class="subpage-nav-bar nav-bottom hub-nav-right">
-                        <button type="button" class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Voltar para Página Principal</button>
+                        <button type="button" class="btn-back-home" onclick="switchPage('home')">Página Principal <i class="fa-solid fa-house"></i></button>
                     </div>
 
                 </div>
