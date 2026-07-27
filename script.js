@@ -10,6 +10,7 @@ function switchPage(pageId) {
 
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Oculta todas as páginas
     Object.keys(pages).forEach(key => {
         if (pages[key]) {
             pages[key].classList.remove('active');
@@ -17,6 +18,7 @@ function switchPage(pageId) {
         }
     });
 
+    // Remove classe active dos links do menu
     navLinks.forEach(link => link.classList.remove('active'));
 
     const activePage = pages[pageId] || pages['home'];
@@ -35,9 +37,16 @@ function switchPage(pageId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     closeMobileMenu();
 
+    // Se navegou para a página de cursos geral (ex: pelo menu)
     if (activeId === 'cursos') {
         closeCourseCategory();
     }
+}
+
+// Função para abrir o curso diretamente vindo do carrossel da Home
+function openCourseDirectly(category) {
+    switchPage('cursos');
+    openCourseCategory(category);
 }
 
 function scrollToContato(event) {
@@ -66,37 +75,35 @@ function closeMobileMenu() {
 // 2. GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
 // ==================================================
 function openCourseCategory(category) {
-    const hub = document.getElementById('cursos-hub');
+    const hubHeader = document.getElementById('hub-header');
+    const hubGrid = document.getElementById('cursos-hub');
     const agricolaCategory = document.getElementById('category-drone-agricola');
     const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
-    if (hub) hub.style.display = 'none';
+    // Esconde o Título Principal e o Grid de Opções para evitar duplicidade visual
+    if (hubHeader) hubHeader.style.display = 'none';
+    if (hubGrid) hubGrid.style.display = 'none';
+
+    // Esconde todas as visões para mostrar apenas a selecionada
+    if (agricolaCategory) agricolaCategory.style.display = 'none';
+    if (imagemCategory) imagemCategory.style.display = 'none';
+    if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
 
     if (category === 'drone-agricola' && agricolaCategory) {
-        if (imagemCategory) imagemCategory.style.display = 'none';
-        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
         agricolaCategory.style.display = 'block';
     } else if ((category === 'drones' || category === 'drones-imagem') && imagemCategory) {
-        if (agricolaCategory) agricolaCategory.style.display = 'none';
-        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
         imagemCategory.style.display = 'block';
     } else if (category === 'geoprocessamento' && geoprocessamentoCategory) {
-        if (agricolaCategory) agricolaCategory.style.display = 'none';
-        if (imagemCategory) imagemCategory.style.display = 'none';
         geoprocessamentoCategory.style.display = 'block';
     }
 
-    setTimeout(() => {
-        const pageCursos = document.getElementById('page-cursos');
-        if (pageCursos) {
-            pageCursos.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, 50);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeCourseCategory() {
-    const hub = document.getElementById('cursos-hub');
+    const hubHeader = document.getElementById('hub-header');
+    const hubGrid = document.getElementById('cursos-hub');
     const agricolaCategory = document.getElementById('category-drone-agricola');
     const imagemCategory = document.getElementById('category-drones-imagem');
     const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
@@ -104,18 +111,16 @@ function closeCourseCategory() {
     if (agricolaCategory) agricolaCategory.style.display = 'none';
     if (imagemCategory) imagemCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
-    if (hub) hub.style.display = 'grid';
 
-    setTimeout(() => {
-        const pageCursos = document.getElementById('page-cursos');
-        if (pageCursos) {
-            pageCursos.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, 50);
+    // Restaura o HUB e Título Principal
+    if (hubHeader) hubHeader.style.display = 'block';
+    if (hubGrid) hubGrid.style.display = 'grid';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ==================================================
-// 3. AUTO-SLIDE DO CARROSSEL
+// 3. AUTO-SLIDE DO CARROSSEL COM PAUSA AO HOVER
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
@@ -148,13 +153,18 @@ function currentSlide(index) {
 }
 
 function startSlideTimer() {
+    stopSlideTimer();
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1);
     }, 5000);
 }
 
+function stopSlideTimer() {
+    if (slideInterval) clearInterval(slideInterval);
+}
+
 function resetSlideTimer() {
-    clearInterval(slideInterval);
+    stopSlideTimer();
     startSlideTimer();
 }
 
@@ -163,6 +173,13 @@ function resetSlideTimer() {
 // ==================================================
 document.addEventListener('DOMContentLoaded', () => {
     startSlideTimer();
+
+    // Pausa o carrossel no mouseover para permitir leitura tranquila
+    const heroCarousel = document.querySelector('.hero-carousel');
+    if (heroCarousel) {
+        heroCarousel.addEventListener('mouseenter', stopSlideTimer);
+        heroCarousel.addEventListener('mouseleave', startSlideTimer);
+    }
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -175,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Animação de Scroll Suave
     const animElements = document.querySelectorAll('.scroll-anim');
 
     const observerOptions = {
