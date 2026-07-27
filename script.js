@@ -111,7 +111,7 @@ function closeCourseCategory() {
 }
 
 // ==================================================
-// 3. GERENCIAMENTO DO CARROSSEL HERO
+// 3. AUTO-SLIDE DO CARROSSEL (DESLIZA SOZINHO A CADA 5s)
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
@@ -146,7 +146,7 @@ function currentSlide(index) {
 function startSlideTimer() {
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1);
-    }, 6000);
+    }, 5000);
 }
 
 function resetSlideTimer() {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         root: null,
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px"
     };
 
