@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Adicional para alinhamentos específicos -->
+    <!-- CSS Adicional para alinhamentos específicos e carrossel -->
     <style>
         .center-title {
             text-align: center !important;
@@ -90,15 +90,94 @@
              PÁGINA 1 - HOME
              ================================================== -->
         <section id="page-home" class="page-content active">
-            <!-- BANNER PRINCIPAL -->
-            <div class="hero-banner">
+
+            <!-- BANNER PRINCIPAL / CARROSSEL HERO -->
+            <div class="hero-carousel">
                 <div class="hero-overlay"></div>
-                <div class="hero-content scroll-anim">
-                    <h1>Tecnologia e Precisão para o Agro e Meio Ambiente</h1>
-                    <p>Transformando dados aéreos e espaciais em informações estratégicas de alta performance.</p>
-                    <a href="#explore-solucoes" class="btn-primary" onclick="document.getElementById('explore-solucoes').scrollIntoView({ behavior: 'smooth' });">Conheça Nossas Soluções</a>
+
+                <!-- SLIDE 1: CURSOS + PULVERIZAÇÃO AGRÍCOLA -->
+                <div class="hero-slide active" style="background-image: url('home_capa.png');">
+                    <div class="hero-content scroll-anim">
+                        <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação &amp; Soluções</span>
+                        <h1>Domine Drones e Geotecnologias no Campo e nas Cidades</h1>
+                        <p>Aprenda a operar drones para mapeamento ou solicite o serviço de <strong>Pulverização Agrícola</strong> com alta tecnologia para sua lavoura.</p>
+                        <div class="hero-actions">
+                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drones');">
+                                <i class="fa-solid fa-rocket"></i> CONHECER NOSSOS CURSOS
+                            </a>
+                            <a href="#solucao-agricola" class="btn-secondary btn-hero-secondary" onclick="document.getElementById('solucao-agricola').scrollIntoView({ behavior: 'smooth' });">
+                                <i class="fa-solid fa-spray-can-sparkles"></i> SERVIÇO DE PULVERIZAÇÃO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: GEOPROCESSAMENTO E QGIS -->
+                <div class="hero-slide" style="background-image: url('home_capa.png');">
+                    <div class="hero-content scroll-anim">
+                        <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Inteligência Espacial</span>
+                        <h1>Transforme Dados Aéreos em Mapas Técnicos de Alta Precisão</h1>
+                        <p>Aprenda a processar imagens no <strong>QGIS e Metashape</strong> para gerar laudos ambientais, análises de solo e projetos de engenharia.</p>
+                        <div class="hero-actions">
+                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('geoprocessamento');">
+                                <i class="fa-solid fa-map-location-dot"></i> CURSOS DE GEOPROCESSAMENTO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTROLES DO CARROSSEL -->
+                <button class="carousel-control prev" onclick="moveSlide(-1)" aria-label="Slide anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next" onclick="moveSlide(1)" aria-label="Próximo slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- INDICADORES (DOTS) -->
+                <div class="carousel-indicators">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
                 </div>
             </div>
+
+            <!-- SEÇÃO DE INTENÇÃO DE VENDA: APLICAÇÃO AGRÍCOLA (PARCERIA COMISSÃO) -->
+            <section id="solucao-agricola" class="section-padding bg-light">
+                <div class="container scroll-anim">
+                    <div class="center-title">
+                        <span class="section-subtitle">Alta Tecnologia no Campo</span>
+                        <h2>Aplicação e Pulverização com Drones Agrícolas</h2>
+                        <p class="section-text" style="max-width: 800px; margin: 0 auto;">Maximize o rendimento da sua cultura com aplicação cirúrgica de insumos, economia de produtos e proteção total contra o amassamento do solo.</p>
+                    </div>
+
+                    <div class="grid-2 margin-top">
+                        <div class="fundadora--wrapper">
+                            <img src="drone_agricola.jpg" alt="Drone Agrícola em Operação de Pulverização" class="fundadora-img">
+                        </div>
+
+                        <div class="agri-content">
+                            <h3 style="font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 20px; font-weight: 800;">Vantagens da Aplicação Venti Verde:</h3>
+                            
+                            <ul class="service-card-list" style="margin-bottom: 30px;">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Amassamento:</strong> Economize até 10% da sua safra eliminando o tráfego pesado de tratores.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Economia de Insumos:</strong> Gotas ultra-finas e aplicação localizada em taxa variável.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Acesso Fácil:</strong> Operação rápida em áreas declivosas, molhadas ou pós-chuva.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>Mapeamento Prévio:</strong> Diagnóstico da área antes da pulverização para máxima eficácia.</li>
+                            </ul>
+
+                            <!-- CAIXA DE CAPTAÇÃO DE LEAD / COMISSÃO -->
+                            <div class="agri-card-lead">
+                                <h4 style="font-size: 1.3rem; color: var(--accent-dark); margin-bottom: 8px; font-weight: 800;">Precisa de pulverização na sua propriedade?</h4>
+                                <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 20px;">Solicite uma cotação rápida. Nossa equipe analisa o tamanho da sua área e indica a melhor estratégia de aplicação.</p>
+                                
+                                <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Aplicação/Pulverização%20com%20Drone%20Agrícola.%20Minha%20área%20é%20de%20X%20hectares." target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: block; text-align: center; width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> SOLICITAR ORÇAMENTO DE PULVERIZAÇÃO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- SEÇÃO INSTITUCIONAL -->
             <div class="institucional section-padding">
@@ -605,9 +684,56 @@
         }
 
         // ==================================================
+        // GERENCIAMENTO DO CARROSSEL HERO
+        // ==================================================
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+
+            if (!slides.length) return;
+
+            if (index >= slides.length) currentSlideIndex = 0;
+            else if (index < 0) currentSlideIndex = slides.length - 1;
+            else currentSlideIndex = index;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentSlideIndex].classList.add('active');
+            if (dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
+        }
+
+        function moveSlide(step) {
+            showSlide(currentSlideIndex + step);
+            resetSlideTimer();
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+            resetSlideTimer();
+        }
+
+        function startSlideTimer() {
+            slideInterval = setInterval(() => {
+                showSlide(currentSlideIndex + 1);
+            }, 6000); // Rotaciona a cada 6 segundos
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            startSlideTimer();
+        }
+
+        // ==================================================
         // EVENTOS APÓS O CARREGAMENTO DO DOM
         // ==================================================
         document.addEventListener('DOMContentLoaded', () => {
+            // Inicia a rotação do Carrossel Hero
+            startSlideTimer();
+
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
 
