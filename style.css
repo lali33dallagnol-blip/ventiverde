@@ -439,6 +439,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .service-card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
@@ -582,6 +583,7 @@ h2 {
     .grid-2 { grid-template-columns: 1fr; }
     .menu-toggle { display: flex; }
     .logo-area { margin-left: 0; }
+    
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -591,10 +593,25 @@ h2 {
         background-color: var(--pure-white);
         flex-direction: column;
         align-items: center;
+        gap: 25px;
         padding-top: 40px;
         transition: left 0.4s ease-in-out;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
+    
     .nav-menu.active { left: 0; }
+
+    /* Animação do ícone Hambúrguer para X */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
