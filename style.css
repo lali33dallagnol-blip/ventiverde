@@ -403,7 +403,7 @@ body {
 }
 
 /* ==================================================
-   6. CONTEÚDO E CARDS DE CURSOS (REGRAS REVISADAS)
+   6. CONTEÚDO E CARDS DE CURSOS (COM TAGS IMG REAIS)
    ================================================== */
 .section-subtitle {
     display: block;
@@ -441,7 +441,7 @@ h2 {
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
 .fundadora-bio { font-size: 1.02rem; line-height: 1.7; margin-bottom: 14px; color: var(--text-color); }
 
-/* HUB DE CURSOS - GRID DE CARDS */
+/* HUB DE CURSOS - GRID DE CARDS COM MÁSCARA E ZOON HOVER */
 .cursos-options-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -460,37 +460,33 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     transition: var(--transition-smooth);
     overflow: hidden;
-    background-color: #12261e; /* Cor base caso a imagem demore a carregar */
+    background-color: #12261e;
 }
 
-/* CARD 1: Drone Agrícola */
-.card-bg-agricola {
-    background-image: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 25, 18, 0.4) 40%, rgba(10, 25, 18, 0.95) 85%),
-        url('reis_agricola.jpeg') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
+.card-media-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    transition: transform 0.5s ease;
 }
 
-/* CARD 2: Drones de Imagem (Larissa) */
-.card-bg-imagem {
-    background-image: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 25, 18, 0.4) 40%, rgba(10, 25, 18, 0.95) 85%),
-        url('larissa_drone.jpeg') !important;
-    background-size: cover !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
+.option-card-banner:hover .card-media-img {
+    transform: scale(1.06);
 }
 
-/* CARD 3: Geoprocessamento (Mapa QGIS) */
-.card-bg-geoprocessamento {
-    background-image: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 25, 18, 0.4) 40%, rgba(10, 25, 18, 0.95) 85%),
-        url('calor_-_mapa.png') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
+.card-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 25, 18, 0.45) 40%, rgba(10, 25, 18, 0.95) 85%);
+    z-index: 2;
 }
 
 .option-card-banner:hover {
@@ -500,7 +496,7 @@ h2 {
 
 .card-banner-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: #ffffff !important;
 }
 
