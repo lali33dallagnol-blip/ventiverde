@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --primary-dark: #0a5c36;     /* Verde Escuro Principal */
+    --primary-dark: #0a5c36;      /* Verde Escuro Principal */
     --primary-light: #7bc15e;    /* Verde Claro Secundário */
     --accent-dark: #12261e;      /* Escuro de Alto Contraste */
     --bg-white: #f4f6f5;          /* Fundo Off-White suave */
@@ -24,7 +24,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none !important;
 }
 
 html {
@@ -81,6 +80,7 @@ body {
     transition: var(--transition-smooth);
     box-shadow: 0 6px 20px rgba(123, 193, 94, 0.35);
     cursor: pointer;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -115,6 +115,7 @@ body {
     transition: var(--transition-smooth);
     box-shadow: var(--shadow-card);
     cursor: pointer;
+    border: none;
 }
 
 .btn-secondary:hover {
@@ -134,6 +135,7 @@ body {
     align-items: center;
     gap: 8px;
     transition: var(--transition-smooth);
+    border: none;
 }
 
 .btn-back:hover { transform: translateX(-5px); }
@@ -150,6 +152,7 @@ body {
     align-items: center;
     gap: 6px;
     transition: var(--transition-smooth);
+    border: none;
 }
 
 .btn-back-home:hover {
@@ -157,15 +160,26 @@ body {
     color: #ffffff;
 }
 
-/* NAVEGAÇÃO INFERIOR DA SUBPÁGINA */
+/* NAVEGAÇÃO INFERIOR DA SUBPÁGINA (ESTILOS DE ALINHAMENTO) */
 .subpage-nav-bar.nav-bottom {
     margin-top: 35px;
-    margin-bottom: 0;
     padding-top: 18px;
-    padding-bottom: 0;
-    border-bottom: none !important;
-    border-top: 2px solid rgba(10, 92, 54, 0.08) !important;
+    border-top: 2px solid rgba(10, 92, 54, 0.08);
 }
+
+.subpage-nav-bar.nav-bottom.nav-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hub-nav-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
 /* ==================================================
    4. NAVBAR FIXA & CLEAN
    ================================================== */
@@ -204,6 +218,9 @@ body {
     font-size: 0.98rem;
     transition: var(--transition-smooth);
     padding: 5px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .nav-link:hover, .nav-link.active { color: var(--primary-dark); }
@@ -212,6 +229,8 @@ body {
     margin-left: auto;
     display: flex;
     align-items: center;
+    background: transparent;
+    border: none;
 }
 
 .nav-logo {
@@ -230,6 +249,7 @@ body {
     background: transparent;
     cursor: pointer;
     z-index: 1001;
+    border: none;
 }
 
 .menu-toggle .bar {
@@ -279,6 +299,7 @@ body {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    background-color: #12261e; /* Fundo caso imagem falhe */
     display: flex;
     align-items: center;
     padding: 0 clamp(2rem, 5vw, 4rem);
@@ -333,22 +354,6 @@ body {
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 }
 
-.hero-highlights-list {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.hero-highlights-list li {
-    font-size: 0.92rem;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.hero-highlights-list li i { color: var(--primary-light); }
-
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -366,6 +371,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
 .carousel-control:hover { 
@@ -402,7 +408,7 @@ body {
 }
 
 /* ==================================================
-   6. CONTEÚDO E CARDS DE CURSOS (COM TAGS IMG REAIS)
+   6. CONTEÚDO E CARDS DE CURSOS
    ================================================== */
 .section-subtitle {
     display: block;
@@ -440,7 +446,6 @@ h2 {
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
 .fundadora-bio { font-size: 1.02rem; line-height: 1.7; margin-bottom: 14px; color: var(--text-color); }
 
-/* HUB DE CURSOS - GRID DE CARDS COM MÁSCARA E ZOON HOVER */
 .cursos-options-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -542,6 +547,7 @@ h2 {
     font-size: 0.9rem;
     cursor: pointer;
     transition: var(--transition-smooth);
+    border: none;
 }
 
 .btn-green-card { background-color: #27ae60; }
@@ -793,4 +799,15 @@ h2 {
     }
     .nav-menu.active { left: 0; }
     .carousel-control { display: none; }
+}
+
+@media (max-width: 600px) {
+    .subpage-nav-bar.nav-bottom.nav-split {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    .hub-nav-right {
+        justify-content: center;
+    }
 }
