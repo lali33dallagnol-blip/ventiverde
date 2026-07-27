@@ -55,7 +55,7 @@
                             <h1>Cursos de Drones &amp; Mapeamento Aéreo</h1>
                             <p class="hero-description">Domine a pilotagem e o mapeamento com aplicação prática em: <strong>Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</strong></p>
                             <div class="hero-actions">
-                                <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drones-imagem');">
+                                <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('drones-imagem')">
                                     <i class="fa-solid fa-rocket"></i> VER CURSOS DE MAPEAMENTO
                                 </a>
                             </div>
@@ -73,27 +73,26 @@
                                 <li><i class="fa-solid fa-check"></i> Apostila, Certificado Digital e Suporte Pós-Curso</li>
                             </ul>
                             <div class="hero-actions">
-                                <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drone-agricola');">
+                                <a href="javascript:void(0)" class="btn-primary btn-agri-hero" onclick="openCourseDirectly('drone-agricola')">
                                     <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO AGRÍCOLA
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SLIDE 3: GEOPROCESSAMENTO E FOTOGRAMETRIA -->
-<!-- SLIDE 3: GEOPROCESSAMENTO -->
-<div class="hero-slide" style="background-image: url('calor_-_mapa.png'); background-position: center center;">
-    <div class="hero-content scroll-anim">
-        <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
-        <h1>Cursos de Geoprocessamento</h1>
-        <p class="hero-description">Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
-        <div class="hero-actions">
-            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('geoprocessamento');">
-                <i class="fa-solid fa-map"></i> VER CURSOS DE GEOPROCESSAMENTO
-            </a>
-        </div>
-    </div>
-</div>
+                    <!-- SLIDE 3: GEOPROCESSAMENTO -->
+                    <div class="hero-slide" style="background-image: url('calor_-_mapa.png');">
+                        <div class="hero-content scroll-anim">
+                            <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
+                            <h1>Cursos de Geoprocessamento</h1>
+                            <p class="hero-description">Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
+                            <div class="hero-actions">
+                                <a href="javascript:void(0)" class="btn-primary" onclick="openCourseDirectly('geoprocessamento')">
+                                    <i class="fa-solid fa-map"></i> VER CURSOS DE GEOPROCESSAMENTO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- CONTROLES -->
                     <button class="carousel-control prev" onclick="moveSlide(-1)" aria-label="Slide anterior">
@@ -169,60 +168,65 @@
         <section id="page-cursos" class="page-content" style="display: none;">
             <div class="treinamentos section-padding">
                 <div class="container scroll-anim">
-                    
-                    <button class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
 
-                    <div class="center-title">
-                        <span class="section-subtitle">Capacitação Profissional</span>
-                        <h2>CURSOS VENTI VERDE</h2>
-                        <p class="section-text" style="text-align: center;">
-                            <strong>Aprenda a utilizar drones e geotecnologias para transformar dados em soluções profissionais.</strong>
-                        </p>
+                    <!-- TITULO CABEÇALHO DO HUB -->
+                    <div id="hub-header">
+                        <button class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
+
+                        <div class="center-title">
+                            <span class="section-subtitle">Capacitação Profissional</span>
+                            <h2>CURSOS VENTI VERDE</h2>
+                            <p class="section-text" style="text-align: center;">
+                                <strong>Aprenda a utilizar drones e geotecnologias para transformar dados em soluções profissionais.</strong>
+                            </p>
+                        </div>
                     </div>
 
-                   <!-- HUB COM CARDS -->
-<div id="cursos-hub" class="cursos-options-grid">
-    
-  <!-- CARD 1: DRONE AGRÍCOLA (Imagem 100% visível, centralizada no topo e sem cortes) -->
-<div class="option-card-banner" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.85) 100%), url('reis_agricola.jpeg'); background-size: contain !important; background-position: top center !important; background-repeat: no-repeat; background-color: #12261e;">
-    <div class="card-banner-content">
-        <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
-        <h3>CURSO DE DRONE AGRÍCOLA</h3>
-        <p>Aprenda a operar drones agrícolas com foco em pulverização e obtenha sua habilitação oficial para o CAAR.</p>
-        <button onclick="openCourseCategory('drone-agricola')" class="btn-card-large btn-green-card">VER DETALHES DO CURSO AGRÍCOLA</button>
-    </div>
-</div>
+                    <!-- HUB COM CARDS -->
+                    <div id="cursos-hub" class="cursos-options-grid">
+                        
+                        <!-- CARD 1: DRONE AGRÍCOLA -->
+                        <div class="option-card-banner" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.85) 100%), url('reis_agricola.jpeg'); background-size: cover !important; background-position: center !important; background-color: #12261e;">
+                            <div class="card-banner-content">
+                                <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
+                                <h3>CURSO DE DRONE AGRÍCOLA</h3>
+                                <p>Aprenda a operar drones agrícolas com foco em pulverização e obtenha sua habilitação oficial para o CAAR.</p>
+                                <button onclick="openCourseCategory('drone-agricola')" class="btn-card-large btn-green-card">VER DETALHES DO CURSO AGRÍCOLA</button>
+                            </div>
+                        </div>
 
-    <!-- CARD 2: DRONES DE IMAGEM -->
-    <div class="option-card-banner" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), url('larissa_drone.jpeg'); background-position: top center;">
-        <div class="card-banner-content">
-            <span class="badge-card-map"><i class="fa-solid fa-helicopter"></i> Mapeamento &amp; Pilotagem</span>
-            <h3>CURSOS DE DRONES DE IMAGEM</h3>
-            <p>Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</p>
-            <button onclick="openCourseCategory('drones-imagem')" class="btn-card-large">VER PLANOS DE CURSOS</button>
-        </div>
-    </div>
+                        <!-- CARD 2: DRONES DE IMAGEM -->
+                        <div class="option-card-banner" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), url('larissa_drone.jpeg'); background-position: top center;">
+                            <div class="card-banner-content">
+                                <span class="badge-card-map"><i class="fa-solid fa-helicopter"></i> Mapeamento &amp; Pilotagem</span>
+                                <h3>CURSOS DE DRONES DE IMAGEM</h3>
+                                <p>Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</p>
+                                <button onclick="openCourseCategory('drones-imagem')" class="btn-card-large">VER PLANOS DE CURSOS</button>
+                            </div>
+                        </div>
 
-    <!-- CARD 3: GEOPROCESSAMENTO -->
-    <div class="option-card-banner" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), url('calor_-_mapa.png');">
-        <div class="card-banner-content">
-            <span class="badge-card-map"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
-            <h3>CURSOS DE GEOPROCESSAMENTO</h3>
-            <p>Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
-            <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
-        </div>
-    </div>
-
-</div>
+                        <!-- CARD 3: GEOPROCESSAMENTO -->
+                        <div class="option-card-banner" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), url('calor_-_mapa.png');">
+                            <div class="card-banner-content">
+                                <span class="badge-card-map"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
+                                <h3>CURSOS DE GEOPROCESSAMENTO</h3>
+                                <p>Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
+                                <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
+                            </div>
+                        </div>
 
                     </div>
 
                     <!-- SUBPÁGINA: DETALHES CURSO DRONE AGRÍCOLA -->
                     <div id="category-drone-agricola" class="course-detail-view" style="display: none;">
-                        <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                        <div class="subpage-nav-bar">
+                            <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                            <button class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                        </div>
                         
                         <div class="agri-full-page-box">
                             <div class="agri-header-title">
+                                <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
                                 <h2>CURSO DE PILOTO DE DRONE AGRÍCOLA</h2>
                                 <p class="agri-partner-desc">Em parceria com a <strong>Reis Pulverização</strong>, aprenda a operar drones agrícolas e prepare-se para atuar profissionalmente no agronegócio.</p>
                             </div>
@@ -292,7 +296,10 @@
 
                     <!-- SUBPÁGINA: DETALHES DRONES DE IMAGEM -->
                     <div id="category-drones-imagem" class="course-detail-view" style="display: none;">
-                        <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                        <div class="subpage-nav-bar">
+                            <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                            <button class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                        </div>
                         
                         <div class="center-title">
                             <h2 class="category-title">CURSOS DE DRONES DE IMAGEM</h2>
@@ -355,7 +362,10 @@
 
                     <!-- SUBPÁGINA: DETALHES GEOPROCESSAMENTO -->
                     <div id="category-geoprocessamento" class="course-detail-view" style="display: none;">
-                        <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                        <div class="subpage-nav-bar">
+                            <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                            <button class="btn-back-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Página Principal</button>
+                        </div>
                         
                         <div class="center-title">
                             <h2 class="category-title">CURSOS DE GEOPROCESSAMENTO</h2>
