@@ -182,40 +182,46 @@
                         </div>
                     </div>
 
-       <!-- HUB COM CARDS -->
-<div id="cursos-hub" class="cursos-options-grid">
-    
-    <!-- CARD 1: DRONE AGRÍCOLA -->
-    <div class="option-card-banner card-bg-agricola">
-        <div class="card-banner-content">
-            <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
-            <h3>CURSO DE DRONE AGRÍCOLA</h3>
-            <p>Aprenda a operar drones agrícolas com foco em pulverização e obtenha sua habilitação oficial para o CAAR.</p>
-            <button onclick="openCourseCategory('drone-agricola')" class="btn-card-large btn-green-card">VER DETALHES DO CURSO AGRÍCOLA</button>
-        </div>
-    </div>
+                    <!-- HUB COM CARDS (USANDO TAGS IMG DIRETAS PARA GARANTIR RENDERIZAÇÃO) -->
+                    <div id="cursos-hub" class="cursos-options-grid">
+                        
+                        <!-- CARD 1: DRONE AGRÍCOLA -->
+                        <div class="option-card-banner">
+                            <img src="reis_agricola.jpeg" alt="Curso Drone Agrícola" class="card-media-img" onerror="this.src='reis_agricola.jpg'">
+                            <div class="card-overlay-gradient"></div>
+                            <div class="card-banner-content">
+                                <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
+                                <h3>CURSO DE DRONE AGRÍCOLA</h3>
+                                <p>Aprenda a operar drones agrícolas com foco em pulverização e obtenha sua habilitação oficial para o CAAR.</p>
+                                <button onclick="openCourseCategory('drone-agricola')" class="btn-card-large btn-green-card">VER DETALHES DO CURSO AGRÍCOLA</button>
+                            </div>
+                        </div>
 
-    <!-- CARD 2: DRONES DE IMAGEM -->
-    <div class="option-card-banner card-bg-imagem">
-        <div class="card-banner-content">
-            <span class="badge-card-map"><i class="fa-solid fa-helicopter"></i> Mapeamento &amp; Pilotagem</span>
-            <h3>CURSOS DE DRONES DE IMAGEM</h3>
-            <p>Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</p>
-            <button onclick="openCourseCategory('drones-imagem')" class="btn-card-large">VER PLANOS DE CURSOS</button>
-        </div>
-    </div>
+                        <!-- CARD 2: DRONES DE IMAGEM -->
+                        <div class="option-card-banner">
+                            <img src="larissa_drone.jpeg" alt="Cursos Drones de Imagem" class="card-media-img" onerror="this.src='larissa_drone.jpg'">
+                            <div class="card-overlay-gradient"></div>
+                            <div class="card-banner-content">
+                                <span class="badge-card-map"><i class="fa-solid fa-helicopter"></i> Mapeamento &amp; Pilotagem</span>
+                                <h3>CURSOS DE DRONES DE IMAGEM</h3>
+                                <p>Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</p>
+                                <button onclick="openCourseCategory('drones-imagem')" class="btn-card-large">VER PLANOS DE CURSOS</button>
+                            </div>
+                        </div>
 
-    <!-- CARD 3: GEOPROCESSAMENTO -->
-    <div class="option-card-banner card-bg-geoprocessamento">
-        <div class="card-banner-content">
-            <span class="badge-card-map"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
-            <h3>CURSOS DE GEOPROCESSAMENTO</h3>
-            <p>Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
-            <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
-        </div>
-    </div>
+                        <!-- CARD 3: GEOPROCESSAMENTO -->
+                        <div class="option-card-banner">
+                            <img src="calor_-_mapa.png" alt="Cursos de Geoprocessamento" class="card-media-img">
+                            <div class="card-overlay-gradient"></div>
+                            <div class="card-banner-content">
+                                <span class="badge-card-map"><i class="fa-solid fa-earth-americas"></i> Geotecnologias &amp; QGIS</span>
+                                <h3>CURSOS DE GEOPROCESSAMENTO</h3>
+                                <p>Aprenda QGIS do zero ao avançado e Processamento Fotogramétrico com Metashape.</p>
+                                <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
+                            </div>
+                        </div>
 
-</div>
+                    </div>
 
                     <!-- SUBPÁGINA: DETALHES CURSO DRONE AGRÍCOLA -->
                     <div id="category-drone-agricola" class="course-detail-view" style="display: none;">
