@@ -29,8 +29,8 @@ function switchPage(pageId) {
         activePage.classList.add('active');
     }
 
-    // 3. Atualiza o link ativo na Navbar
-    const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
+    // 3. Atualiza o link ativo na Navbar buscando pelo parâmetro onclick
+    const activeLink = document.querySelector(`.nav-link[onclick*="'${activeId}'"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
@@ -40,6 +40,17 @@ function switchPage(pageId) {
 
     // 5. Fecha o menu mobile caso esteja aberto
     closeMobileMenu();
+
+    // 6. Se alternou para a página de cursos, reseta para o HUB de cursos
+    if (activeId === 'cursos') {
+        const hub = document.getElementById('cursos-hub');
+        const dronesCategory = document.getElementById('category-drones');
+        const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
+
+        if (dronesCategory) dronesCategory.style.display = 'none';
+        if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
+        if (hub) hub.style.display = 'grid';
+    }
 }
 
 // Auxiliar para fechar o menu mobile
@@ -74,8 +85,11 @@ function openCourseCategory(category) {
         geoprocessamentoCategory.style.display = 'block';
     }
 
-    // Rola até o topo dos cursos para facilitar a leitura
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Rola suavemente até o início do conteúdo da página de cursos
+    const pageCursos = document.getElementById('page-cursos');
+    if (pageCursos) {
+        pageCursos.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function closeCourseCategory() {
@@ -86,8 +100,12 @@ function closeCourseCategory() {
     if (dronesCategory) dronesCategory.style.display = 'none';
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
     if (hub) hub.style.display = 'grid';
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Rola suavemente de volta ao HUB de cursos
+    const pageCursos = document.getElementById('page-cursos');
+    if (pageCursos) {
+        pageCursos.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 // ==================================================
@@ -105,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
     }
+
+    // Fecha o menu mobile ao clicar em links de âncora direta (ex: #contato)
+    const anchorLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
 
     // Sistema de Animação ao Rolar a Tela (Intersection Observer)
     const animElements = document.querySelectorAll('.scroll-anim');
