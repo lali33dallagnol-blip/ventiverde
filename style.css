@@ -160,7 +160,6 @@ body {
     color: #ffffff;
 }
 
-/* NAVEGAÇÃO INFERIOR DA SUBPÁGINA (ORGANIZADA ESQUERDA X DIREITA) */
 .subpage-nav-bar.nav-bottom {
     margin-top: 35px;
     padding-top: 22px;
@@ -422,7 +421,7 @@ body {
 }
 
 /* ==================================================
-   6. SEÇÃO FUNDADORA & CHIPS VISUAIS (NOVO DESIGN)
+   6. SEÇÃO FUNDADORA & CHIPS VISUAIS
    ================================================== */
 .fundadora--wrapper {
     border-radius: 24px;
