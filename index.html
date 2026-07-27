@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venti Verde - Geotecnologias e Meio Ambiente</title>
+    <title>Venti Verde - Serviços & Especialização em Drones e Geotecnologias</title>
     <meta name="description" content="Soluções em Drones, Geotecnologias, Cursos e Consultoria Ambiental.">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Adicional para alinhamentos, bordas do carrossel e textos -->
+    <!-- CSS Adicional de Alinhamentos e Ajustes das Subpáginas -->
     <style>
         .center-title {
             text-align: center !important;
@@ -22,57 +22,6 @@
             display: block !important;
         }
 
-        /* Moldura, Bordas e Sombra no Carrossel Hero (Não ocupa mais a tela toda) */
-        .hero-carousel {
-            position: relative !important;
-            max-width: 1200px !important;
-            margin: 20px auto 40px auto !important;
-            border-radius: 20px !important;
-            overflow: hidden !important;
-            border: 2px solid rgba(46, 125, 50, 0.2) !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
-            height: 520px !important;
-        }
-
-        /* Fundo dos slides do carrossel */
-        .hero-slide {
-            background-size: cover !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-            height: 100% !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        /* Cartão de fundo transparente sobre a foto para destacar as palavras */
-        .hero-content {
-            background: rgba(0, 0, 0, 0.55) !important;
-            backdrop-filter: blur(4px) !important;
-            padding: 35px 30px !important;
-            border-radius: 16px !important;
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            max-width: 800px !important;
-            margin: 0 20px !important;
-            text-align: center !important;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
-        }
-
-        .hero-content h1 {
-            color: #ffffff !important;
-            font-size: 2.2rem !important;
-            margin-top: 10px !important;
-            margin-bottom: 15px !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
-        }
-
-        .hero-content p {
-            color: #f0f0f0 !important;
-            font-size: 1.1rem !important;
-            margin-bottom: 25px !important;
-        }
-
-        /* Centralização da seção Explore Nossas Soluções */
         .home-explore, .home-explore .container {
             text-align: center !important;
         }
@@ -86,7 +35,6 @@
             margin-top: 1.5rem !important;
         }
 
-        /* Centralização da caixa final de Consultoria */
         .custom-consult-box {
             text-align: center !important;
             display: flex !important;
@@ -107,20 +55,6 @@
                 display: grid !important;
                 grid-template-columns: repeat(4, 1fr) !important;
                 gap: 20px !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-carousel {
-                height: 480px !important;
-                margin: 10px 15px 30px 15px !important;
-                border-radius: 14px !important;
-            }
-            .hero-content {
-                padding: 20px 15px !important;
-            }
-            .hero-content h1 {
-                font-size: 1.6rem !important;
             }
         }
     </style>
@@ -155,36 +89,51 @@
              ================================================== -->
         <section id="page-home" class="page-content active">
 
-            <!-- BANNER PRINCIPAL / CARROSSEL HERO (EMOLDURADO COM BORDAS) -->
+            <!-- CARROSSEL HERO FLUIDO E SEM BORDAS EXCESSIVAS -->
             <div class="hero-carousel">
                 <div class="hero-overlay"></div>
 
-                <!-- SLIDE 1: CURSO DRONE (Imagem: curso_drone.png) -->
-                <div class="hero-slide active" style="background-image: url('curso_drone.png');">
+                <!-- SLIDE 1: DRONES MAPEAMENTO E APLICAÇÕES -->
+                <div class="hero-slide active" style="background-image: url('home_capa.png');">
                     <div class="hero-content scroll-anim">
-                        <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação &amp; Soluções</span>
-                        <h1>Domine Drones e Geotecnologias no Campo e nas Cidades</h1>
-                        <p>Aprenda a operar drones para mapeamento ou solicite o serviço de <strong>Pulverização Agrícola</strong> com alta tecnologia para sua lavoura.</p>
+                        <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação Profissional</span>
+                        <h1>Cursos de Drones &amp; Mapeamento Aéreo</h1>
+                        <p class="hero-description">Domine a pilotagem e o mapeamento com aplicação prática em: <strong>Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</strong></p>
                         <div class="hero-actions">
-                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drones');">
-                                <i class="fa-solid fa-rocket"></i> CONHECER NOSSOS CURSOS
-                            </a>
-                            <a href="#solucao-agricola" class="btn-secondary btn-hero-secondary" onclick="document.getElementById('solucao-agricola').scrollIntoView({ behavior: 'smooth' });">
-                                <i class="fa-solid fa-spray-can-sparkles"></i> SERVIÇO DE PULVERIZAÇÃO
+                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drones-imagem');">
+                                <i class="fa-solid fa-rocket"></i> VER CURSOS DE MAPEAMENTO
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 2: GEOPROCESSAMENTO E QGIS -->
+                <!-- SLIDE 2: DRONE AGRÍCOLA (REIS PULVERIZAÇÃO) -->
+                <div class="hero-slide" style="background-image: url('curso_drone.png');">
+                    <div class="hero-content scroll-anim">
+                        <span class="hero-badge badge-agri-banner"><i class="fa-solid fa-wheat-awn"></i> +150 Alunos Formados</span>
+                        <h1>Curso de Piloto de Drone Agrícola</h1>
+                        <p class="hero-description">Em parceria com a <strong>Reis Pulverização</strong>, aprenda a operar drones agrícolas e obtenha sua habilitação oficial para o <strong>CAAR</strong>.</p>
+                        <ul class="hero-highlights-list">
+                            <li><i class="fa-solid fa-check"></i> Teórico Completo e Prática Presencial em turma de até 10 alunos</li>
+                            <li><i class="fa-solid fa-check"></i> Apostila, Certificado Digital e Suporte Pós-Curso</li>
+                        </ul>
+                        <div class="hero-actions">
+                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('drone-agricola');">
+                                <i class="fa-solid fa-wheat-awn"></i> CONHECER CURSO AGRÍCOLA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: SERVIÇOS TÉCNICOS -->
                 <div class="hero-slide" style="background-image: url('home_capa.png');">
                     <div class="hero-content scroll-anim">
-                        <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> Inteligência Espacial</span>
-                        <h1>Transforme Dados Aéreos em Mapas Técnicos de Alta Precisão</h1>
-                        <p>Aprenda a processar imagens no <strong>QGIS e Metashape</strong> para gerar laudos ambientais, análises de solo e projetos de engenharia.</p>
+                        <span class="hero-badge"><i class="fa-solid fa-gears"></i> Soluções Corporativas</span>
+                        <h1>Serviços Técnicos e Consultoria Ambiental</h1>
+                        <p class="hero-description">Mapeamento com Drones, Processamento de Satélite, Elaboração de Mapas Temáticos e Estudos Ambientais.</p>
                         <div class="hero-actions">
-                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('cursos'); openCourseCategory('geoprocessamento');">
-                                <i class="fa-solid fa-map-location-dot"></i> CURSOS DE GEOPROCESSAMENTO
+                            <a href="javascript:void(0)" class="btn-primary" onclick="switchPage('servicos');">
+                                <i class="fa-solid fa-map-location-dot"></i> VER SOLUÇÕES TÉCNICAS
                             </a>
                         </div>
                     </div>
@@ -202,60 +151,7 @@
                 <div class="carousel-indicators">
                     <span class="dot active" onclick="currentSlide(0)"></span>
                     <span class="dot" onclick="currentSlide(1)"></span>
-                </div>
-            </div>
-
-            <!-- SEÇÃO DE INTENÇÃO DE VENDA: APLICAÇÃO AGRÍCOLA -->
-            <section id="solucao-agricola" class="section-padding bg-light">
-                <div class="container scroll-anim">
-                    <div class="center-title">
-                        <span class="section-subtitle">Alta Tecnologia no Campo</span>
-                        <h2>Aplicação e Pulverização com Drones Agrícolas</h2>
-                        <p class="section-text" style="max-width: 800px; margin: 0 auto;">Maximize o rendimento da sua cultura com aplicação cirúrgica de insumos, economia de produtos e proteção total contra o amassamento do solo.</p>
-                    </div>
-
-                    <div class="grid-2 margin-top">
-                        <div class="fundadora--wrapper">
-                            <img src="drone_agricola.jpg" alt="Drone Agrícola em Operação de Pulverização" class="fundadora-img">
-                        </div>
-
-                        <div class="agri-content">
-                            <h3 style="font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 20px; font-weight: 800;">Vantagens da Aplicação Venti Verde:</h3>
-                            
-                            <ul class="service-card-list" style="margin-bottom: 30px;">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Amassamento:</strong> Economize até 10% da sua safra eliminando o tráfego pesado de tratores.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Economia de Insumos:</strong> Gotas ultra-finas e aplicação localizada em taxa variável.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Acesso Fácil:</strong> Operação rápida em áreas declivosas, molhadas ou pós-chuva.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Mapeamento Prévio:</strong> Diagnóstico da área antes da pulverização para máxima eficácia.</li>
-                            </ul>
-
-                            <!-- CAIXA DE CAPTAÇÃO DE LEAD / COMISSÃO -->
-                            <div class="agri-card-lead">
-                                <h4 style="font-size: 1.3rem; color: var(--accent-dark); margin-bottom: 8px; font-weight: 800;">Precisa de pulverização na sua propriedade?</h4>
-                                <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 20px;">Solicite uma cotação rápida. Nossa equipe analisa o tamanho da sua área e indica a melhor estratégia de aplicação.</p>
-                                
-                                <a href="https://wa.me/5551998654971?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Aplicação/Pulverização%20com%20Drone%20Agrícola.%20Minha%20área%20é%20de%20X%20hectares." target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: block; text-align: center; width: 100%;">
-                                    <i class="fa-brands fa-whatsapp"></i> SOLICITAR ORÇAMENTO DE PULVERIZAÇÃO
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SEÇÃO INSTITUCIONAL -->
-            <div class="institucional section-padding">
-                <div class="container scroll-anim">
-                    <div class="center-title">
-                        <span class="section-subtitle">Quem Somos</span>
-                        <h2>Venti Verde - Soluções em Drones, Geotecnologias e Meio Ambiente</h2>
-                    </div>
-                    <p class="section-text">
-                        A Venti Verde é uma empresa especializada em soluções utilizando drones, geotecnologias e inteligência espacial para atender empresas, produtores rurais e profissionais que buscam inovação, precisão e segurança em seus projetos.
-                    </p>
-                    <p class="section-text">
-                        Atuamos com cursos especializados, processamento de imagens, geoprocessamento, levantamentos aéreos, elaboração de mapas, laudos e análises ambientais voltadas à regularização ambiental e ao planejamento territorial.
-                    </p>
+                    <span class="dot" onclick="currentSlide(2)"></span>
                 </div>
             </div>
 
@@ -295,11 +191,14 @@
         </section>
 
         <!-- ==================================================
-             PÁGINA 2 - CURSOS
+             PÁGINA 2 - CURSOS (HUB E ARVORE DE DECISÃO)
              ================================================== -->
         <section id="page-cursos" class="page-content" style="display: none;">
             <div class="treinamentos section-padding">
                 <div class="container scroll-anim">
+                    
+                    <button class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
+
                     <div class="center-title">
                         <span class="section-subtitle">Capacitação Profissional</span>
                         <h2>CURSOS VENTI VERDE</h2>
@@ -308,31 +207,111 @@
                         </p>
                     </div>
 
-                    <!-- MENU PRINCIPAL DE CURSOS (HUB) -->
+                    <!-- HUB COM CONTAINER CARDS COM IMAGEM DE FUNDO -->
                     <div id="cursos-hub" class="cursos-options-grid">
-                        <!-- OPÇÃO 1 -->
-                        <div class="option-card">
-                            <i class="fa-solid fa-helicopter category-icon"></i>
-                            <h3>CURSOS DE DRONES</h3>
-                            <p>Aprenda a operar drones com segurança e desenvolva habilidades para aplicações profissionais.</p>
-                            <button onclick="openCourseCategory('drones')" class="btn-card-large">VER CURSOS DE DRONES</button>
+                        
+                        <!-- CONTAINER 1: DRONE AGRÍCOLA (IMAGEM: reis_agricola.jpeg) -->
+                        <div class="option-card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('reis_agricola.jpeg');">
+                            <div class="card-banner-content">
+                                <span class="badge-card-agri"><i class="fa-solid fa-wheat-awn"></i> Parceria Reis Pulverização</span>
+                                <h3>CURSO DE DRONE AGRÍCOLA</h3>
+                                <p>Aprenda a operar drones agrícolas com foco em pulverização e habilitação oficial para o CAAR.</p>
+                                <button onclick="openCourseCategory('drone-agricola')" class="btn-card-large btn-green-card">VER DETALHES DO CURSO AGRÍCOLA</button>
+                            </div>
                         </div>
 
-                        <!-- OPÇÃO 2 -->
-                        <div class="option-card">
-                            <i class="fa-solid fa-earth-americas category-icon"></i>
-                            <h3>CURSOS DE GEOPROCESSAMENTO</h3>
-                            <p>Aprenda a trabalhar com dados geográficos, imagens e ferramentas de geoprocessamento.</p>
-                            <button onclick="openCourseCategory('geoprocessamento')" class="btn-card-large">VER CURSOS DE GEOPROCESSAMENTO</button>
+                        <!-- CONTAINER 2: DRONES MAPEAMENTO (IMAGEM: larissa_drone.jpeg) -->
+                        <div class="option-card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('larissa_drone.jpeg');">
+                            <div class="card-banner-content">
+                                <span class="badge-card-map"><i class="fa-solid fa-helicopter"></i> Mapeamento &amp; Pilotagem</span>
+                                <h3>CURSOS DE DRONES DE IMAGENS</h3>
+                                <p>Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública.</p>
+                                <button onclick="openCourseCategory('drones-imagem')" class="btn-card-large">VER PLANOS DE CURSOS</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBPÁGINA: DETALHES CURSO DRONE AGRÍCOLA -->
+                    <div id="category-drone-agricola" class="course-detail-view" style="display: none;">
+                        <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
+                        
+                        <div class="agri-full-page-box">
+                            <div class="agri-header-title">
+                                <h2>CURSO DE PILOTO DE DRONE AGRÍCOLA</h2>
+                                <p class="agri-partner-desc">Em parceria com a <strong>Reis Pulverização</strong>, aprenda a operar drones agrícolas e prepare-se para atuar profissionalmente no agronegócio.</p>
+                            </div>
+
+                            <div class="agri-details-grid">
+                                <div class="agri-info-col">
+                                    <h3><i class="fa-solid fa-box-open"></i> Inclui:</h3>
+                                    <ul class="course-topics">
+                                        <li><i class="fa-solid fa-check"></i> Conteúdo teórico completo</li>
+                                        <li><i class="fa-solid fa-check"></i> Prática presencial em turma de até 10 alunos</li>
+                                        <li><i class="fa-solid fa-check"></i> Apostila digital</li>
+                                        <li><i class="fa-solid fa-check"></i> Certificado digital</li>
+                                        <li><i class="fa-solid fa-check"></i> Formação profissional em operação de drones agrícolas</li>
+                                        <li><i class="fa-solid fa-check"></i> Preparação e obtenção do CAAR</li>
+                                        <li><i class="fa-solid fa-check"></i> Acompanhamento e suporte do professor após a conclusão da formação</li>
+                                    </ul>
+
+                                    <div class="price-single margin-top-sm">
+                                        <span class="price-label">Valor do Curso:</span>
+                                        <span class="price-value">R$ 2.500,00</span>
+                                    </div>
+                                </div>
+
+                                <div class="agri-curriculum-col">
+                                    <h3><i class="fa-solid fa-list-check"></i> Grade Curricular:</h3>
+                                    <div class="table-responsive">
+                                        <table class="curriculum-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Componente</th>
+                                                    <th>Carga Horária</th>
+                                                    <th>Instrutor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Automação de Voos</td>
+                                                    <td>0004:00 h/a</td>
+                                                    <td>Wellington Barbosa dos Reis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Configuração Extras</td>
+                                                    <td>0006:00 h/a</td>
+                                                    <td>Wellington Barbosa dos Reis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Conhecimentos Técnicos sobre Drones</td>
+                                                    <td>0004:00 h/a</td>
+                                                    <td>Wellington Barbosa dos Reis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Manutenções Essenciais do ARP</td>
+                                                    <td>0006:00 h/a</td>
+                                                    <td>Wellington Barbosa dos Reis</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <a href="https://wa.me/5551998654971?text=Olá!%20Quero%20me%20inscrever%20no%20Curso%20de%20Piloto%20de%20Drone%20Agrícola%20(R$%202.500,00)." target="_blank" rel="noopener noreferrer" class="btn-primary btn-agri-cta">
+                                        <i class="fa-brands fa-whatsapp"></i> INSCREVER-SE NO CURSO AGRÍCOLA
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SUBPÁGINA: DETALHES CURSOS DE DRONES -->
-                    <div id="category-drones" class="course-detail-view" style="display: none;">
+                    <!-- SUBPÁGINA: DETALHES CURSOS DE DRONES MAPEAMENTO -->
+                    <div id="category-drones-imagem" class="course-detail-view" style="display: none;">
                         <button class="btn-back" onclick="closeCourseCategory()"><i class="fa-solid fa-arrow-left"></i> Voltar para opções de cursos</button>
                         
                         <div class="center-title">
                             <h2 class="category-title">CURSOS DE DRONES</h2>
+                            <p class="section-subtitle">Aplicado a Fotofilmagem, Agricultura de Precisão, Meio Ambiente, Engenharia e Segurança Pública</p>
                         </div>
 
                         <div class="cursos-container">
@@ -485,16 +464,20 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- ==================================================
-             PÁGINA 3 - SERVIÇOS
+             PÁGINA 3 - SERVIÇOS TÉCNICOS
              ================================================== -->
         <section id="page-servicos" class="page-content" style="display: none;">
             <div class="solucoes-tecnicas section-padding">
                 <div class="container scroll-anim">
+                    
+                    <button class="btn-back" onclick="switchPage('home')"><i class="fa-solid fa-arrow-left"></i> Voltar para Página Principal</button>
+
                     <div class="center-title">
                         <span class="section-subtitle">Serviços Técnicos</span>
                         <h2>SOLUÇÕES TÉCNICAS</h2>
@@ -649,7 +632,6 @@
 
             const navLinks = document.querySelectorAll('.nav-link');
 
-            // 1. Esconde todas as páginas e remove destaques do menu
             Object.keys(pages).forEach(key => {
                 if (pages[key]) {
                     pages[key].classList.remove('active');
@@ -659,7 +641,6 @@
 
             navLinks.forEach(link => link.classList.remove('active'));
 
-            // 2. Torna visível a página desejada
             const activePage = pages[pageId] || pages['home'];
             const activeId = pages[pageId] ? pageId : 'home';
 
@@ -668,31 +649,19 @@
                 activePage.classList.add('active');
             }
 
-            // 3. Atualiza o link ativo na Navbar buscando pelo parâmetro onclick
             const activeLink = document.querySelector(`.nav-link[onclick*="'${activeId}'"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
             }
 
-            // 4. Força o topo da tela imediatamente
             window.scrollTo(0, 0);
-
-            // 5. Fecha o menu mobile caso esteja aberto
             closeMobileMenu();
 
-            // 6. Se alternou para a página de cursos, reseta para o HUB de cursos
             if (activeId === 'cursos') {
-                const hub = document.getElementById('cursos-hub');
-                const dronesCategory = document.getElementById('category-drones');
-                const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
-
-                if (dronesCategory) dronesCategory.style.display = 'none';
-                if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
-                if (hub) hub.style.display = 'grid';
+                closeCourseCategory();
             }
         }
 
-        // Função específica para rolagem até o Contato
         function scrollToContato(event) {
             if (event) event.preventDefault();
             closeMobileMenu();
@@ -702,7 +671,6 @@
             }
         }
 
-        // Auxiliar para fechar o menu mobile
         function closeMobileMenu() {
             const navMenu = document.querySelector('.nav-menu');
             const menuToggle = document.querySelector('.menu-toggle');
@@ -721,20 +689,26 @@
         // ==================================================
         function openCourseCategory(category) {
             const hub = document.getElementById('cursos-hub');
-            const dronesCategory = document.getElementById('category-drones');
+            const agricolaCategory = document.getElementById('category-drone-agricola');
+            const imagemCategory = document.getElementById('category-drones-imagem');
             const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
             if (hub) hub.style.display = 'none';
 
-            if (category === 'drones' && dronesCategory) {
+            if (category === 'drone-agricola' && agricolaCategory) {
+                if (imagemCategory) imagemCategory.style.display = 'none';
                 if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
-                dronesCategory.style.display = 'block';
+                agricolaCategory.style.display = 'block';
+            } else if ((category === 'drones' || category === 'drones-imagem') && imagemCategory) {
+                if (agricolaCategory) agricolaCategory.style.display = 'none';
+                if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
+                imagemCategory.style.display = 'block';
             } else if (category === 'geoprocessamento' && geoprocessamentoCategory) {
-                if (dronesCategory) dronesCategory.style.display = 'none';
+                if (agricolaCategory) agricolaCategory.style.display = 'none';
+                if (imagemCategory) imagemCategory.style.display = 'none';
                 geoprocessamentoCategory.style.display = 'block';
             }
 
-            // Rola suavemente até o início do conteúdo da página de cursos
             const pageCursos = document.getElementById('page-cursos');
             if (pageCursos) {
                 pageCursos.scrollIntoView({ behavior: 'smooth' });
@@ -743,14 +717,15 @@
 
         function closeCourseCategory() {
             const hub = document.getElementById('cursos-hub');
-            const dronesCategory = document.getElementById('category-drones');
+            const agricolaCategory = document.getElementById('category-drone-agricola');
+            const imagemCategory = document.getElementById('category-drones-imagem');
             const geoprocessamentoCategory = document.getElementById('category-geoprocessamento');
 
-            if (dronesCategory) dronesCategory.style.display = 'none';
+            if (agricolaCategory) agricolaCategory.style.display = 'none';
+            if (imagemCategory) imagemCategory.style.display = 'none';
             if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
             if (hub) hub.style.display = 'grid';
 
-            // Rola suavemente de volta ao HUB de cursos
             const pageCursos = document.getElementById('page-cursos');
             if (pageCursos) {
                 pageCursos.scrollIntoView({ behavior: 'smooth' });
@@ -793,7 +768,7 @@
         function startSlideTimer() {
             slideInterval = setInterval(() => {
                 showSlide(currentSlideIndex + 1);
-            }, 6000); // Rotaciona a cada 6 segundos
+            }, 6000);
         }
 
         function resetSlideTimer() {
@@ -805,13 +780,11 @@
         // EVENTOS APÓS O CARREGAMENTO DO DOM
         // ==================================================
         document.addEventListener('DOMContentLoaded', () => {
-            // Inicia a rotação do Carrossel Hero
             startSlideTimer();
 
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
 
-            // Alternador do Menu Mobile (Hambúrguer -> X)
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', () => {
                     const isOpen = navMenu.classList.toggle('active');
@@ -820,7 +793,6 @@
                 });
             }
 
-            // Sistema de Animação ao Rolar a Tela (Intersection Observer)
             const animElements = document.querySelectorAll('.scroll-anim');
 
             const observerOptions = {
@@ -842,7 +814,7 @@
         });
 
         // ==================================================
-        // GERENCIAMENTO DE CARREGAMENTO DIRETO VIA HASH DA URL
+        // CARREGAMENTO DIRETO VIA HASH DA URL
         // ==================================================
         window.addEventListener('load', () => {
             const hash = window.location.hash.replace('#', '');
