@@ -29,19 +29,17 @@ function switchPage(pageId) {
         activePage.classList.add('active');
     }
 
-    // Atualiza o link ativo na Navbar buscando pelo parâmetro onclick
+    // Atualiza o link ativo na Navbar
     const activeLink = document.querySelector(`.nav-link[onclick*="'${activeId}'"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
 
-    // Força o topo da tela imediatamente
+    // Reseta o topo da página e fecha o menu mobile se estiver aberto
     window.scrollTo(0, 0);
-
-    // Fecha o menu mobile caso esteja aberto
     closeMobileMenu();
 
-    // Se alternou para a página de cursos, reseta para o HUB de cursos
+    // Se navegou para a aba Cursos, reseta a visualização para o HUB inicial
     if (activeId === 'cursos') {
         const hub = document.getElementById('cursos-hub');
         const dronesCategory = document.getElementById('category-drones');
@@ -53,7 +51,7 @@ function switchPage(pageId) {
     }
 }
 
-// Auxiliar para fechar o menu mobile
+// Auxiliar para fechar o menu mobile hambúrguer
 function closeMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -68,7 +66,7 @@ function closeMobileMenu() {
 }
 
 // ==================================================
-// 2. GERENCIAMENTO DAS SUBCATEGORIAS DE CURSOS
+// 2. GERENCIAMENTO DAS CATEGORIAS DE CURSOS
 // ==================================================
 function openCourseCategory(category) {
     const hub = document.getElementById('cursos-hub');
@@ -85,7 +83,7 @@ function openCourseCategory(category) {
         geoprocessamentoCategory.style.display = 'block';
     }
 
-    // Rola suavemente até o início do conteúdo da página de cursos
+    // Rola a tela suavemente até a seção de cursos
     const pageCursos = document.getElementById('page-cursos');
     if (pageCursos) {
         pageCursos.scrollIntoView({ behavior: 'smooth' });
@@ -101,7 +99,6 @@ function closeCourseCategory() {
     if (geoprocessamentoCategory) geoprocessamentoCategory.style.display = 'none';
     if (hub) hub.style.display = 'grid';
 
-    // Rola suavemente de volta ao HUB de cursos
     const pageCursos = document.getElementById('page-cursos');
     if (pageCursos) {
         pageCursos.scrollIntoView({ behavior: 'smooth' });
@@ -109,7 +106,7 @@ function closeCourseCategory() {
 }
 
 // ==================================================
-// 3. GERENCIAMENTO DO CARROSSEL HERO
+// 3. GERENCIAMENTO DO CARROSSEL HERO (HOME)
 // ==================================================
 let currentSlideIndex = 0;
 let slideInterval;
@@ -154,16 +151,16 @@ function resetSlideTimer() {
 }
 
 // ==================================================
-// 4. EVENTOS APÓS O CARREGAMENTO DO DOM
+// 4. INICIALIZAÇÃO DE EVENTOS (DOM LOADED)
 // ==================================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicia a rotação automática do carrossel na Home
+    // Inicia a rotação automática do carrossel Hero
     startSlideTimer();
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Alternador do Menu Mobile (Hambúrguer -> X)
+    // Alternador do menu responsivo (Hambúrguer -> X)
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('active');
@@ -172,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fecha o menu mobile ao clicar em links de âncora direta (ex: #contato ou #solucao-agricola)
+    // Fecha o menu ao clicar em links âncora (#contato, etc.)
     const anchorLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
     anchorLinks.forEach(anchor => {
         anchor.addEventListener('click', () => {
@@ -180,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sistema de Animação ao Rolar a Tela (Intersection Observer)
+    // Animações ao rolar a página
     const animElements = document.querySelectorAll('.scroll-anim');
 
     const observerOptions = {
@@ -202,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================================================
-// 5. CARREGAMENTO DIRETO VIA HASH DA URL (#cursos, #servicos)
+// 5. CARREGAMENTO DIRETO VIA HASH NA URL (#cursos, #servicos)
 // ==================================================
 window.addEventListener('load', () => {
     const hash = window.location.hash.replace('#', '');
