@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================================================
-// 5. CARREGAMENTO DIRETO VIA HASH DA URL (#cursos, #servicos)
+// 5. CARREGAMENTO DIRETO VIA HASH DA URL
 // ==================================================
 window.addEventListener('load', () => {
     const hash = window.location.hash.replace('#', '');
