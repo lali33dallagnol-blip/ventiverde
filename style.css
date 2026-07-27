@@ -404,7 +404,7 @@ body {
 }
 
 /* ==================================================
-   6. CONTEÚDO E CARDS DE CURSOS
+   6. CONTEÚDO E CARDS DE CURSOS (EXIBIÇÃO DAS IMAGENS CORRIGIDA)
    ================================================== */
 .section-subtitle {
     display: block;
@@ -442,7 +442,7 @@ h2 {
 .fundadora-img { width: 100%; display: block; object-fit: cover; }
 .fundadora-bio { font-size: 1.02rem; line-height: 1.7; margin-bottom: 14px; color: var(--text-color); }
 
-/* HUB DE CURSOS */
+/* HUB DE CURSOS - GRID DE CARDS */
 .cursos-options-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -452,15 +452,46 @@ h2 {
 
 .option-card-banner {
     position: relative;
-    min-height: 400px;
+    min-height: 420px;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: clamp(20px, 3vw, 30px);
+    padding: clamp(20px, 3vw, 28px);
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
     overflow: hidden;
+    background-color: var(--accent-dark);
+}
+
+/* CARD 1: Drone Agrícola */
+.card-bg-agricola {
+    background-image: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(10, 25, 18, 0.92) 80%),
+        url('reis_agricola.jpeg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* CARD 2: Drones de Imagem (Foto da Larissa no topo) */
+.card-bg-imagem {
+    background-image: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(10, 25, 18, 0.92) 80%),
+        url('larissa_drone.jpeg') !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* CARD 3: Geoprocessamento (Mapa do QGIS) */
+.card-bg-geoprocessamento {
+    background-image: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(10, 25, 18, 0.92) 80%),
+        url('calor_-_mapa.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
 }
 
 .option-card-banner:hover {
@@ -489,8 +520,21 @@ h2 {
 .badge-card-agri { background-color: rgba(39, 174, 96, 0.95); color: #fff; }
 .badge-card-map { background-color: rgba(10, 92, 54, 0.95); color: #fff; }
 
-.card-banner-content h3 { font-size: 1.45rem; line-height: 1.25; margin-bottom: 8px; font-weight: 800; }
-.card-banner-content p { font-size: 0.92rem; line-height: 1.5; margin-bottom: 18px; opacity: 0.95; }
+.card-banner-content h3 { 
+    font-size: 1.45rem; 
+    line-height: 1.25; 
+    margin-bottom: 8px; 
+    font-weight: 800; 
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.card-banner-content p { 
+    font-size: 0.92rem; 
+    line-height: 1.5; 
+    margin-bottom: 18px; 
+    opacity: 0.95; 
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
 
 .btn-card-large {
     width: 100%;
@@ -629,7 +673,9 @@ h2 {
     color: var(--accent-dark);
 }
 
-/* SERVIÇOS */
+/* ==================================================
+   7. SERVIÇOS TÉCNICOS
+   ================================================== */
 .services-full-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -672,7 +718,9 @@ h2 {
 .custom-consult-box h3 { font-size: 1.6rem; margin-bottom: 10px; color: #fff; }
 .custom-consult-box p { font-size: 1.05rem; margin-bottom: 22px; opacity: 0.9; }
 
-/* RODAPÉ & WHATSAPP FLUTUANTE */
+/* ==================================================
+   8. RODAPÉ & WHATSAPP FLUTUANTE
+   ================================================== */
 .whatsapp-float {
     position: fixed;
     bottom: 22px;
