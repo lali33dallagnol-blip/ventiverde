@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Adicional para alinhamentos específicos e carrossel -->
+    <!-- CSS Adicional para alinhamentos, bordas do carrossel e textos -->
     <style>
         .center-title {
             text-align: center !important;
@@ -20,6 +20,56 @@
         .center-title h2 {
             text-align: center !important;
             display: block !important;
+        }
+
+        /* Moldura, Bordas e Sombra no Carrossel Hero (Não ocupa mais a tela toda) */
+        .hero-carousel {
+            position: relative !important;
+            max-width: 1200px !important;
+            margin: 20px auto 40px auto !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            border: 2px solid rgba(46, 125, 50, 0.2) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+            height: 520px !important;
+        }
+
+        /* Fundo dos slides do carrossel */
+        .hero-slide {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            height: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* Cartão de fundo transparente sobre a foto para destacar as palavras */
+        .hero-content {
+            background: rgba(0, 0, 0, 0.55) !important;
+            backdrop-filter: blur(4px) !important;
+            padding: 35px 30px !important;
+            border-radius: 16px !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            max-width: 800px !important;
+            margin: 0 20px !important;
+            text-align: center !important;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
+        }
+
+        .hero-content h1 {
+            color: #ffffff !important;
+            font-size: 2.2rem !important;
+            margin-top: 10px !important;
+            margin-bottom: 15px !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+        }
+
+        .hero-content p {
+            color: #f0f0f0 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 25px !important;
         }
 
         /* Centralização da seção Explore Nossas Soluções */
@@ -59,6 +109,20 @@
                 gap: 20px !important;
             }
         }
+
+        @media (max-width: 768px) {
+            .hero-carousel {
+                height: 480px !important;
+                margin: 10px 15px 30px 15px !important;
+                border-radius: 14px !important;
+            }
+            .hero-content {
+                padding: 20px 15px !important;
+            }
+            .hero-content h1 {
+                font-size: 1.6rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,12 +155,12 @@
              ================================================== -->
         <section id="page-home" class="page-content active">
 
-            <!-- BANNER PRINCIPAL / CARROSSEL HERO -->
+            <!-- BANNER PRINCIPAL / CARROSSEL HERO (EMOLDURADO COM BORDAS) -->
             <div class="hero-carousel">
                 <div class="hero-overlay"></div>
 
-                <!-- SLIDE 1: CURSOS + PULVERIZAÇÃO AGRÍCOLA -->
-                <div class="hero-slide active" style="background-image: url('home_capa.png');">
+                <!-- SLIDE 1: CURSO DRONE (Imagem: curso_drone.png) -->
+                <div class="hero-slide active" style="background-image: url('curso_drone.png');">
                     <div class="hero-content scroll-anim">
                         <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Capacitação &amp; Soluções</span>
                         <h1>Domine Drones e Geotecnologias no Campo e nas Cidades</h1>
@@ -141,7 +205,7 @@
                 </div>
             </div>
 
-            <!-- SEÇÃO DE INTENÇÃO DE VENDA: APLICAÇÃO AGRÍCOLA (PARCERIA COMISSÃO) -->
+            <!-- SEÇÃO DE INTENÇÃO DE VENDA: APLICAÇÃO AGRÍCOLA -->
             <section id="solucao-agricola" class="section-padding bg-light">
                 <div class="container scroll-anim">
                     <div class="center-title">
